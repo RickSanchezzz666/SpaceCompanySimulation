@@ -1,4 +1,4 @@
-Space Station Company Simulation.
+## Space Station Company Simulation.
 
 # Stack
 
