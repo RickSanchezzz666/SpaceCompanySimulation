@@ -1,3 +1,0 @@
-D:/Repos/SpaceCompanySimulation/SpaceCompanySimulationCMake/out/build/x64-debug/CMakeFiles/SpaceCompanySimulationCMake.dir
-D:/Repos/SpaceCompanySimulation/SpaceCompanySimulationCMake/out/build/x64-debug/CMakeFiles/edit_cache.dir
-D:/Repos/SpaceCompanySimulation/SpaceCompanySimulationCMake/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
