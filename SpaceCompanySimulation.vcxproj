@@ -127,10 +127,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <None Include="packages.config" />
+    <None Include="Simulation\info.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ClCompile Include="Simulation\main.cpp" />
+    <ClCompile Include="Simulation\Models\Planets\MarsPlanet.cpp" />
+    <ClCompile Include="Simulation\Models\Planets\MercuryPlanet.cpp" />
+    <ClCompile Include="Simulation\Models\Planets\VenusPlanet.cpp" />
+    <ClCompile Include="Simulation\Models\Ships\ExplorerSpaceShip.cpp" />
+    <ClCompile Include="Simulation\Models\Ships\MiningSpaceShip.cpp" />
+    <ClCompile Include="Simulation\Models\Ships\PassengerSpaceShip.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Simulation\Models\Planets\MarsPlanet.hpp" />
+    <ClInclude Include="Simulation\Models\Planets\MercuryPlanet.hpp" />
+    <ClInclude Include="Simulation\Models\Planets\PlanetAbstract.hpp" />
+    <ClInclude Include="Simulation\Models\Planets\VenusPlanet.hpp" />
+    <ClInclude Include="Simulation\Models\Ships\ExplorerSpaceShip.hpp" />
+    <ClInclude Include="Simulation\Models\Ships\MiningSpaceShip.hpp" />
+    <ClInclude Include="Simulation\Models\Ships\PassengerSpaceShip.hpp" />
+    <ClInclude Include="Simulation\Models\Ships\SpaceShipAbstract.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

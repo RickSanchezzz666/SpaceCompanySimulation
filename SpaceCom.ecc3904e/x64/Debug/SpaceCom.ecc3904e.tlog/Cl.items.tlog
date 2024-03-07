@@ -1,1 +1,7 @@
-D:\Repos\SpaceCompanySimulation\main.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\main.obj
+D:\Repos\SpaceCompanySimulation\Simulation\main.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\main.obj
+D:\Repos\SpaceCompanySimulation\Simulation\Models\Planets\MarsPlanet.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\MarsPlanet.obj
+D:\Repos\SpaceCompanySimulation\Simulation\Models\Planets\MercuryPlanet.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\MercuryPlanet.obj
+D:\Repos\SpaceCompanySimulation\Simulation\Models\Planets\VenusPlanet.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\VenusPlanet.obj
+D:\Repos\SpaceCompanySimulation\Simulation\Models\Ships\ExplorerSpaceShip.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\ExplorerSpaceShip.obj
+D:\Repos\SpaceCompanySimulation\Simulation\Models\Ships\MiningSpaceShip.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\MiningSpaceShip.obj
+D:\Repos\SpaceCompanySimulation\Simulation\Models\Ships\PassengerSpaceShip.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\PassengerSpaceShip.obj

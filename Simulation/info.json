@@ -1,0 +1,51 @@
+{
+  "Simulation": {
+    "Simulation speed": [
+      "Star(Sun)",
+      "Planets",
+      "Ships",
+      "Passengers?",
+      "Station",
+      "Asteroid Clusters?"
+    ]
+  },
+  "Structure": {
+    "Stars": {},
+    "Planets": {
+      "Properties": [
+        "Radius",
+        "Mass",
+        "YearDuration",
+        "DayDuration",
+        "FullOrbitSpin",
+        "SquareArea",
+        "OrbitalPeriod",
+        "DistanceToStar",
+        "WhoseOrbitOn",
+        "Temperature",
+        "Atmosphere",
+        "AtmosphereComposition",
+        "Gravitation",
+        "MagneticField",
+        "GeologicalActivity",
+        "LifeChance",
+        "Moons",
+        "AsteroidClusters"
+      ]
+    },
+    "Ships": {
+      "Methods": [
+        "StartEngine",
+        "StopEngine",
+        "flightInProgress"
+      ]
+    },
+    "Station": {}
+  },
+  "Prototypes": {
+    "Stars": "Sun",
+    "Planets": [ "Mercury", "Venus", "Mars" ],
+    "Ships": [ "Passenger", "Mining", "Explorer" ],
+    "Station":  "Earth Station"
+  }
+}
