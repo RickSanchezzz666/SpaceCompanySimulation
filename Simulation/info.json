@@ -10,15 +10,34 @@
     ]
   },
   "Structure": {
-    "Stars": {},
+    "Stars": {
+      "Methods": [
+        "showStarInfo"
+      ],
+      "Properties": [
+        "Radius",
+        "Mass",
+        "Area",
+        "Age",
+        "Temperature",
+        "StarType",
+        "SpectralClass",
+        "Luminosity",
+        "AbsoluteMagnitude",
+        "DistanceToCenterOfGalaxy"
+      ]
+    },
     "Planets": {
+      "Methods": [
+        "showPlanetInfo"
+      ],
       "Properties": [
         "Radius",
         "Mass",
         "YearDuration",
         "DayDuration",
         "FullOrbitSpin",
-        "SquareArea",
+        "Area",
         "OrbitalPeriod",
         "DistanceToStar",
         "WhoseOrbitOn",
