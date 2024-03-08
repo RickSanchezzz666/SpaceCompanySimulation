@@ -1,9 +1,11 @@
 #pragma once
 #include "SpaceShipAbstract.hpp"
 
+#include <iostream>
+
 class MiningSpaceShip : public SpaceShipAbstract {
 public:
-	void startEngine() override;
+	MiningSpaceShip() { std::cout << "Mining Space Ship started engine...\n"; }
 
-	void stopEngine() override;
+	~MiningSpaceShip() { std::cout << "Mining Space Ship stopped engine...\n"; }
 };

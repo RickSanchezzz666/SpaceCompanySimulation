@@ -19,24 +19,9 @@ int main() {
 
 	SolarSystem solarSystem;
 
-	pShip.startEngine();
-	pShip.stopEngine();
-
-	mShip.startEngine();
-	mShip.stopEngine();
-
-	eShip.startEngine();
-	eShip.stopEngine();
-
-	for (auto& planet : solarSystem.planets) {
-		planet->generatePlanet();
-		planet->showPlanetInfo();
-		planet->destroyPlanet();
-	}
-	
-	solarSystem.star->generateStar();
 	solarSystem.star->showStarInfo();
-	solarSystem.star->destroyStar();
+
+	for (auto& planet : solarSystem.planets) planet->showPlanetInfo();
 
 	std::cin.get();
 	return 0;

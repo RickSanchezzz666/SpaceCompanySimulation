@@ -25,6 +25,4 @@ public:
         _distanceToCenterOfGalaxy(distance) {};
 
     virtual void showStarInfo() = 0;
-	virtual void generateStar() = 0;
-	virtual void destroyStar() = 0;
 };

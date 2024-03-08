@@ -33,7 +33,7 @@ public:
 		_atmosphere(atmosphere), _atmosphereComposition(atmosphereComposition), _gravity(gravity), 
 		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum) {};
 
+	virtual ~PlanetAbstract() {};
+
 	virtual void showPlanetInfo() = 0;
-	virtual void generatePlanet() = 0;
-	virtual void destroyPlanet() = 0;
 };

@@ -24,11 +24,3 @@ void MercuryPlanet::showPlanetInfo() {
 	cout << "\n   Magnetic Field Strength (nT): " << _magneticFieldStrength << " nT";
 	cout << "\n   Life Chance (%): " << _lifeChance << "%\n";
 }
-
-void MercuryPlanet::generatePlanet() {
-	std::cout << "Mercury Planet Generated...\n";
-}
-
-void MercuryPlanet::destroyPlanet() {
-	std::cout << "Mercury Planet Destroyed...\n";
-}

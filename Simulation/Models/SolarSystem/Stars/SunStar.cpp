@@ -17,11 +17,3 @@ void SunStar::showStarInfo() {
 	cout << "\n   Absolute Magnitued: " << _absoluteMagnitude;
 	cout << "\n   Distance to the Center of the Galaxy (LY): " << _distanceToCenterOfGalaxy << " Light Years\n";
 }
-
-void SunStar::generateStar() {
-	cout << "Sun Star is generated...\n";
-}
-
-void SunStar::destroyStar() {
-	cout << "Sun Star is destroyed...\n";
-}

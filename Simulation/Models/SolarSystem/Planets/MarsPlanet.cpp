@@ -25,11 +25,3 @@ void MarsPlanet::showPlanetInfo() {
 	cout << "\n   Life Chance (%): " << _lifeChance << "%\n";
 }
 
-void MarsPlanet::generatePlanet() {
-	std::cout << "Mars Planet Generated...\n";
-}
-
-void MarsPlanet::destroyPlanet() {
-	std::cout << "Mars Planet Destroyed...\n";
-}
-
