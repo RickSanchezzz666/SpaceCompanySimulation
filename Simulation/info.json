@@ -59,7 +59,19 @@
         "flightInProgress"
       ]
     },
-    "Station": {}
+    "Station": {
+      "Properties": [
+        "AstronautsNumber",
+        "StationBalanceClass",
+        "AvailableShips",
+        "ShipsInFlight"
+      ],
+      "Methods": [
+        "GetAvailableShips",
+        "GetShipsInFlight",
+        "StartShip"
+      ]
+    }
   },
   "Prototypes": {
     "Stars": "Sun",

@@ -32,6 +32,10 @@ add_executable (SpaceCompanySimulationCMake  "../Simulation/main.cpp"
                                              "../Simulation/Models/SolarSystem/Stars/SunStar.cpp"
                                              "../Simulation/Models/SolarSystem/SolarSystem.hpp"
                                              "../Simulation/Models/SolarSystem/SolarSystem.cpp"
+                                             "../Simulation/Models/SolarSystem/Ships/SpaceShipType.hpp"
+                                             "../Simulation/Features/EarthStation.hpp"
+                                             "../Simulation/Features/EarthStation.hpp"
+                                             "../Simulation/Features/SpaceShipStatus.hpp"
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

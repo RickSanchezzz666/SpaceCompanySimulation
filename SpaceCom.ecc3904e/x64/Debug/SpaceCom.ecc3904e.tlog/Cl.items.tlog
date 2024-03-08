@@ -1,3 +1,4 @@
+D:\Repos\SpaceCompanySimulation\Simulation\Features\EarthStation.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\EarthStation.obj
 D:\Repos\SpaceCompanySimulation\Simulation\main.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\main.obj
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\MarsPlanet.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\MarsPlanet.obj
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\MercuryPlanet.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\MercuryPlanet.obj
@@ -7,3 +8,4 @@ D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\MiningSpaceS
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\PassengerSpaceShip.obj
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\SolarSystem.obj
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Stars\SunStar.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\SunStar.obj
+D:\Repos\SpaceCompanySimulation\Threads\Threads.cpp;D:\Repos\SpaceCompanySimulation\SpaceCom.ecc3904e\x64\Debug\Threads.obj

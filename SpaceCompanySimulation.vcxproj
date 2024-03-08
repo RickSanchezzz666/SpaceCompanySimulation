@@ -131,6 +131,7 @@
     <None Include="Simulation\info.json" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Simulation\Features\EarthStation.cpp" />
     <ClCompile Include="Simulation\main.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Planets\MarsPlanet.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Planets\MercuryPlanet.cpp" />
@@ -140,8 +141,11 @@
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\SolarSystem.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Stars\SunStar.cpp" />
+    <ClCompile Include="Threads\Threads.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Simulation\Features\EarthStation.hpp" />
+    <ClInclude Include="Simulation\Features\SpaceShipStatus.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\MarsPlanet.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\MercuryPlanet.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\PlanetAbstract.hpp" />
@@ -150,9 +154,11 @@
     <ClInclude Include="Simulation\Models\SolarSystem\Ships\MiningSpaceShip.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp" />
+    <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipType.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\SolarSystem.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Stars\StarsAbstract.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Stars\SunStar.hpp" />
+    <ClInclude Include="Threads\Thread.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
