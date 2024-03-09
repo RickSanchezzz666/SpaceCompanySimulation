@@ -13,18 +13,15 @@
 #include <iostream>
 
 int main() {
-	PassengerSpaceShip pShip;
-	MiningSpaceShip mShip;
-	ExplorerSpaceShip eShip;
-
 	SolarSystem solarSystem;
 
 	solarSystem.star->showStarInfo();
 
 	for (auto& planet : solarSystem.planets) planet->showPlanetInfo();
 
-	solarSystem.earthStation->launchS(0);
-	solarSystem.earthStation->launchS(1);
+	solarSystem.earthStation->launchSpaceShip(0);
+	solarSystem.earthStation->launchSpaceShip(1);
+	solarSystem.earthStation->launchSpaceShip(2);
 
 	std::cin.get();
 	return 0;

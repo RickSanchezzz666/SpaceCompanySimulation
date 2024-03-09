@@ -2,7 +2,7 @@
 
 void ExplorerSpaceShip::launchShip() {
 	std::cout << "Explorer Ship is launching..\n";
-	this->startEngine();
+	this->__startEngine();
 	std::this_thread::sleep_for(std::chrono::seconds(5));
-	this->stopEngine();
+	this->__stopEngine();
 }

@@ -7,13 +7,16 @@
 
 class Thread {
 private:
-	std::atomic<bool> __isRunning;
 	std::thread __thread;
 public:
+	std::atomic<bool> isRunning;
+
+	Thread() : isRunning(false) {};
+
 	template <class Function, class... Args>
-	Thread(Function &&func, Args &&...args) : __isRunning(false) {
-		if (!__isRunning) {
-			__isRunning = true;
+	void createThread(Function &&func, Args &&...args) {
+		if (!isRunning) {
+			isRunning = true;
 			__thread = std::thread(
 				std::forward<Function>(func),
 				std::forward<Args>(args)...);
@@ -22,8 +25,8 @@ public:
 	};
 
 	~Thread() {
-		if (__isRunning) {
-			__isRunning = false;
+		if (isRunning) {
+			isRunning = false;
 			__thread.join();
 			std::cout << "Thread stopped...\n";
 		}

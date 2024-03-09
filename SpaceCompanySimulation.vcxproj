@@ -141,7 +141,6 @@
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\SolarSystem.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Stars\SunStar.cpp" />
-    <ClCompile Include="Threads\Thread.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Simulation\Features\EarthStation.hpp" />

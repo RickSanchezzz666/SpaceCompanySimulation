@@ -51,9 +51,6 @@
     <ClCompile Include="Simulation\Features\EarthStation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Threads\Thread.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Simulation\Models\SolarSystem\SolarSystem.hpp">

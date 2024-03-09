@@ -6,14 +6,13 @@
 #include <iostream>
 
 class MiningSpaceShip : public SpaceShipAbstract {
+private:
+	void __startEngine() override { std::cout << "Mining ship started engine...\n"; }
+	void __stopEngine() override { std::cout << "Mining ship stopped engine...\n"; }
 public:
-	MiningSpaceShip() : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::MINING) { std::cout << "Mining Space Ship generated...\n"; }
+	MiningSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::MINING, 8, id) { std::cout << "Mining Space Ship generated...\n"; }
 
 	~MiningSpaceShip() { std::cout << "Mining Space Ship destroyed...\n"; }
 
-	void startEngine() override { std::cout << "Mining ship started engine..."; }
-	void stopEngine() override { std::cout << "Mining ship stopped engine..."; }
-
-	void launchShip() override {};
-
+	void launchShip() override;
 };
