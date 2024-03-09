@@ -23,9 +23,9 @@ int main() {
 
 	for (auto& planet : solarSystem.planets) planet->showPlanetInfo();
 
-	solarSystem.earthStation->launchShip();
-	solarSystem.earthStation->launchShip();
-	solarSystem.earthStation->launchShip();
+	solarSystem.earthStation->launchS(0);
+	solarSystem.earthStation->launchS(1);
 
+	std::cin.get();
 	return 0;
 }

@@ -26,7 +26,6 @@ private:
 
 	void __setSpaceShipsStatus();
 
-	void __launchShip();
 	
 	//void __getShipType();
 
@@ -45,7 +44,7 @@ public:
 
 	~EarthStation() { std::cout << "Earth Station destroyed...\n"; }
 	
-	void launchShip();
+	void launchS(int num);
 
 	void getAvailableSpaceShips();
 	void getSpaceShipsInFlight();

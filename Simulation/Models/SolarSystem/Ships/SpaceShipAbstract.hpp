@@ -3,6 +3,9 @@
 #include "../../../Features/SpaceShipStatus.hpp"
 #include "SpaceShipType.hpp"
 
+#include <thread>
+#include <chrono>
+
 class SpaceShipAbstract {
 public:
 	SpaceShipStatus spaceShipStatus = SpaceShipStatus::AVAILABLE;
@@ -12,4 +15,6 @@ public:
 
 	virtual void startEngine() = 0;
 	virtual void stopEngine() = 0;
+
+	virtual void launchShip() = 0;
 };

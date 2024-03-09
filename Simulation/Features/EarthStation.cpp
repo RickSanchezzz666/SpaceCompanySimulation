@@ -3,13 +3,13 @@
 #include <iostream>
 #include <chrono>
 
-void EarthStation::__launchShip() {
-	std::cout << "Ship is launching..\n";
-	__availableSpaceShips[0][0]->startEngine();
-	std::this_thread::sleep_for(std::chrono::seconds(5));
-	__availableSpaceShips[0][0]->stopEngine();
-}
+void EarthStation::launchS(int num) {
+	Thread* launchThread = nullptr;
 
-void EarthStation::launchShip() {
-	Thread launchThread([&]() { __launchShip(); });
+	if (num == 0) {
+		launchThread = new Thread([&]() { __availableSpaceShips[0][0]->launchShip(); });
+	}
+	else {
+		launchThread = new Thread([&]() { __availableSpaceShips[0][1]->launchShip(); });
+	}
 }

@@ -13,4 +13,6 @@ public:
 
 	void startEngine() override { std::cout << "Explorer ship started engine...\n"; }
 	void stopEngine() override { std::cout << "Explorer ship stopped engine...\n"; }
+
+	void launchShip() override;
 };

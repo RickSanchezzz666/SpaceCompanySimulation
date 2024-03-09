@@ -11,6 +11,9 @@ public:
 
 	~MiningSpaceShip() { std::cout << "Mining Space Ship destroyed...\n"; }
 
-	void startEngine() override { std::cout << "Explorer ship started engine..."; }
-	void stopEngine() override { std::cout << "Explorer ship stopped engine..."; }
+	void startEngine() override { std::cout << "Mining ship started engine..."; }
+	void stopEngine() override { std::cout << "Mining ship stopped engine..."; }
+
+	void launchShip() override {};
+
 };

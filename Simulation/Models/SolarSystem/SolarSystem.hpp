@@ -11,9 +11,9 @@
 
 class SolarSystem {
 public:
-	static SunStar* star;
-	static std::vector<PlanetAbstract*> planets;
-	static EarthStation* earthStation;
+	SunStar* star;
+	std::vector<PlanetAbstract*> planets;
+	EarthStation* earthStation;
 
 	SolarSystem() { star = new SunStar();
 		planets.push_back(new MercuryPlanet());
