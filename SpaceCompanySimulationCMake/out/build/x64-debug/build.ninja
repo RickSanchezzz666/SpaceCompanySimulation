@@ -119,6 +119,13 @@ build CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation
   TARGET_COMPILE_PDB = CMakeFiles\SpaceCompanySimulationCMake.dir\
   TARGET_PDB = SpaceCompanySimulationCMake.pdb
 
+build CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Simulation.cpp.obj: CXX_COMPILER__SpaceCompanySimulationCMake_unscanned_Debug D$:\Repos\SpaceCompanySimulation\Simulation\Simulation.cpp || cmake_object_order_depends_target_SpaceCompanySimulationCMake
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
+  OBJECT_DIR = CMakeFiles\SpaceCompanySimulationCMake.dir
+  OBJECT_FILE_DIR = CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation
+  TARGET_COMPILE_PDB = CMakeFiles\SpaceCompanySimulationCMake.dir\
+  TARGET_PDB = SpaceCompanySimulationCMake.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SpaceCompanySimulationCMake
@@ -127,7 +134,7 @@ build CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation
 #############################################
 # Link the executable SpaceCompanySimulationCMake.exe
 
-build SpaceCompanySimulationCMake.exe: CXX_EXECUTABLE_LINKER__SpaceCompanySimulationCMake_Debug CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\main.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\MiningSpaceShip.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\MercuryPlanet.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\MarsPlanet.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Stars\SunStar.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Features\EarthStation.cpp.obj
+build SpaceCompanySimulationCMake.exe: CXX_EXECUTABLE_LINKER__SpaceCompanySimulationCMake_Debug CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\main.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\MiningSpaceShip.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\MercuryPlanet.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\MarsPlanet.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Stars\SunStar.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Features\EarthStation.cpp.obj CMakeFiles\SpaceCompanySimulationCMake.dir\D_\Repos\SpaceCompanySimulation\Simulation\Simulation.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

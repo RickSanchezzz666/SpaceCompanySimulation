@@ -20,7 +20,6 @@ public:
 			__thread = std::thread(
 				std::forward<Function>(func),
 				std::forward<Args>(args)...);
-			std::cout << "Thread started...\n";
 		}
 	};
 
@@ -28,7 +27,6 @@ public:
 		if (isRunning) {
 			isRunning = false;
 			__thread.join();
-			std::cout << "Thread stopped...\n";
 		}
 	}
 };

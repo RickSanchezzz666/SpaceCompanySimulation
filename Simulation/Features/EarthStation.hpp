@@ -5,73 +5,76 @@
 #include "../Models/SolarSystem/Ships/PassengerSpaceShip.hpp"
 #include "../Models/SolarSystem/Ships/SpaceShipType.hpp"
 
+#include "Balance.hpp"
+
 #include "../../Threads/Thread.hpp"
 
 #include <iostream>
 #include <vector>
+#include <atomic>
 
 class EarthStation {
 private:
 	std::vector<Thread*> launchThreads;
 
-	short int __astronautsNumOnTheStation = 40;
-	std::vector<SpaceShipAbstract*> __availableSpaceShips;
-
-	std::vector<SpaceShipAbstract*> __spaceShipsInFlight;
+	std::atomic<short> __astronautsNumOnTheStation = 40;
 
 	std::vector<SpaceShipAbstract*> __everyShip;
 
 	short int __shipsNumber = 0;
 	//balance
 
-	void __addAstronautsNumber(int num);
-	bool __decreaseAstronautsNumber(int num);
+	void __increaseAstronautsNumber(const int num);
+	void __decreaseAstronautsNumber(const int num);
 
 	void __makeShipAvailable(const int shipId);
-	void __makeShipInFlight(const int shipId);
-
-	bool __checkIfShipIsAvailable(const int shipId);
+	void __makeShipBusy(const int shipId);
 
 	SpaceShipAbstract* __findShipById(const int shipId);
 
-	void __setSpaceShipsStatus(const int shipId, SpaceShipStatus status);
+	void __setSpaceShipsStatus(const int shipId, const SpaceShipStatus status);
+
+	bool __checkIfShipIsAvailable(const int shipId);
 
 	//void __getShipType();
 
 public:
+	Balance* balance;
+
 	EarthStation() {
+		balance = new Balance(100);
 		for (size_t i = 0; i < static_cast<int>(SpaceShipType::TYPE_COUNT); ++i) {
 			for (size_t j = 0; j < 2; ++j) {
 				if (i == 0) {
-					__availableSpaceShips.push_back(new ExplorerSpaceShip(__shipsNumber++));
+					__everyShip.push_back(new ExplorerSpaceShip(__shipsNumber++));
 				}
 				else if (i == 1) {
-					__availableSpaceShips.push_back(new MiningSpaceShip(__shipsNumber++));
+					__everyShip.push_back(new MiningSpaceShip(__shipsNumber++));
 				}
 				else if (i == 2) {
-					__availableSpaceShips.push_back(new PassengerSpaceShip(__shipsNumber++));
+					__everyShip.push_back(new PassengerSpaceShip(__shipsNumber++));
 				}
 			}
-		}
-		for (auto& ship : __availableSpaceShips) {
-			__everyShip.push_back(ship);
 		}
 		std::cout << "Earth Station generated...\n";
 	};
 
 	~EarthStation() { 
-		for (auto& ship : __everyShip) {
-			delete ship;
-		}
+		for (auto& ship : __everyShip) delete ship;
 		__everyShip.clear();
-		__availableSpaceShips.clear();
-		__spaceShipsInFlight.clear();
 		std::cout << "Earth Station destroyed...\n";
 	}
 	
-	void launchSpaceShip(int num);
+	void launchSpaceShip(const int shipId);
+
+	bool checkIfShipIsAvailable(const int shipId);
 
 	int getAstronautsNumber();
-	void getAvailableSpaceShips();
-	void getSpaceShipsInFlight();
+
+	int getShipsNumber() { return __shipsNumber; }
+
+	void displayAvailableSpaceShips();
+	void displaySpaceShipsInFlight();
+
+	void displayEveryShip();
 };

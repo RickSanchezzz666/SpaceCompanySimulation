@@ -37,6 +37,9 @@ add_executable (SpaceCompanySimulationCMake  "../Simulation/main.cpp"
                                              "../Simulation/Features/EarthStation.cpp"
                                              "../Simulation/Features/SpaceShipStatus.hpp"
                                              "../Threads/Thread.hpp"
+                                             "../Simulation/Simulation.hpp"
+                                             "../Simulation/Simulation.cpp"
+                                             "../Simulation/Features/Random.hpp"
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
