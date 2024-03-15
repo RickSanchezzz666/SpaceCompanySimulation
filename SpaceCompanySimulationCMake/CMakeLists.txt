@@ -40,6 +40,7 @@ add_executable (SpaceCompanySimulationCMake  "../Simulation/main.cpp"
                                              "../Simulation/Simulation.hpp"
                                              "../Simulation/Simulation.cpp"
                                              "../Simulation/Features/Random.hpp"
+                                             "../Simulation/Features/Balance.hpp"
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

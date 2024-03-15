@@ -4,6 +4,7 @@
 #include "../Models/SolarSystem/Ships/ExplorerSpaceShip.hpp"
 #include "../Models/SolarSystem/Ships/PassengerSpaceShip.hpp"
 #include "../Models/SolarSystem/Ships/SpaceShipType.hpp"
+#include "../Models/SolarSystem/SolarSystem.hpp"
 
 #include "Balance.hpp"
 
@@ -22,13 +23,6 @@ private:
 	std::vector<SpaceShipAbstract*> __everyShip;
 
 	short int __shipsNumber = 0;
-	//balance
-
-	void __increaseAstronautsNumber(const int num);
-	void __decreaseAstronautsNumber(const int num);
-
-	void __makeShipAvailable(const int shipId);
-	void __makeShipBusy(const int shipId);
 
 	SpaceShipAbstract* __findShipById(const int shipId);
 
@@ -41,8 +35,11 @@ private:
 public:
 	Balance* balance;
 
-	EarthStation() {
+	SolarSystem* solarSystem = nullptr;
+
+	EarthStation(SolarSystem* sol) {
 		balance = new Balance(100);
+		solarSystem = sol;
 		for (size_t i = 0; i < static_cast<int>(SpaceShipType::TYPE_COUNT); ++i) {
 			for (size_t j = 0; j < 2; ++j) {
 				if (i == 0) {

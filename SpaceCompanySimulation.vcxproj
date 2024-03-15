@@ -146,9 +146,9 @@
   <ItemGroup>
     <ClInclude Include="Simulation\Features\Balance.hpp" />
     <ClInclude Include="Simulation\Features\Random.hpp" />
+    <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipStatus.hpp" />
     <ClInclude Include="Simulation\Simulation.hpp" />
     <ClInclude Include="Simulation\Features\EarthStation.hpp" />
-    <ClInclude Include="Simulation\Features\SpaceShipStatus.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\MarsPlanet.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\MercuryPlanet.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\PlanetAbstract.hpp" />

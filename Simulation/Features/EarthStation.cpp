@@ -7,32 +7,6 @@ std::mutex mtx;
 
 int EarthStation::getAstronautsNumber() { return __astronautsNumOnTheStation.load(std::memory_order_relaxed); }
 
-void EarthStation::__increaseAstronautsNumber(const int num) {
-    __astronautsNumOnTheStation.fetch_add(num, std::memory_order_relaxed);
-}
-
-void EarthStation::__decreaseAstronautsNumber(const int num) {
-    int currentNum = getAstronautsNumber();
-    if ((currentNum - num) < 0) return;
-    __astronautsNumOnTheStation.fetch_sub(num, std::memory_order_relaxed);
-}
-
-void EarthStation::__makeShipBusy(const int shipId) {
-    if (__checkIfShipIsAvailable(shipId)) {
-        SpaceShipAbstract* shipToTransfer = __findShipById(shipId);
-        __decreaseAstronautsNumber(shipToTransfer->requiredAstronautsNumber);
-        __setSpaceShipsStatus(shipToTransfer->shipId, SpaceShipStatus::BUSY);
-    }
-}
-
-void EarthStation::__makeShipAvailable(const int shipId) {
-    if (!__checkIfShipIsAvailable(shipId)) {
-        SpaceShipAbstract* shipToTransfer = __findShipById(shipId);
-        __increaseAstronautsNumber(shipToTransfer->requiredAstronautsNumber);
-        __setSpaceShipsStatus(shipToTransfer->shipId, SpaceShipStatus::AVAILABLE);
-    }
-}
-
 bool EarthStation::__checkIfShipIsAvailable(const int shipId) {
     return __findShipById(shipId)->spaceShipStatus == SpaceShipStatus::AVAILABLE;
 }

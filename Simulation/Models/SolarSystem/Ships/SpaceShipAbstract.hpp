@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../Features/SpaceShipStatus.hpp"
+#include "SpaceShipStatus.hpp"
 #include "SpaceShipType.hpp"
 
 #include <thread>

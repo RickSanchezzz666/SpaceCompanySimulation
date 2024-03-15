@@ -1,5 +1,6 @@
 #pragma once
 #include "Models/SolarSystem/SolarSystem.hpp"
+#include "Features/EarthStation.hpp"
 #include "Features/Random.hpp"
 
 #include <iostream>
@@ -9,44 +10,21 @@
 class Simulation : Random {
 private:
 	SolarSystem* solarSystem;
-	EarthStation* eStation;
+	EarthStation* earthStation;
 
-	void __startSimulation() {
-		size_t i = 1;
-		int randomNum;
-		while (i < 7) {
-			randomNum = getRandomNumber(0, eStation->getShipsNumber() - 1);
-			if (eStation->checkIfShipIsAvailable(0)) eStation->launchSpaceShip(0);
-			randomNum = getRandomNumber(0, eStation->getShipsNumber() - 1);
-			if (eStation->checkIfShipIsAvailable(randomNum)) eStation->launchSpaceShip(randomNum);
-			randomNum = getRandomNumber(0, eStation->getShipsNumber() - 1);
-			if (eStation->checkIfShipIsAvailable(randomNum)) eStation->launchSpaceShip(randomNum);
+	void __startSimulation();
 
-			std::this_thread::sleep_for(std::chrono::seconds(i));
+	void __showInfo();
 
-			if (eStation->checkIfShipIsAvailable(randomNum)) eStation->launchSpaceShip(randomNum);
-			randomNum = getRandomNumber(0, eStation->getShipsNumber() - 1);
-			if (eStation->checkIfShipIsAvailable(randomNum)) eStation->launchSpaceShip(randomNum);
-			randomNum = getRandomNumber(0, eStation->getShipsNumber() - 1);
-
-			std::this_thread::sleep_for(std::chrono::seconds(i));
-			++i;
-		}
-	}
-
-	void __showInfo() {
-		solarSystem->star->showStarInfo();
-
-		for (auto& planet : solarSystem->planets) planet->showPlanetInfo();
-
-		eStation->displayEveryShip();
-	}
 public:
-	Simulation() { solarSystem = new SolarSystem();
-				eStation = solarSystem->earthStation; };
+	Simulation() {
+		solarSystem = new SolarSystem();
+		earthStation = new EarthStation(solarSystem);
+	};
 
 	~Simulation() {
 		delete solarSystem;
+		delete earthStation;
 	}
 
 	void startSimulation() {
