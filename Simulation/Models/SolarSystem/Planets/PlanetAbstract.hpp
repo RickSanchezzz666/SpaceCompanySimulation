@@ -24,14 +24,17 @@ protected:
 	// asteroidClusters
 
 public:
-	PlanetAbstract(long double mass, float radius, float day, long int area,
+	const std::string _name; // Planet Name
+	const int timeFromEarthToPlanet; // 1 million KM in 1 Sec - 1 sec + min distance in KM
+
+	PlanetAbstract(std::string name, long double mass, float radius, float day, long int area,
 		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
 		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
-		int magneticField, float lifeChance, int moonsNum) : _mass(mass), _radius(radius),
+		int magneticField, float lifeChance, int moonsNum, int time) : _name(name), _mass(mass), _radius(radius),
 		_dayDuration(day), _area(area), _orbitalPeriod(period),
 		_distanceToStar(distance), _maxTemperature(maxTemperature), _minTemperature(minTemperature), 
 		_atmosphere(atmosphere), _atmosphereComposition(atmosphereComposition), _gravity(gravity), 
-		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum) {};
+		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(time){};
 
 	virtual ~PlanetAbstract() {};
 

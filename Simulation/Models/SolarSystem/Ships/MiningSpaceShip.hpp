@@ -17,5 +17,5 @@ public:
 
 	~MiningSpaceShip() { std::cout << ">Mining Space Ship (id: " + std::to_string(this->shipId) + ") destroyed...\n"; }
 
-	void launchShip(std::atomic<short>& astroNum) override;
+	void launchShip(std::atomic<short>& astroNum, SolarSystem* sol) override;
 };

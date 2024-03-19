@@ -8,7 +8,7 @@ void MiningSpaceShip::__startEngine() {
 	std::cout << ">Mining Ship (id: " + std::to_string(this->shipId) + ") started engine...\n";
 }
 
-void MiningSpaceShip::launchShip(std::atomic<short>& astroNum) {
+void MiningSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol) {
 	__setSpaceShipsStatus(SpaceShipStatus::BUSY);
 	__decreaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
 	std::cout << "\n>Mining Ship (id: " + std::to_string(this->shipId) + ") is preparing for a flight..\n";

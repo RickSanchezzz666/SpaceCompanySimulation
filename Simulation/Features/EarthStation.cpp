@@ -51,17 +51,17 @@ void EarthStation::launchSpaceShip(const int shipId) {
     launchThreads[shipId] = new Thread();
     switch (shipId) {
     case 0:
-        launchThreads[shipId]->createThread([&]() { __everyShip[0]->launchShip(__astronautsNumOnTheStation); });
+        launchThreads[shipId]->createThread([&]() { __everyShip[0]->launchShip(__astronautsNumOnTheStation, solarSystem); });
     case 1:
-        launchThreads[shipId]->createThread([&]() { __everyShip[1]->launchShip(__astronautsNumOnTheStation); });
+        launchThreads[shipId]->createThread([&]() { __everyShip[1]->launchShip(__astronautsNumOnTheStation, solarSystem); });
     case 2:
-        launchThreads[shipId]->createThread([&]() { __everyShip[2]->launchShip(__astronautsNumOnTheStation); });
+        launchThreads[shipId]->createThread([&]() { __everyShip[2]->launchShip(__astronautsNumOnTheStation, solarSystem); });
     case 3:
-        launchThreads[shipId]->createThread([&]() { __everyShip[3]->launchShip(__astronautsNumOnTheStation); });
+        launchThreads[shipId]->createThread([&]() { __everyShip[3]->launchShip(__astronautsNumOnTheStation, solarSystem); });
     case 4:
-        launchThreads[shipId]->createThread([&]() { __everyShip[4]->launchShip(__astronautsNumOnTheStation); });
+        launchThreads[shipId]->createThread([&]() { __everyShip[4]->launchShip(__astronautsNumOnTheStation, solarSystem); });
     case 5:
-        launchThreads[shipId]->createThread([&]() { __everyShip[5]->launchShip(__astronautsNumOnTheStation); });
+        launchThreads[shipId]->createThread([&]() { __everyShip[5]->launchShip(__astronautsNumOnTheStation, solarSystem); });
     default:
         return;
     }

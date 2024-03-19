@@ -2,6 +2,8 @@
 
 #include "SpaceShipStatus.hpp"
 #include "SpaceShipType.hpp"
+#include "../SolarSystem.hpp"
+#include "../../../Features/Random.hpp"
 
 #include <thread>
 #include <chrono>
@@ -18,10 +20,15 @@ protected:
 	void __increaseAstronautsNumber(std::atomic<short>& astroNum, const int num) {
 		astroNum.fetch_add(num, std::memory_order_relaxed);
 	}
+
 	void __decreaseAstronautsNumber(std::atomic<short>& astroNum, const int num) {
 		int currentNum = astroNum;
 		if ((currentNum - num) < 0) return;
 		astroNum.fetch_sub(num, std::memory_order_relaxed);
+	}
+
+	PlanetAbstract* __getRandomPlanet(SolarSystem* sol) {
+		return sol->planets[Random::getRandomNumber(0, sol->planets.size() - 1)];
 	}
 
 public:
@@ -30,7 +37,11 @@ public:
 	const int requiredAstronautsNumber;
 	const int shipId;
 
+	void threadSleep(int sec) {
+		std::this_thread::sleep_for(std::chrono::seconds(sec));
+	}
+
 	SpaceShipAbstract(SpaceShipStatus status, SpaceShipType type, int astroNumber, int id) : spaceShipStatus(status), spaceShipType(type), requiredAstronautsNumber(astroNumber), shipId(id) {}
 
-	virtual void launchShip(std::atomic<short>& astroNum) = 0;
+	virtual void launchShip(std::atomic<short>& astroNum, SolarSystem* sol) = 0;
 };
