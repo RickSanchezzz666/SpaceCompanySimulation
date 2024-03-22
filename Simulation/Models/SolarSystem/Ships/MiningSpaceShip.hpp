@@ -8,6 +8,13 @@
 
 class MiningSpaceShip : public SpaceShipAbstract {
 private:
+
+	void __sendShipToObject(PlanetAbstract* planet) override {};
+	void __sendShipToObject(StarsAbstract* sun) override {};
+	void __sendShipToEarth(PlanetAbstract* planet) override {};
+	void __sendShipToEarth(StarsAbstract* sun) override {};
+	void __landShipOnStation() override {};
+
 	void __startEngine() override;
 	void __stopEngine() override { std::cout << ">Mining Ship (id: " + std::to_string(this->shipId) + ") stopped engine...\n"; }
 

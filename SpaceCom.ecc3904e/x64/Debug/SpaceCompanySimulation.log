@@ -75,6 +75,9 @@ D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54)
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(31,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
   
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp(77,66): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp(128,116): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp(145,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
@@ -127,6 +130,7 @@ D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54)
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(31,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp')
   
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp(127,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [

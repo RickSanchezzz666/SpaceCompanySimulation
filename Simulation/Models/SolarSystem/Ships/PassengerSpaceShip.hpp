@@ -15,10 +15,13 @@ private:
 
 	void __getPassengersOnBoard(const int passengersNum);
 	void __removePassengersFromBoard();
+	void __touristsAction(int tObject);
 
-	void __sendShipToPlanet(SolarSystem* sol);
-	void __landShipOnStation();
-
+	void __sendShipToObject(PlanetAbstract* planet) override;
+	void __sendShipToObject(StarsAbstract* sun) override;
+	void __sendShipToEarth(PlanetAbstract* planet) override;
+	void __sendShipToEarth(StarsAbstract* sun) override;
+	void __landShipOnStation() override;
 
 	void __startEngine() override;
 	void __stopEngine() override { std::cout << shipSign + " stopped engine...\n"; }

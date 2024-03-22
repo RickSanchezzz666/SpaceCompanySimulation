@@ -31,6 +31,12 @@ protected:
 		return sol->planets[Random::getRandomNumber(0, sol->planets.size() - 1)];
 	}
 
+	virtual void __sendShipToObject(PlanetAbstract* planet) = 0;
+	virtual void __sendShipToObject(StarsAbstract* sun) = 0;
+	virtual void __sendShipToEarth(PlanetAbstract* planet) = 0;
+	virtual void __sendShipToEarth(StarsAbstract* sun) = 0;
+	virtual void __landShipOnStation() = 0;
+
 public:
 	SpaceShipStatus spaceShipStatus = SpaceShipStatus::AVAILABLE;
 	const SpaceShipType spaceShipType;

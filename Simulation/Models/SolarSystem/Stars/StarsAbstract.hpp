@@ -17,12 +17,14 @@ protected:
     const int _distanceToCenterOfGalaxy; // Example: 26660 LY
 
 public:
+    const std::string name; // Star Name
+    const int timeFromEarthToStar; // 1 million KM in - 1 sec
 
     StarsAbstract(long double mass, float radius, long double area, float age, int temp, std::string starType,
-        std::string luminosity, std::string spectralClass, float absoluteMagnitude, int distance) : 
+        std::string luminosity, std::string spectralClass, float absoluteMagnitude, int distance, std::string name, int time) : 
         _mass(mass), _radius(radius), _area(area), _age(age), _surfaceTemperature(temp), _starType(starType),
         _luminosity(luminosity), _fullSpectralClass(spectralClass), _absoluteMagnitude(absoluteMagnitude), 
-        _distanceToCenterOfGalaxy(distance) {};
+        _distanceToCenterOfGalaxy(distance), name(name), timeFromEarthToStar(time) {};
 
     virtual void showStarInfo() = 0;
 };

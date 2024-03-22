@@ -13,6 +13,7 @@ public:
 	SunStar* star;
 	std::vector<PlanetAbstract*> planets;
 
+
 	SolarSystem() { star = new SunStar();
 		planets.push_back(new MercuryPlanet());
 		planets.push_back(new VenusPlanet());
