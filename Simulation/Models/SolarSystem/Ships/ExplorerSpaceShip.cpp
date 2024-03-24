@@ -144,7 +144,7 @@ void ExplorerSpaceShip::__doExploration(SolarSystem* sol, PlanetAbstract* planet
 			_exploredData.push_back(foundMoon);
 			printMessage(shipSign + " EXPLORER'S RADIO: New Moon was found: " + foundMoon + "!.\n");
 			threadSleep(2);
-		} while (static_cast<bool>(Random::getRandomNumber(0, 1)));
+		} while (static_cast<bool>(Random::getRandomNumber(0, 3)));
 
 		__continueExploration(sol, planet->_name);
 	}
@@ -160,9 +160,9 @@ void ExplorerSpaceShip::__doExploration(SolarSystem* sol, PlanetAbstract* planet
 
 void ExplorerSpaceShip::__concludeExploration() {
 	threadSleep(2);
-	std::cout << "\nResults of expedition of Explorer Ship(id: " + std::to_string(this->shipId) + ") :\n";
+	std::cout << "\nResults of expedition of Explorer Ship(id: " + std::to_string(this->shipId) + "):\n";
 	std::cout << "Found objects: ";
-	if (_exploredData.size() == 0) printMessage("None!.\n");
+	if (_exploredData.size() == 0) std::cout << "None!.\n";
 	else {
 		for (std::string& obj : _exploredData) {
 			std::cout << "\nObject: " + obj;

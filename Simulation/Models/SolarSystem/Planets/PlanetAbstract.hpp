@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../AsteroidCluster.hpp"
+
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -22,12 +24,13 @@ protected:
 	const int _moonsNumber; // Example: 2
 	std::vector<std::string> _unexploredMoons; // Example: {"Deimos", "Phobos"}
 	std::vector<std::string> _exploredMoons; // Example: {}
-	// asteroidClusters
+	const bool _asteroidBelt; // Example: True
 
 public:
 	const int _id; // objectId
 	const std::string _name; // Planet Name
 	const int timeFromEarthToPlanet; // 1 million KM in - 1 sec + min distance in KM
+	AsteroidCluster* asteroidBelt = nullptr; // AsteroidCluster Object
 
 	int getMoonsNum() const { return _moonsNumber; }
 	std::vector<std::string> getUnexploredMoons() { return _unexploredMoons; }
@@ -40,14 +43,25 @@ public:
 		return moon;
 	}
 
+	//no asteroid belt
 	PlanetAbstract(std::string name, long double mass, float radius, float day, long int area,
 		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
 		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
-		int magneticField, float lifeChance, int moonsNum, int time, std::vector<std::string> moons, int id) : _name(name), _mass(mass), _radius(radius),
+		int magneticField, float lifeChance, int moonsNum, int time, std::vector<std::string> moons, int id, bool belt) : _name(name), _mass(mass), _radius(radius),
 		_dayDuration(day), _area(area), _orbitalPeriod(period),
 		_distanceToStar(distance), _maxTemperature(maxTemperature), _minTemperature(minTemperature), 
 		_atmosphere(atmosphere), _atmosphereComposition(atmosphereComposition), _gravity(gravity), 
-		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(time), _unexploredMoons(moons), _id(id) {};
+		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(time), _unexploredMoons(moons), _id(id), _asteroidBelt(belt) {};
+
+	//asteroid belt
+	PlanetAbstract(std::string name, long double mass, float radius, float day, long int area,
+		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
+		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
+		int magneticField, float lifeChance, int moonsNum, int time, std::vector<std::string> moons, int id, bool belt, AsteroidCluster* cluster) : _name(name), _mass(mass), _radius(radius),
+		_dayDuration(day), _area(area), _orbitalPeriod(period),
+		_distanceToStar(distance), _maxTemperature(maxTemperature), _minTemperature(minTemperature),
+		_atmosphere(atmosphere), _atmosphereComposition(atmosphereComposition), _gravity(gravity),
+		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(time), _unexploredMoons(moons), _id(id), _asteroidBelt(belt), asteroidBelt(cluster) {};
 
 	virtual ~PlanetAbstract() {};
 

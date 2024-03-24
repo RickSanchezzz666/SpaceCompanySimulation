@@ -13,6 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Planets">
+      <UniqueIdentifier>{6ce91c97-1f4d-4510-86c4-2dcaa668a122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Ships">
+      <UniqueIdentifier>{ec3d6ad5-68aa-4206-b1a8-84f9402dd1a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Features">
+      <UniqueIdentifier>{7dd6c5a9-02e0-4c45-ba47-aa2f559b0b0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Simulation">
+      <UniqueIdentifier>{3cedf53a-ae7d-4cf1-ad5b-20333fe2be14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Planets">
+      <UniqueIdentifier>{d135a9f9-0bdc-4550-b411-3b2cc421cdff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ships">
+      <UniqueIdentifier>{fc418d76-4077-476b-85ed-94f2ef29acfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Simulation">
+      <UniqueIdentifier>{3b88995a-faf0-4c80-aa24-3e1baf62adec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SolarSystem">
+      <UniqueIdentifier>{ae063ab6-90a0-4b55-a0c6-8f6f6aa429be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SolarSystem">
+      <UniqueIdentifier>{00317556-fc76-4154-b54a-ecf12525a0e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -24,115 +51,115 @@
     <ClCompile Include="Simulation\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\SolarSystem.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.cpp">
+      <Filter>Source Files\Planets</Filter>
     </ClCompile>
     <ClCompile Include="Simulation\Models\SolarSystem\Planets\MarsPlanet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Planets</Filter>
     </ClCompile>
     <ClCompile Include="Simulation\Models\SolarSystem\Planets\MercuryPlanet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\VenusPlanet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Ships\MiningSpaceShip.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Stars\SunStar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Features\EarthStation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Simulation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Planets</Filter>
     </ClCompile>
     <ClCompile Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Planets</Filter>
     </ClCompile>
     <ClCompile Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Planets</Filter>
     </ClCompile>
     <ClCompile Include="Simulation\Models\SolarSystem\Planets\UranusPlanet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Planets</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\VenusPlanet.cpp">
+      <Filter>Source Files\Planets</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp">
+      <Filter>Source Files\Ships</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Ships\MiningSpaceShip.cpp">
+      <Filter>Source Files\Ships</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp">
+      <Filter>Source Files\Ships</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Simulation.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Features\EarthStation.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Stars\SunStar.cpp">
+      <Filter>Source Files\SolarSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Simulation\Models\SolarSystem\SolarSystem.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp">
+      <Filter>Header Files\Planets</Filter>
     </ClInclude>
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\MarsPlanet.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Planets</Filter>
     </ClInclude>
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\MercuryPlanet.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Planets\PlanetAbstract.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Ships\MiningSpaceShip.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Stars\StarsAbstract.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Stars\SunStar.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Features\EarthStation.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipType.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Threads\Thread.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Simulation.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Features\Random.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Features\Balance.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipStatus.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Planets</Filter>
     </ClInclude>
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Planets</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\PlanetAbstract.hpp">
+      <Filter>Header Files\Planets</Filter>
     </ClInclude>
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Planets</Filter>
     </ClInclude>
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\UranusPlanet.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Planets</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp">
+      <Filter>Header Files\Planets</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.hpp">
+      <Filter>Header Files\Ships</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Ships\MiningSpaceShip.hpp">
+      <Filter>Header Files\Ships</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.hpp">
+      <Filter>Header Files\Ships</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp">
+      <Filter>Header Files\Ships</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipStatus.hpp">
+      <Filter>Header Files\Ships</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipType.hpp">
+      <Filter>Header Files\Ships</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Stars\SunStar.hpp">
+      <Filter>Header Files\SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Stars\StarsAbstract.hpp">
+      <Filter>Header Files\SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Threads\Thread.hpp">
+      <Filter>Header Files\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Features\Random.hpp">
+      <Filter>Header Files\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Features\Balance.hpp">
+      <Filter>Header Files\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Features\EarthStation.hpp">
+      <Filter>Header Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Simulation.hpp">
+      <Filter>Header Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\SolarSystem.hpp">
+      <Filter>Header Files\SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\AsteroidCluster.hpp">
+      <Filter>Header Files\SolarSystem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

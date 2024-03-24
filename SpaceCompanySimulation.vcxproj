@@ -144,12 +144,12 @@
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\MiningSpaceShip.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp" />
-    <ClCompile Include="Simulation\Models\SolarSystem\SolarSystem.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Stars\SunStar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Simulation\Features\Balance.hpp" />
     <ClInclude Include="Simulation\Features\Random.hpp" />
+    <ClInclude Include="Simulation\Models\SolarSystem\AsteroidCluster.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.hpp" />
