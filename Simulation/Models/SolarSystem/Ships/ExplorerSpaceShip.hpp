@@ -11,11 +11,16 @@ class ExplorerSpaceShip : public SpaceShipAbstract {
 private:
 	const std::string shipSign = ">Explorer Ship (id: " + std::to_string(this->shipId) + ")";
 
+	int __expeditionNum = 0;
+
 	std::vector<int> __objectsSearched;
+	std::vector<std::string> _exploredData;
 
 	void __doExploration(SolarSystem* sol, PlanetAbstract* planet);
 	void __doExploration(SolarSystem* sol, StarsAbstract* sun);
 	void __continueExploration(SolarSystem* sol, std::string objName);
+
+	void __concludeExploration();
 
 	void __sendShipToObject(PlanetAbstract* planet) override;
 	void __sendShipToObject(StarsAbstract* sun) override;

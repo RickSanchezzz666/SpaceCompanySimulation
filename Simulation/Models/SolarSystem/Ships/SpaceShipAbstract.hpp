@@ -31,6 +31,10 @@ protected:
 		return sol->planets[Random::getRandomNumber(0, sol->planets.size() - 1)];
 	}
 
+	PlanetAbstract* __getPlanet(SolarSystem* sol, int index) {
+		return sol->planets[index];
+	}
+
 	virtual void __sendShipToObject(PlanetAbstract* planet) = 0;
 	virtual void __sendShipToObject(StarsAbstract* sun) = 0;
 	virtual void __sendShipToEarth(PlanetAbstract* planet) = 0;
