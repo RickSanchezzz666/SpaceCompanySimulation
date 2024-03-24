@@ -8,5 +8,7 @@ int main() {
 
 	simulation.startSimulation();
 
+	//TODO Commit, Folders in proj, CMake
+
 	return 0;
 }

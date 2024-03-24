@@ -8,6 +8,9 @@
 #include <thread>
 #include <chrono>
 #include <atomic>
+#include <iomanip>
+#include <sstream>
+#include <ctime>
 
 class SpaceShipAbstract {
 private:
@@ -41,11 +44,31 @@ protected:
 	virtual void __sendShipToEarth(StarsAbstract* sun) = 0;
 	virtual void __landShipOnStation() = 0;
 
+	std::string __getCurrentTimestamp() {
+		auto now = std::chrono::system_clock::now();
+		std::time_t time = std::chrono::system_clock::to_time_t(now);
+		std::tm timeinfo;
+		localtime_s(&timeinfo, &time);
+
+		std::ostringstream oss;
+		oss << "[" << std::put_time(&timeinfo, "%H:%M:%S") << "]";
+		return oss.str();
+	}
+
 public:
 	SpaceShipStatus spaceShipStatus = SpaceShipStatus::AVAILABLE;
 	const SpaceShipType spaceShipType;
 	const int requiredAstronautsNumber;
 	const int shipId;
+
+	void printMessage(const std::string& msg, bool withEndl = false) {
+		if (withEndl) {
+			std::cout << "\n" + __getCurrentTimestamp() + msg;
+		}
+		else {
+			std::cout << __getCurrentTimestamp() + msg;
+		}
+	}
 
 	void threadSleep(int sec) {
 		std::this_thread::sleep_for(std::chrono::seconds(sec));

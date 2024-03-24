@@ -54,6 +54,18 @@
     <ClCompile Include="Simulation\Simulation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\UranusPlanet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Simulation\Models\SolarSystem\SolarSystem.hpp">
@@ -108,6 +120,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipStatus.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\UranusPlanet.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

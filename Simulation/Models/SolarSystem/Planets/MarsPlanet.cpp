@@ -22,6 +22,7 @@ void MarsPlanet::showPlanetInfo() {
 	}
 	cout << "\n   Gravity (EarthG): " << _gravity << " G";
 	cout << "\n   Magnetic Field Strength (nT): " << _magneticFieldStrength << " nT";
-	cout << "\n   Life Chance (%): " << _lifeChance << "%\n";
+	cout << "\n   Life Chance (%): " << _lifeChance << "%";
+	cout << "\n   Moons Number: " << _moonsNumber << "\n";
 }
 

@@ -9,7 +9,7 @@
 
 class ExplorerSpaceShip : public SpaceShipAbstract {
 private:
-	const std::string shipSign = ">Explorer Ship (id: " + std::to_string(this->shipId) + ")";
+	const std::string shipSign = " >Explorer Ship (id: " + std::to_string(this->shipId) + ")";
 
 	int __expeditionNum = 0;
 
@@ -29,7 +29,7 @@ private:
 	void __landShipOnStation() override;
 
 	void __startEngine() override;
-	void __stopEngine() override { std::cout << shipSign + " stopped engine...\n"; }
+	void __stopEngine() override { printMessage(shipSign + " stopped engine...\n"); }
 
 	void __setSpaceShipsStatus(SpaceShipStatus status) override { this->spaceShipStatus = status; }
 

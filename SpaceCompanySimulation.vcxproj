@@ -131,6 +131,10 @@
     <None Include="Simulation\info.json" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.cpp" />
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.cpp" />
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.cpp" />
+    <ClCompile Include="Simulation\Models\SolarSystem\Planets\UranusPlanet.cpp" />
     <ClCompile Include="Simulation\Simulation.cpp" />
     <ClCompile Include="Simulation\Features\EarthStation.cpp" />
     <ClCompile Include="Simulation\main.cpp" />
@@ -146,6 +150,10 @@
   <ItemGroup>
     <ClInclude Include="Simulation\Features\Balance.hpp" />
     <ClInclude Include="Simulation\Features\Random.hpp" />
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp" />
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp" />
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.hpp" />
+    <ClInclude Include="Simulation\Models\SolarSystem\Planets\UranusPlanet.hpp" />
     <ClInclude Include="Simulation\Models\SolarSystem\Ships\SpaceShipStatus.hpp" />
     <ClInclude Include="Simulation\Simulation.hpp" />
     <ClInclude Include="Simulation\Features\EarthStation.hpp" />
