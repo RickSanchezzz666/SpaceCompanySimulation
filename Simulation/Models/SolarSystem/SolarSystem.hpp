@@ -14,6 +14,9 @@
 #include <iostream>
 
 class SolarSystem {
+private:
+	std::vector<AsteroidCluster*> __exploredAsteroidClusters;
+
 public:
 	SunStar* star;
 	std::vector<PlanetAbstract*> planets;
@@ -39,5 +42,21 @@ public:
 		for (auto& planet : planets) delete planet;
 		for (auto& asteroids : asteroidClusters) delete asteroids;
 		std::cout << "Solar System destroyed...\n";
+	}
+
+	std::vector<AsteroidCluster*> getExploredClusters() const { return __exploredAsteroidClusters; }
+
+	bool isEveryClusterExplored() const {
+		for (auto& cluster : asteroidClusters) {
+			if (cluster->clusterStatus == AsteroidStatus::UNEXPLORED) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	void makeClusterExplored(AsteroidCluster* cluster) {
+		cluster->clusterStatus = AsteroidStatus::EXPLORED;
+		__exploredAsteroidClusters.push_back(cluster); 
 	}
 };

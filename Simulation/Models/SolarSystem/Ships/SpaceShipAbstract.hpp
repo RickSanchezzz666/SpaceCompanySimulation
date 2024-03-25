@@ -11,6 +11,14 @@
 #include <iomanip>
 #include <sstream>
 #include <ctime>
+#include <tuple>
+
+enum class ShipCurrentStatus {
+	STARTING,
+	LANDED,
+	INFLIGHT,
+	LANDING
+};
 
 class SpaceShipAbstract {
 private:
@@ -18,7 +26,6 @@ private:
 	virtual void __stopEngine() = 0;
 
 	virtual void __setSpaceShipsStatus(SpaceShipStatus status) = 0;
-	
 protected:
 	void __increaseAstronautsNumber(std::atomic<short>& astroNum, const int num) {
 		astroNum.fetch_add(num, std::memory_order_relaxed);
@@ -30,13 +37,24 @@ protected:
 		astroNum.fetch_sub(num, std::memory_order_relaxed);
 	}
 
-	PlanetAbstract* __getRandomPlanet(SolarSystem* sol) {
+	PlanetAbstract* __getRandomPlanet(SolarSystem* sol) const {
 		return sol->planets[Random::getRandomNumber(0, sol->planets.size() - 1)];
 	}
 
-	PlanetAbstract* __getPlanet(SolarSystem* sol, int index) {
+	AsteroidCluster* __getRandomCluster(SolarSystem* sol) const {
+		AsteroidCluster* cluster = nullptr;
+		do {
+			if (sol->isEveryClusterExplored()) return nullptr;
+			cluster = sol->asteroidClusters[Random::getRandomNumber(0, sol->asteroidClusters.size() - 1)];
+		} while (cluster->clusterStatus == AsteroidStatus::EXPLORED);
+		return cluster;
+	}
+
+	PlanetAbstract* __getPlanet(SolarSystem* sol, int index) const {
 		return sol->planets[index];
 	}
+
+	AsteroidCluster* __getCluster(PlanetAbstract* planet) const { return planet->asteroidBelt; }
 
 	virtual void __sendShipToObject(PlanetAbstract* planet) = 0;
 	virtual void __sendShipToObject(StarsAbstract* sun) = 0;
@@ -60,6 +78,11 @@ public:
 	const SpaceShipType spaceShipType;
 	const int requiredAstronautsNumber;
 	const int shipId;
+	ShipCurrentStatus currentStatus = ShipCurrentStatus::LANDED;
+
+	void changeShipStatus(ShipCurrentStatus status) {
+		this->currentStatus = status;
+	}
 
 	void printMessage(const std::string& msg, bool withEndl = false) {
 		if (withEndl) {

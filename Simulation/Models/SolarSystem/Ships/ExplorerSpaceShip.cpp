@@ -12,12 +12,13 @@ void ExplorerSpaceShip::__sendShipToObject(PlanetAbstract* planet) {
 	threadSleep(2);
 	printMessage(shipSign + " route is set with the goal of exploring " + planet->_name + "..\n");
 	threadSleep(5);
-	if (__objectsSearched.empty()) {
+	if (currentStatus == ShipCurrentStatus::STARTING) {
 		printMessage(shipSign + " left Earth's atmosphere..\n");
 		threadSleep(2);
 	}
+	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " is currently heading to " + planet->_name + "..\n");
-	threadSleep(planet->timeFromEarthToPlanet);
+	//threadSleep(planet->timeFromEarthToPlanet);
 	printMessage(shipSign + " reached " + planet->_name + "'s orbit..\n");
 	threadSleep(2);
 	printMessage(shipSign + " is currently orbiting " + planet->_name + "..\n");
@@ -27,12 +28,13 @@ void ExplorerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
 	threadSleep(2);
 	printMessage(shipSign + " route is set with the goal of exploring " + sun->name + "..\n");
 	threadSleep(5);
-	if (__objectsSearched.empty()) {
+	if (currentStatus == ShipCurrentStatus::STARTING) {
 		printMessage(shipSign + " left Earth's atmosphere..\n");
 		threadSleep(2);
 	}
+	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " is currently heading to " + sun->name + "..\n");
-	threadSleep(sun->timeFromEarthToStar);
+	//threadSleep(sun->timeFromEarthToStar);
 	printMessage(shipSign + " reached " + sun->name + "'s orbit..\n");
 	threadSleep(2);
 	printMessage(shipSign + " is currently orbiting " + sun->name + "..\n");
@@ -41,7 +43,7 @@ void ExplorerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
 void ExplorerSpaceShip::__sendShipToEarth(PlanetAbstract* planet) {
 	threadSleep(5);
 	printMessage(shipSign + " started heading back to Earth from exploration..\n");
-	threadSleep(planet->timeFromEarthToPlanet);
+	//threadSleep(planet->timeFromEarthToPlanet);
 	printMessage(shipSign + " is on Earth's orbit..\n");
 	threadSleep(2);
 	printMessage(shipSign + " began to enter Earth's atmosphere..\n");
@@ -114,16 +116,39 @@ void ExplorerSpaceShip::__continueExploration(SolarSystem* sol, std::string objN
 
 void ExplorerSpaceShip::__doExploration(SolarSystem* sol, StarsAbstract* sun) {
 	threadSleep(2);
-	printMessage(shipSign + " exploring star...");
+	printMessage(shipSign + " is scanning for potential asteroid clusters on Sun's orbit..\n");
+	threadSleep(1);
+	printMessage(shipSign + " EXPLORER'S RADIO: Scanning...\n");
+	threadSleep(5);
+	if (sol->isEveryClusterExplored()) {
+		printMessage(shipSign + " EXPLORER'S RADIO: Every Asteroid Cluster was Explored..\n");
+		threadSleep(2);
+	}
+	else {
+		do {
+			if (sol->isEveryClusterExplored()) {
+				printMessage(shipSign + " EXPLORER'S RADIO: All Asteroid Clusters were discovered!.\n");
+				threadSleep(2);
+				break;
+			}
+			AsteroidCluster* cluster = __getRandomCluster(sol);
+			sol->makeClusterExplored(cluster);
+			_exploredDataClusters.push_back(std::make_tuple(cluster->name, cluster->whoseOrbitOn));
+			printMessage(shipSign + " EXPLORER'S RADIO: Found new Asteroid Cluster " + cluster->name + " on " + cluster->whoseOrbitOn + "'s orbit..\n");
+			threadSleep(2);
+		} while (static_cast<bool>(Random::getRandomNumber(0, 1)));
+	}
+
+	printMessage(shipSign + " looking for another Planet or Star to explore..\n");
 	threadSleep(2);
-	//__objectsSearched++;
-	//int targetObject = Random::getRandomNumber(1, sol->planets.size());// except Sun
-	//__sendShipToEarth(sun);
+	PlanetAbstract* newPlanet = __getRandomPlanet(sol);
+	__objectsSearched.push_back(newPlanet->_id);
+	__sendShipToObject(newPlanet);
+	__doExploration(sol, newPlanet);
 }
 
 void ExplorerSpaceShip::__doExploration(SolarSystem* sol, PlanetAbstract* planet) {
 	threadSleep(2);
-	__expeditionNum++;
 	printMessage(shipSign + " is scanning for potential interesting objects..\n");
 	threadSleep(1);
 	printMessage(shipSign + " EXPLORER'S RADIO: Scanning...\n");
@@ -134,6 +159,14 @@ void ExplorerSpaceShip::__doExploration(SolarSystem* sol, PlanetAbstract* planet
 		__continueExploration(sol, planet->_name);
 	}
 	else {
+		if (planet->getAsteroidBeltStatus()) {
+			AsteroidCluster* cluster = __getCluster(planet);
+			sol->makeClusterExplored(cluster);
+			_exploredDataClusters.push_back(std::make_tuple(cluster->name, cluster->whoseOrbitOn));
+			printMessage(shipSign + " EXPLORER'S RADIO: Found new Asteroid Cluster " + cluster->name + " on " + cluster->whoseOrbitOn + "'s orbit..\n");
+			threadSleep(2);
+		}
+
 		do {
 			if (planet->getUnexploredMoons().size() == 0) {
 				printMessage(shipSign + " EXPLORER'S RADIO: All moons were discovered!.\n");
@@ -141,20 +174,18 @@ void ExplorerSpaceShip::__doExploration(SolarSystem* sol, PlanetAbstract* planet
 				break;
 			}
 			std::string foundMoon = planet->makeMoonExplored(Random::getRandomNumber(0, planet->getUnexploredMoons().size() - 1));
-			_exploredData.push_back(foundMoon);
+			_exploredData.push_back(std::make_tuple(foundMoon, planet->_name));
 			printMessage(shipSign + " EXPLORER'S RADIO: New Moon was found: " + foundMoon + "!.\n");
 			threadSleep(2);
-		} while (static_cast<bool>(Random::getRandomNumber(0, 3)));
+		} while (static_cast<bool>(Random::getRandomNumber(0, 4)));
 
 		__continueExploration(sol, planet->_name);
 	}
 
-	if (__expeditionNum == 1) {
+	if (currentStatus == ShipCurrentStatus::INFLIGHT) {
+		changeShipStatus(ShipCurrentStatus::LANDING);
 		threadSleep(2);
 		__sendShipToEarth(planet);
-	}
-	else {
-		__expeditionNum--;
 	}
 }
 
@@ -164,8 +195,11 @@ void ExplorerSpaceShip::__concludeExploration() {
 	std::cout << "Found objects: ";
 	if (_exploredData.size() == 0) std::cout << "None!.\n";
 	else {
-		for (std::string& obj : _exploredData) {
-			std::cout << "\nObject: " + obj;
+		for (std::tuple<std::string, std::string> cluster : _exploredDataClusters) {
+			std::cout << "\nAsteroid Clusters: " + std::get<0>(cluster) + " (" + std::get<1>(cluster) + "'s orbit)";
+		}
+		for (std::tuple<std::string, std::string> obj : _exploredData) {
+			std::cout << "\nObject: " + std::get<0>(obj) + " (" + std::get<1>(obj) + "'s moon)";
 		}
 		std::cout << "\n";
 	}
@@ -178,7 +212,8 @@ void ExplorerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* so
 	printMessage(shipSign + " is preparing for a flight..\n", true);
 	printMessage(shipSign + " is launching..\n");
 	this->__startEngine();
-	int targetObject = Random::getRandomNumber(1, sol->planets.size());
+	changeShipStatus(ShipCurrentStatus::STARTING);
+	int targetObject = Random::getRandomNumber(0, sol->planets.size());
 	//0 - Sun
 	//other - Planets
 	if (targetObject == 0) {
@@ -195,7 +230,7 @@ void ExplorerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* so
 	__landShipOnStation();
 	__concludeExploration();
 	__setSpaceShipsStatus(SpaceShipStatus::AVAILABLE);
+	changeShipStatus(ShipCurrentStatus::LANDED);
 	__objectsSearched.clear();
-	__expeditionNum = 0;
 	__increaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
 }

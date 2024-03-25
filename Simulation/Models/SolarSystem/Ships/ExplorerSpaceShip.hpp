@@ -11,10 +11,9 @@ class ExplorerSpaceShip : public SpaceShipAbstract {
 private:
 	const std::string shipSign = " >Explorer Ship (id: " + std::to_string(this->shipId) + ")";
 
-	int __expeditionNum = 0;
-
 	std::vector<int> __objectsSearched;
-	std::vector<std::string> _exploredData;
+	std::vector<std::tuple<std::string, std::string>> _exploredData; // (Moon, Planet)
+	std::vector<std::tuple<std::string, std::string>> _exploredDataClusters; // (Asteroid, Orbit)
 
 	void __doExploration(SolarSystem* sol, PlanetAbstract* planet);
 	void __doExploration(SolarSystem* sol, StarsAbstract* sun);

@@ -32,6 +32,8 @@ public:
 	const int timeFromEarthToPlanet; // 1 million KM in - 1 sec + min distance in KM
 	AsteroidCluster* asteroidBelt = nullptr; // AsteroidCluster Object
 
+	bool getAsteroidBeltStatus() const { return _asteroidBelt; }
+
 	int getMoonsNum() const { return _moonsNumber; }
 	std::vector<std::string> getUnexploredMoons() { return _unexploredMoons; }
 	std::vector<std::string> getExploredMoons() { return _exploredMoons; }
