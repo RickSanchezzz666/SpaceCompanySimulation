@@ -1,28 +1,222 @@
-﻿  ExplorerSpaceShip.cpp
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,75): warning C4305: 'argument': truncation from '__int64' to 'long'
-  (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
+﻿  EarthStation.cpp
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4305: 'argument': truncation from '__int64' to 'const int'
+  (compiling source file 'Simulation/Features/EarthStation.cpp')
   
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,75): warning C4309: 'argument': truncation of constant value
-  (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4309: 'argument': truncation of constant value
+  (compiling source file 'Simulation/Features/EarthStation.cpp')
   
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\SaturnPlanet.hpp(15,75): warning C4305: 'argument': truncation from '__int64' to 'long'
-  (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(41,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/Features/EarthStation.cpp')
   
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\SaturnPlanet.hpp(15,75): warning C4309: 'argument': truncation of constant value
-  (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(48,92): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/Features/EarthStation.cpp')
   
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\UranusPlanet.hpp(15,74): warning C4305: 'argument': truncation from '__int64' to 'long'
-  (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Features/EarthStation.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,118):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[21],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[21],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,32):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'VenusPlanet::VenusPlanet'
   
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\UranusPlanet.hpp(15,74): warning C4309: 'argument': truncation of constant value
-  (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=int
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Features/EarthStation.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],int,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=int
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,34):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'JupiterPlanet::JupiterPlanet'
   
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp(15,77): warning C4305: 'argument': truncation from '__int64' to 'long'
-  (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
+  JupiterPlanet.cpp
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=int
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Planets/JupiterPlanet.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],int,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=int
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,34):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'JupiterPlanet::JupiterPlanet'
   
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp(15,77): warning C4309: 'argument': truncation of constant value
-  (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
+  MarsPlanet.cpp
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Planets/MarsPlanet.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\MarsPlanet.hpp(16,5):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[21],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[21],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\MarsPlanet.hpp(15,31):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'MarsPlanet::MarsPlanet'
   
+  MercuryPlanet.cpp
+  NeptunePlanet.cpp
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=int
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Planets/NeptunePlanet.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],int,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=int
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp(15,34):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'NeptunePlanet::NeptunePlanet'
+  
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Planets/NeptunePlanet.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp(16,47):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\NeptunePlanet.hpp(15,34):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'NeptunePlanet::NeptunePlanet'
+  
+  SaturnPlanet.cpp
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Planets/SaturnPlanet.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\SaturnPlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\SaturnPlanet.hpp(15,33):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'SaturnPlanet::SaturnPlanet'
+  
+  UranusPlanet.cpp
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Planets/UranusPlanet.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\UranusPlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\UranusPlanet.hpp(15,33):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'UranusPlanet::UranusPlanet'
+  
+  VenusPlanet.cpp
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Planets/VenusPlanet.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,118):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[21],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[21],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,32):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'VenusPlanet::VenusPlanet'
+  
+  ExplorerSpaceShip.cpp
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4305: 'argument': truncation from '__int64' to 'const int'
   (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
   
@@ -36,8 +230,8 @@ D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbs
   (compiling source file 'Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp')
   
 D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp(76,66): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp(176,116): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp(216,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp(184,116): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp(224,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
 D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
@@ -82,6 +276,237 @@ D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54)
   		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,34):
   		see the first reference to 'std::pair<const std::string,float>::pair' in 'JupiterPlanet::JupiterPlanet'
   
+  MiningSpaceShip.cpp
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4305: 'argument': truncation from '__int64' to 'const int'
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4309: 'argument': truncation of constant value
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(41,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(48,92): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp')
+  
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,118):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[21],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[21],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,32):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'VenusPlanet::VenusPlanet'
+  
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=int
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],int,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=int
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,34):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'JupiterPlanet::JupiterPlanet'
+  
+  PassengerSpaceShip.cpp
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4305: 'argument': truncation from '__int64' to 'const int'
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4309: 'argument': truncation of constant value
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(41,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(48,92): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp(127,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,118):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[21],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[21],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,32):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'VenusPlanet::VenusPlanet'
+  
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=int
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],int,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=int
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,34):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'JupiterPlanet::JupiterPlanet'
+  
+  Simulation.cpp
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4305: 'argument': truncation from '__int64' to 'const int'
+  (compiling source file 'Simulation/Simulation.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4309: 'argument': truncation of constant value
+  (compiling source file 'Simulation/Simulation.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(41,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/Simulation.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(48,92): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/Simulation.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Simulation.cpp(5,6): warning C4101: 'randomNum': unreferenced local variable
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Simulation.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,118):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[21],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[21],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,32):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'VenusPlanet::VenusPlanet'
+  
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=int
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/Simulation.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],int,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=int
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,34):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'JupiterPlanet::JupiterPlanet'
+  
+  main.cpp
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4305: 'argument': truncation from '__int64' to 'const int'
+  (compiling source file 'Simulation/main.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\SolarSystem.hpp(36,72): warning C4309: 'argument': truncation of constant value
+  (compiling source file 'Simulation/main.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(41,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/main.cpp')
+  
+D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Ships\SpaceShipAbstract.hpp(48,92): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Simulation/main.cpp')
+  
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=double
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/main.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,118):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[21],double,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[21],
+              _Other2=double
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\VenusPlanet.hpp(15,32):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'VenusPlanet::VenusPlanet'
+  
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         with
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty=int
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         and
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         [
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:             _Ty2=float
+D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54): warning C4244:         ]
+  (compiling source file 'Simulation/main.cpp')
+  D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\include\utility(250,54):
+  the template instantiation context (the oldest one first) is
+  	D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(16,3):
+  	see reference to function template instantiation 'std::pair<const std::string,float>::pair<const char(&)[14],int,0>(_Other1,_Other2 &&) noexcept(false)' being compiled
+          with
+          [
+              _Other1=const char (&)[14],
+              _Other2=int
+          ]
+  		D:\Repos\SpaceCompanySimulation\Simulation\Models\SolarSystem\Planets\JupiterPlanet.hpp(15,34):
+  		see the first reference to 'std::pair<const std::string,float>::pair' in 'JupiterPlanet::JupiterPlanet'
+  
+  Generating Code...
   SpaceCompanySimulation.vcxproj -> D:\Repos\SpaceCompanySimulation\x64\Debug\SpaceCompanySimulation.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

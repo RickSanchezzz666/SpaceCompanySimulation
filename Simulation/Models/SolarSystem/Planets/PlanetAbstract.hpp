@@ -11,7 +11,7 @@ protected:
 	const long double _mass; // Example: 3E23L KG
 	const float _radius; // Example: 2439,7 KM
 	const float _dayDuration; // Example: 23,59 EarthDays
-	const long int _area; // Example: 78'800'000 KM^2
+	const long double _area; // Example: 3E10L KM^2
 	const float _orbitalPeriod; // Example: 87,969 EarthDays
 	const float _distanceToStar; // Example: 0,4 AU (Astronomical Units)
 	const int _maxTemperature; // Example: 255 K
@@ -46,7 +46,7 @@ public:
 	}
 
 	//no asteroid belt
-	PlanetAbstract(std::string name, long double mass, float radius, float day, long int area,
+	PlanetAbstract(std::string name, long double mass, float radius, float day, long double area,
 		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
 		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
 		int magneticField, float lifeChance, int moonsNum, int time, std::vector<std::string> moons, int id, bool belt) : _name(name), _mass(mass), _radius(radius),
@@ -56,7 +56,7 @@ public:
 		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(time), _unexploredMoons(moons), _id(id), _asteroidBelt(belt) {};
 
 	//asteroid belt
-	PlanetAbstract(std::string name, long double mass, float radius, float day, long int area,
+	PlanetAbstract(std::string name, long double mass, float radius, float day, long double area,
 		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
 		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
 		int magneticField, float lifeChance, int moonsNum, int time, std::vector<std::string> moons, int id, bool belt, AsteroidCluster* cluster) : _name(name), _mass(mass), _radius(radius),

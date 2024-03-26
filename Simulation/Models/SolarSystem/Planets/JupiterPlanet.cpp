@@ -14,7 +14,7 @@ void JupiterPlanet::showPlanetInfo() {
 	cout << "\n   Distance to Star (AU): " << _distanceToStar << " AU";
 	cout << "\n   Max Surface Temperature (K): " << _maxTemperature << " K";
 	cout << "\n   Min Surface Temperature (K): " << _minTemperature << " K";
-	cout << "\n   Atmosphere (BOOL): " << _atmosphere;
+	cout << "\n   Atmosphere (BOOL): " << (_atmosphere ? "True" : "False");
 	if (_atmosphere)
 		cout << "\n   Atmosphere Composition ( {Element: Content%} ): ";
 	for (auto it = _atmosphereComposition.begin(); it != _atmosphereComposition.end(); ++it) {

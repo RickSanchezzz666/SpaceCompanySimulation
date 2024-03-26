@@ -18,7 +18,7 @@ void ExplorerSpaceShip::__sendShipToObject(PlanetAbstract* planet) {
 	}
 	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " is currently heading to " + planet->_name + "..\n");
-	//threadSleep(planet->timeFromEarthToPlanet);
+	threadSleep(planet->timeFromEarthToPlanet);
 	printMessage(shipSign + " reached " + planet->_name + "'s orbit..\n");
 	threadSleep(2);
 	printMessage(shipSign + " is currently orbiting " + planet->_name + "..\n");
@@ -34,7 +34,7 @@ void ExplorerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
 	}
 	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " is currently heading to " + sun->name + "..\n");
-	//threadSleep(sun->timeFromEarthToStar);
+	threadSleep(sun->timeFromEarthToStar);
 	printMessage(shipSign + " reached " + sun->name + "'s orbit..\n");
 	threadSleep(2);
 	printMessage(shipSign + " is currently orbiting " + sun->name + "..\n");
@@ -43,7 +43,7 @@ void ExplorerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
 void ExplorerSpaceShip::__sendShipToEarth(PlanetAbstract* planet) {
 	threadSleep(5);
 	printMessage(shipSign + " started heading back to Earth from exploration..\n");
-	//threadSleep(planet->timeFromEarthToPlanet);
+	threadSleep(planet->timeFromEarthToPlanet);
 	printMessage(shipSign + " is on Earth's orbit..\n");
 	threadSleep(2);
 	printMessage(shipSign + " began to enter Earth's atmosphere..\n");
@@ -116,6 +116,10 @@ void ExplorerSpaceShip::__continueExploration(SolarSystem* sol, std::string objN
 
 void ExplorerSpaceShip::__doExploration(SolarSystem* sol, StarsAbstract* sun) {
 	threadSleep(2);
+	printMessage(shipSign + " scanning star..\n");
+	threadSleep(2);
+	sun->showStarInfo();
+	threadSleep(2);
 	printMessage(shipSign + " is scanning for potential asteroid clusters on Sun's orbit..\n");
 	threadSleep(1);
 	printMessage(shipSign + " EXPLORER'S RADIO: Scanning...\n");
@@ -134,7 +138,7 @@ void ExplorerSpaceShip::__doExploration(SolarSystem* sol, StarsAbstract* sun) {
 			AsteroidCluster* cluster = __getRandomCluster(sol);
 			sol->makeClusterExplored(cluster);
 			_exploredDataClusters.push_back(std::make_tuple(cluster->name, cluster->whoseOrbitOn));
-			printMessage(shipSign + " EXPLORER'S RADIO: Found new Asteroid Cluster " + cluster->name + " on " + cluster->whoseOrbitOn + "'s orbit..\n");
+			printMessage(shipSign + " EXPLORER'S RADIO: Found new Asteroid Cluster: " + cluster->name + " on " + cluster->whoseOrbitOn + "'s orbit..\n");
 			threadSleep(2);
 		} while (static_cast<bool>(Random::getRandomNumber(0, 1)));
 	}
@@ -148,6 +152,10 @@ void ExplorerSpaceShip::__doExploration(SolarSystem* sol, StarsAbstract* sun) {
 }
 
 void ExplorerSpaceShip::__doExploration(SolarSystem* sol, PlanetAbstract* planet) {
+	threadSleep(2);
+	printMessage(shipSign + " scanning planet..\n");
+	threadSleep(2);
+	planet->showPlanetInfo();
 	threadSleep(2);
 	printMessage(shipSign + " is scanning for potential interesting objects..\n");
 	threadSleep(1);
@@ -163,7 +171,7 @@ void ExplorerSpaceShip::__doExploration(SolarSystem* sol, PlanetAbstract* planet
 			AsteroidCluster* cluster = __getCluster(planet);
 			sol->makeClusterExplored(cluster);
 			_exploredDataClusters.push_back(std::make_tuple(cluster->name, cluster->whoseOrbitOn));
-			printMessage(shipSign + " EXPLORER'S RADIO: Found new Asteroid Cluster " + cluster->name + " on " + cluster->whoseOrbitOn + "'s orbit..\n");
+			printMessage(shipSign + " EXPLORER'S RADIO: Found new Asteroid Cluster: " + cluster->name + " on " + cluster->whoseOrbitOn + "'s orbit..\n");
 			threadSleep(2);
 		}
 

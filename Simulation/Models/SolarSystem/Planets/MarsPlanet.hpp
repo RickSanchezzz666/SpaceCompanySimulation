@@ -5,7 +5,7 @@
 
 class MarsPlanet : public PlanetAbstract {
 public:
-	MarsPlanet(std::string name, long double mass, float radius, float day, long int area,
+	MarsPlanet(std::string name, long double mass, float radius, float day, long double area,
 		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
 		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
 		int magneticField, float lifeChance, int moonsNum, int time, std::vector<std::string> moons, int id, bool belt) : PlanetAbstract(name, mass, radius, day,
