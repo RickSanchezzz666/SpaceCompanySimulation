@@ -42,7 +42,7 @@ void ExplorerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
 
 void ExplorerSpaceShip::__sendShipToEarth(PlanetAbstract* planet) {
 	threadSleep(5);
-	printMessage(shipSign + " started heading back to Earth from exploration..\n");
+	printMessage(shipSign + " ending expedition. Started heading back to Earth from " + planet->_name + "..\n");
 	threadSleep(planet->timeFromEarthToPlanet);
 	printMessage(shipSign + " is on Earth's orbit..\n");
 	threadSleep(2);
@@ -51,7 +51,7 @@ void ExplorerSpaceShip::__sendShipToEarth(PlanetAbstract* planet) {
 
 void ExplorerSpaceShip::__sendShipToEarth(StarsAbstract* star) {
 	threadSleep(5);
-	printMessage(shipSign + " started heading back to Earth from exploration..\n");
+	printMessage(shipSign + " ending expedition. Started heading back to Earth from " + star->name + "..\n");
 	threadSleep(star->timeFromEarthToStar);
 	printMessage(shipSign + " is on Earth's orbit..\n");
 	threadSleep(2);
@@ -74,42 +74,27 @@ void ExplorerSpaceShip::__continueExploration(SolarSystem* sol, std::string objN
 	}
 	else {
 		int targetObject = Random::getRandomNumber(0, sol->planets.size());
-		if (targetObject == 0) {
-			bool foundStatus = false;
-			for (auto& id : __objectsSearched) {
-				if (targetObject == id) {
-					threadSleep(1);
-					printMessage(shipSign + " crew is tired. Getting ready to come back to Earth..\n");
-					foundStatus = true;
-					return;
-				}
-			}
-			if (!foundStatus) {
-				printMessage(shipSign + " looking for another Planet or Star to explore..\n");
-				threadSleep(2);
-				__objectsSearched.push_back(sol->star->_id);
-				__sendShipToObject(sol->star);
-				__doExploration(sol, sol->star);
+		for (auto& id : __objectsSearched) {
+			if (targetObject == id) {
+				threadSleep(1);
+				printMessage(shipSign + " crew is tired. Getting ready to come back to Earth..\n");
+				return;
 			}
 		}
+		if (targetObject == 0) {
+			printMessage(shipSign + " looking for another Planet or Star to explore..\n");
+			threadSleep(2);
+			__objectsSearched.push_back(sol->star->_id);
+			__sendShipToObject(sol->star);
+			__doExploration(sol, sol->star);
+		}
 		else {
-			bool foundStatus = false;
-			for (auto& id : __objectsSearched) {
-				if (targetObject == id) {
-					threadSleep(1);
-					printMessage(shipSign + " crew is tired. Getting ready to come back to Earth..\n");
-					foundStatus = true;
-					return;
-				}
-			}
-			if (!foundStatus) {
-				printMessage(shipSign + " looking for another Planet or Star to explore..\n");
-				threadSleep(2);
-				PlanetAbstract* newPlanet = __getPlanet(sol, targetObject - 1);
-				__objectsSearched.push_back(newPlanet->_id);
-				__sendShipToObject(newPlanet);
-				__doExploration(sol, newPlanet);
-			}
+			printMessage(shipSign + " looking for another Planet or Star to explore..\n");
+			threadSleep(2);
+			PlanetAbstract* newPlanet = __getPlanet(sol, targetObject - 1);
+			__objectsSearched.push_back(newPlanet->_id);
+			__sendShipToObject(newPlanet);
+			__doExploration(sol, newPlanet);
 		}
 	}
 }
@@ -203,10 +188,10 @@ void ExplorerSpaceShip::__concludeExploration() {
 	std::cout << "Found objects: ";
 	if (_exploredData.size() == 0) std::cout << "None!.\n";
 	else {
-		for (std::tuple<std::string, std::string> cluster : _exploredDataClusters) {
+		for (std::tuple<std::string, std::string>& cluster : _exploredDataClusters) {
 			std::cout << "\nAsteroid Clusters: " + std::get<0>(cluster) + " (" + std::get<1>(cluster) + "'s orbit)";
 		}
-		for (std::tuple<std::string, std::string> obj : _exploredData) {
+		for (std::tuple<std::string, std::string>& obj : _exploredData) {
 			std::cout << "\nObject: " + std::get<0>(obj) + " (" + std::get<1>(obj) + "'s moon)";
 		}
 		std::cout << "\n";

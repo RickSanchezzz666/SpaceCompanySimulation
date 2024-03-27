@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\Repos\\SpaceCompanySimulation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Planets\\NeptunePlanet.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Models\\SolarSystem\\Planets\\NeptunePlanet.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Simulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Simulation.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -34,8 +34,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 225,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -57,7 +61,7 @@
               "RelativeDocumentMoniker": "Simulation\\main.cpp",
               "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\main.cpp",
               "RelativeToolTip": "Simulation\\main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAfAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-05T17:16:58.5Z",
               "IsPinned": true,
@@ -65,58 +69,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NeptunePlanet.hpp",
-              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Planets\\NeptunePlanet.hpp",
-              "RelativeDocumentMoniker": "Simulation\\Models\\SolarSystem\\Planets\\NeptunePlanet.hpp",
-              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Planets\\NeptunePlanet.hpp",
-              "RelativeToolTip": "Simulation\\Models\\SolarSystem\\Planets\\NeptunePlanet.hpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-26T13:06:28.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Simulation.hpp",
-              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.hpp",
-              "RelativeDocumentMoniker": "Simulation\\Simulation.hpp",
-              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.hpp",
-              "RelativeToolTip": "Simulation\\Simulation.hpp",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-26T12:57:27.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Simulation.cpp",
-              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.cpp",
-              "RelativeDocumentMoniker": "Simulation\\Simulation.cpp",
-              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.cpp",
-              "RelativeToolTip": "Simulation\\Simulation.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAASwBMAAAAAAAAA",
+              "Title": "ExplorerSpaceShip.hpp",
+              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.hpp",
+              "RelativeDocumentMoniker": "Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.hpp",
+              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.hpp",
+              "RelativeToolTip": "Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.hpp",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-27T15:12:42.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExplorerSpaceShip.cpp",
+              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.cpp",
+              "RelativeDocumentMoniker": "Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.cpp",
+              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.cpp",
+              "RelativeToolTip": "Simulation\\Models\\SolarSystem\\Ships\\ExplorerSpaceShip.cpp",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAACwAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-26T12:57:32.442Z",
+              "WhenOpened": "2024-03-27T15:11:36.098Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SpaceShipAbstract.hpp",
-              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp",
-              "RelativeDocumentMoniker": "Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp",
-              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp",
-              "RelativeToolTip": "Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAQwFUAAAAAAAAA",
+              "Title": "PassengerSpaceShip.hpp",
+              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp",
+              "RelativeDocumentMoniker": "Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp",
+              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp",
+              "RelativeToolTip": "Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-25T15:25:12.972Z",
+              "WhenOpened": "2024-03-27T15:07:43.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PassengerSpaceShip.cpp",
+              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp",
+              "RelativeDocumentMoniker": "Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp",
+              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp",
+              "RelativeToolTip": "Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp",
+              "ViewState": "AQIAALEAAAAAAAAAAAAAAMQAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-27T15:04:58.339Z",
               "EditorCaption": ""
             }
           ]

@@ -13,9 +13,16 @@ private:
 
 	std::atomic<int> __currPassengersAmount = 0;
 
+	std::vector<std::string> __objectsVisited;
+
+	void __doTourism(SolarSystem* sol, int objectId);
+	void __endTourism(SolarSystem* sol, int objectId);
+	
+	void __concludeTourism();
+
 	void __getPassengersOnBoard(const int passengersNum);
 	void __removePassengersFromBoard();
-	void __touristsAction(int tObject);
+	void __touristsAction(SolarSystem* sol, int objectId);
 
 	void __sendShipToObject(PlanetAbstract* planet) override;
 	void __sendShipToObject(StarsAbstract* sun) override;

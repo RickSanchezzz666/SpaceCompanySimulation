@@ -8,7 +8,5 @@ int main() {
 
 	simulation.startSimulation();
 
-	//to do show planet properties
-
 	return 0;
 }

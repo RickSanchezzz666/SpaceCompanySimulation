@@ -8,23 +8,85 @@ void PassengerSpaceShip::__startEngine() {
 	printMessage(shipSign + " started engine...\n");
 }
 
-void PassengerSpaceShip::__getPassengersOnBoard(const int passengersNum) { 
-	__currPassengersAmount.fetch_add(passengersNum, std::memory_order_relaxed); 
+void PassengerSpaceShip::__getPassengersOnBoard(const int passengersNum) {
+	__currPassengersAmount.fetch_add(passengersNum, std::memory_order_relaxed);
 	printMessage(shipSign + " boarded " + std::to_string(passengersNum) + " passengers..\n");
 }
 
-void PassengerSpaceShip::__removePassengersFromBoard() { 
+void PassengerSpaceShip::__removePassengersFromBoard() {
 	printMessage(shipSign + " " + std::to_string(__currPassengersAmount) + " passengers left a board..\n");
 	__currPassengersAmount = 0;
 }
 
-void PassengerSpaceShip::__touristsAction(int tObject) {
+void PassengerSpaceShip::__doTourism(SolarSystem* sol, int objectId) {
+	__touristsAction(sol, objectId);
+	threadSleep(2);
+	bool againSwitch = Random::getRandomNumber(0, 1);
+	if (againSwitch) {
+		printMessage(shipSign + " getting ready to come back to Earth..\n");
+		threadSleep(2);
+		return __endTourism(sol, objectId);
+	}
+	else {
+		int targetObject = Random::getRandomNumber(0, sol->planets.size());
+		for (auto& objectName : __objectsVisited) {
+			if (objectName == (targetObject == 0 ? sol->star->name : __getPlanet(sol, targetObject - 1)->_name)) {
+				printMessage(shipSign + " passengers is tired. Getting ready to come back to Earth..\n");
+				threadSleep(1);
+				return __endTourism(sol, objectId);
+			}
+		}
+		if (targetObject == 0) {
+			printMessage(shipSign + " looking for another Planet or Star to visit..\n");
+			threadSleep(2);
+			__objectsVisited.push_back(sol->star->name);
+			__sendShipToObject(sol->star);
+			__doTourism(sol, sol->star->_id);
+		}
+		else {
+			printMessage(shipSign + " looking for another Planet or Star to visit..\n");
+			threadSleep(2);
+			PlanetAbstract* newPlanet = __getPlanet(sol, targetObject - 1);
+			__objectsVisited.push_back(newPlanet->_name);
+			__sendShipToObject(newPlanet);
+			__doTourism(sol, newPlanet->_id);
+		}
+	}
+}
+
+void PassengerSpaceShip::__endTourism(SolarSystem* sol, int objectId) {
+	if (currentStatus == ShipCurrentStatus::INFLIGHT) {
+		changeShipStatus(ShipCurrentStatus::LANDING);
+		if (objectId == 0) { return __sendShipToEarth(sol->star); }
+		else { return __sendShipToEarth(__getPlanet(sol, objectId - 1)); }
+	}
+}
+
+void PassengerSpaceShip::__concludeTourism() {
+	threadSleep(2);
+	std::cout << "\nResults of expedition of Passenger Ship(id: " + std::to_string(this->shipId) + "):\n";
+	std::cout << "Visited objects: ";
+	if (__objectsVisited.size() == 0) std::cout << "None!.\n";
+	else {
+		std::cout << "Earth";
+		for (int i = 0; i < __objectsVisited.size(); ++i) {
+			std::cout << " --> " + __objectsVisited[i];
+		}
+		std::cout << " --> Earth.\n";
+	}
+}
+
+
+void PassengerSpaceShip::__touristsAction(SolarSystem* sol, int objectId) {
 	int randomNum = -1;
-	if (tObject == 0) {
+	bool asteroidEvent = false;
+	if (objectId == 0) {
 		randomNum = Random::getRandomNumber(0, 4);
+		if (sol->getExploredClusters().size() != 0) asteroidEvent = true;
 	}
 	else {
 		randomNum = Random::getRandomNumber(5, 9);
+		if (__getPlanet(sol, objectId - 1)->getAsteroidBeltStatus() == true && __getPlanet(sol, objectId - 1)->asteroidBelt->clusterStatus == AsteroidStatus::EXPLORED) asteroidEvent = true;
 	}
 	threadSleep(2);
 	switch (randomNum)
@@ -63,14 +125,41 @@ void PassengerSpaceShip::__touristsAction(int tObject) {
 		printMessage(shipSign + " TOURIST'S RADIO: " + "BAD CONNECTION...\n");
 		break;
 	}
+
+	threadSleep(2);
+
+	if (asteroidEvent) {
+		randomNum = Random::getRandomNumber(1, 4);
+
+		switch (randomNum) {
+		case 1:
+			printMessage(shipSign + " TOURIST'S RADIO: " + "Scanning asteroid fields for potential resources..\n");
+			break;
+		case 2:
+			printMessage(shipSign + " TOURIST'S RADIO: " + "Navigating through asteroid belts, avoiding collisions..\n");
+			break;
+		case 3:
+			printMessage(shipSign + " TOURIST'S RADIO: " + "Studying asteroid composition..\n");
+			break;
+		case 4:
+			printMessage(shipSign + " TOURIST'S RADIO: " + "Observing asteroid impacts, studying crater formations..\n");
+			break;
+		default:
+			printMessage(shipSign + " TOURIST'S RADIO: " + "BAD CONNECTION...\n");
+			break;
+		}
+	}
 }
 
 void PassengerSpaceShip::__sendShipToObject(PlanetAbstract* planet) {
 	threadSleep(2);
-	printMessage(shipSign + " route is set with the goal of reaching  " + planet->_name + "..\n");
+	printMessage(shipSign + " route is set with the goal of reaching " + planet->_name + "..\n");
 	threadSleep(5);
-	printMessage(shipSign + " left Earth's atmosphere..\n");
-	threadSleep(2);
+	if (currentStatus == ShipCurrentStatus::STARTING) {
+		printMessage(shipSign + " left Earth's atmosphere..\n");
+		threadSleep(2);
+	}
+	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " is currently heading to " + planet->_name + "..\n");
 	threadSleep(planet->timeFromEarthToPlanet);
 	printMessage(shipSign + " reached " + planet->_name + "'s orbit..\n");
@@ -80,10 +169,13 @@ void PassengerSpaceShip::__sendShipToObject(PlanetAbstract* planet) {
 
 void PassengerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
 	threadSleep(2);
-	printMessage(shipSign + " route is set with the goal of reaching  " + sun->name + "..\n");
+	printMessage(shipSign + " route is set with the goal of reaching " + sun->name + "..\n");
 	threadSleep(5);
-	printMessage(shipSign + " left Earth's atmosphere..\n");
-	threadSleep(2);
+	if (currentStatus == ShipCurrentStatus::STARTING) {
+		printMessage(shipSign + " left Earth's atmosphere..\n");
+		threadSleep(2);
+	}
+	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " is currently heading to " + sun->name + "..\n");
 	threadSleep(sun->timeFromEarthToStar);
 	printMessage(shipSign + " reached " + sun->name + "'s orbit..\n");
@@ -93,7 +185,7 @@ void PassengerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
 
 void PassengerSpaceShip::__sendShipToEarth(PlanetAbstract* planet) {
 	threadSleep(5);
-	printMessage(shipSign + " started heading back to Earth..\n");
+	printMessage(shipSign + " started heading back to Earth from " + planet->_name + "..\n");
 	threadSleep(planet->timeFromEarthToPlanet);
 	printMessage(shipSign + " is on Earth's orbit..\n");
 	threadSleep(2);
@@ -102,7 +194,7 @@ void PassengerSpaceShip::__sendShipToEarth(PlanetAbstract* planet) {
 
 void PassengerSpaceShip::__sendShipToEarth(StarsAbstract* star) {
 	threadSleep(5);
-	printMessage(shipSign + " started heading back to Earth..\n");
+	printMessage(shipSign + " started heading back to Earth from " + star->name + "..\n");
 	threadSleep(star->timeFromEarthToStar);
 	printMessage(shipSign + " is on Earth's orbit..\n");
 	threadSleep(2);
@@ -110,6 +202,7 @@ void PassengerSpaceShip::__sendShipToEarth(StarsAbstract* star) {
 }
 
 void PassengerSpaceShip::__landShipOnStation() {
+	changeShipStatus(ShipCurrentStatus::LANDING);
 	threadSleep(2);
 	printMessage(shipSign + " is getting ready to land on Earth's Station..\n");
 	threadSleep(3);
@@ -124,22 +217,25 @@ void PassengerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* s
 	__getPassengersOnBoard(Random::getRandomNumber(10, 30));
 	printMessage(shipSign + " is launching..\n");
 	this->__startEngine();
+	changeShipStatus(ShipCurrentStatus::STARTING);
 	int targetObject = Random::getRandomNumber(0, sol->planets.size());
 	//0 - Sun
 	//other - Planets
 	if (targetObject == 0) {
 		__sendShipToObject(sol->star);
-		__touristsAction(targetObject);
-		__sendShipToObject(sol->star);
+		__objectsVisited.push_back(sol->star->name);
+		__doTourism(sol, sol->star->_id);
 	}
 	else {
 		PlanetAbstract* planet = __getRandomPlanet(sol);
 		__sendShipToObject(planet);
-		__touristsAction(targetObject);
-		__sendShipToEarth(planet);
+		__objectsVisited.push_back(planet->_name);
+		__doTourism(sol, planet->_id);
 	}
 	__landShipOnStation();
 	__removePassengersFromBoard();
+	__concludeTourism();
+	changeShipStatus(ShipCurrentStatus::LANDED);
 	__setSpaceShipsStatus(SpaceShipStatus::AVAILABLE);
 	__increaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
 }
