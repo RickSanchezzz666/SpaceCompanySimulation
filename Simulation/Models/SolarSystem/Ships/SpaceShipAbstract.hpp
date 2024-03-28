@@ -50,16 +50,27 @@ protected:
 		return cluster;
 	}
 
-	PlanetAbstract* __getPlanet(SolarSystem* sol, int index) const {
-		return sol->planets[index];
-	}
+	PlanetAbstract* __getPlanet(SolarSystem* sol, int index) const { return sol->planets[index]; }
 
 	AsteroidCluster* __getCluster(PlanetAbstract* planet) const { return planet->asteroidBelt; }
 
-	virtual void __sendShipToObject(PlanetAbstract* planet) = 0;
-	virtual void __sendShipToObject(StarsAbstract* sun) = 0;
-	virtual void __sendShipToEarth(PlanetAbstract* planet) = 0;
-	virtual void __sendShipToEarth(StarsAbstract* sun) = 0;
+	PlanetAbstract* __getPlanetByName(SolarSystem* sol, std::string& planetName) {
+		for (auto& planet : sol->planets) {
+			if (planet->_name == planetName) return planet;
+		}
+		return nullptr;
+	}
+
+	int calculateTimeForFlight(SolarSystem* sol, std::string oldObject, std::string newObject) {
+		float distanceOld = (oldObject != "Sun" ? __getPlanetByName(sol, oldObject)->getDistanceToStar() : 0.0f);
+		float distanceNew = (newObject != "Sun" ? __getPlanetByName(sol, newObject)->getDistanceToStar() : 0.0f);
+		return static_cast<int>(abs((distanceOld - distanceNew) * 15));
+	}
+
+	virtual void __sendShipToObject(SolarSystem* sol, PlanetAbstract* planet) = 0;
+	virtual void __sendShipToObject(SolarSystem* sol, StarsAbstract* sun) = 0;
+	virtual void __sendShipToEarth(SolarSystem* sol, PlanetAbstract* planet) = 0;
+	virtual void __sendShipToEarth(SolarSystem* sol, StarsAbstract* sun) = 0;
 	virtual void __landShipOnStation() = 0;
 
 	std::string __getCurrentTimestamp() {

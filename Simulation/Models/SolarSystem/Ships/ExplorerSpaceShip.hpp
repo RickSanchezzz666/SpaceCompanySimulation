@@ -11,7 +11,7 @@ class ExplorerSpaceShip : public SpaceShipAbstract {
 private:
 	const std::string shipSign = " >Explorer Ship (id: " + std::to_string(this->shipId) + ")";
 
-	std::vector<int> __objectsSearched;
+	std::vector<std::string> __objectsSearched;
 	std::vector<std::tuple<std::string, std::string>> _exploredData; // (Moon, Planet)
 	std::vector<std::tuple<std::string, std::string>> _exploredDataClusters; // (Asteroid, Orbit)
 
@@ -21,10 +21,10 @@ private:
 
 	void __concludeExploration();
 
-	void __sendShipToObject(PlanetAbstract* planet) override;
-	void __sendShipToObject(StarsAbstract* sun) override;
-	void __sendShipToEarth(PlanetAbstract* planet) override;
-	void __sendShipToEarth(StarsAbstract* sun) override;
+	void __sendShipToObject(SolarSystem* sol, PlanetAbstract* planet) override;
+	void __sendShipToObject(SolarSystem* sol, StarsAbstract* sun) override;
+	void __sendShipToEarth(SolarSystem* sol, PlanetAbstract* planet) override;
+	void __sendShipToEarth(SolarSystem* sol, StarsAbstract* sun) override;
 	void __landShipOnStation() override;
 
 	void __startEngine() override;

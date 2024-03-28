@@ -11,9 +11,9 @@ void Simulation::__startSimulation() {
 	//	if (earthStation->checkIfShipIsAvailable(4)) earthStation->launchSpaceShip(4);
 	//}
 
+	if (earthStation->checkIfShipIsAvailable(0)) earthStation->launchSpaceShip(0);
+	std::this_thread::sleep_for(std::chrono::seconds(11));
 	if (earthStation->checkIfShipIsAvailable(4)) earthStation->launchSpaceShip(4);
-	//std::this_thread::sleep_for(std::chrono::seconds(11));
-	//if (earthStation->checkIfShipIsAvailable(4)) earthStation->launchSpaceShip(4);
 }
 
 void Simulation::__showInfo() {

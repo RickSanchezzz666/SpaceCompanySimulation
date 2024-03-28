@@ -39,16 +39,16 @@ void PassengerSpaceShip::__doTourism(SolarSystem* sol, int objectId) {
 		if (targetObject == 0) {
 			printMessage(shipSign + " looking for another Planet or Star to visit..\n");
 			threadSleep(2);
+			__sendShipToObject(sol, sol->star);
 			__objectsVisited.push_back(sol->star->name);
-			__sendShipToObject(sol->star);
 			__doTourism(sol, sol->star->_id);
 		}
 		else {
 			printMessage(shipSign + " looking for another Planet or Star to visit..\n");
 			threadSleep(2);
 			PlanetAbstract* newPlanet = __getPlanet(sol, targetObject - 1);
+			__sendShipToObject(sol, newPlanet);
 			__objectsVisited.push_back(newPlanet->_name);
-			__sendShipToObject(newPlanet);
 			__doTourism(sol, newPlanet->_id);
 		}
 	}
@@ -57,8 +57,8 @@ void PassengerSpaceShip::__doTourism(SolarSystem* sol, int objectId) {
 void PassengerSpaceShip::__endTourism(SolarSystem* sol, int objectId) {
 	if (currentStatus == ShipCurrentStatus::INFLIGHT) {
 		changeShipStatus(ShipCurrentStatus::LANDING);
-		if (objectId == 0) { return __sendShipToEarth(sol->star); }
-		else { return __sendShipToEarth(__getPlanet(sol, objectId - 1)); }
+		if (objectId == 0) { return __sendShipToEarth(sol, sol->star); }
+		else { return __sendShipToEarth(sol, __getPlanet(sol, objectId - 1)); }
 	}
 }
 
@@ -151,7 +151,7 @@ void PassengerSpaceShip::__touristsAction(SolarSystem* sol, int objectId) {
 	}
 }
 
-void PassengerSpaceShip::__sendShipToObject(PlanetAbstract* planet) {
+void PassengerSpaceShip::__sendShipToObject(SolarSystem* sol, PlanetAbstract* planet) {
 	threadSleep(2);
 	printMessage(shipSign + " route is set with the goal of reaching " + planet->_name + "..\n");
 	threadSleep(5);
@@ -159,15 +159,16 @@ void PassengerSpaceShip::__sendShipToObject(PlanetAbstract* planet) {
 		printMessage(shipSign + " left Earth's atmosphere..\n");
 		threadSleep(2);
 	}
-	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " is currently heading to " + planet->_name + "..\n");
-	threadSleep(planet->timeFromEarthToPlanet);
+	if (currentStatus == ShipCurrentStatus::STARTING) threadSleep(planet->timeFromEarthToPlanet);
+	else threadSleep(calculateTimeForFlight(sol, __objectsVisited[__objectsVisited.size() - 1], planet->_name));
+	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " reached " + planet->_name + "'s orbit..\n");
 	threadSleep(2);
 	printMessage(shipSign + " is currently orbiting " + planet->_name + "..\n");
 }
 
-void PassengerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
+void PassengerSpaceShip::__sendShipToObject(SolarSystem* sol, StarsAbstract* sun) {
 	threadSleep(2);
 	printMessage(shipSign + " route is set with the goal of reaching " + sun->name + "..\n");
 	threadSleep(5);
@@ -175,15 +176,16 @@ void PassengerSpaceShip::__sendShipToObject(StarsAbstract* sun) {
 		printMessage(shipSign + " left Earth's atmosphere..\n");
 		threadSleep(2);
 	}
-	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " is currently heading to " + sun->name + "..\n");
-	threadSleep(sun->timeFromEarthToStar);
+	if (currentStatus == ShipCurrentStatus::STARTING) threadSleep(sun->timeFromEarthToStar);
+	else threadSleep(calculateTimeForFlight(sol, __objectsVisited[__objectsVisited.size() - 1], sun->name));
+	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " reached " + sun->name + "'s orbit..\n");
 	threadSleep(2);
 	printMessage(shipSign + " is currently orbiting " + sun->name + "..\n");
 }
 
-void PassengerSpaceShip::__sendShipToEarth(PlanetAbstract* planet) {
+void PassengerSpaceShip::__sendShipToEarth(SolarSystem* sol, PlanetAbstract* planet) {
 	threadSleep(5);
 	printMessage(shipSign + " started heading back to Earth from " + planet->_name + "..\n");
 	threadSleep(planet->timeFromEarthToPlanet);
@@ -192,7 +194,7 @@ void PassengerSpaceShip::__sendShipToEarth(PlanetAbstract* planet) {
 	printMessage(shipSign + " began to enter Earth's atmosphere..\n");
 }
 
-void PassengerSpaceShip::__sendShipToEarth(StarsAbstract* star) {
+void PassengerSpaceShip::__sendShipToEarth(SolarSystem* sol, StarsAbstract* star) {
 	threadSleep(5);
 	printMessage(shipSign + " started heading back to Earth from " + star->name + "..\n");
 	threadSleep(star->timeFromEarthToStar);
@@ -222,13 +224,13 @@ void PassengerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* s
 	//0 - Sun
 	//other - Planets
 	if (targetObject == 0) {
-		__sendShipToObject(sol->star);
+		__sendShipToObject(sol, sol->star);
 		__objectsVisited.push_back(sol->star->name);
 		__doTourism(sol, sol->star->_id);
 	}
 	else {
 		PlanetAbstract* planet = __getRandomPlanet(sol);
-		__sendShipToObject(planet);
+		__sendShipToObject(sol, planet);
 		__objectsVisited.push_back(planet->_name);
 		__doTourism(sol, planet->_id);
 	}

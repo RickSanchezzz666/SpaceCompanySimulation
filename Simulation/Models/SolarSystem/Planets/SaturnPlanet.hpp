@@ -8,13 +8,13 @@ public:
 	SaturnPlanet(std::string name, long double mass, float radius, float day, long double area,
 		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
 		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
-		int magneticField, float lifeChance, int moonsNum, int time, std::vector<std::string> moons, int id, bool belt, AsteroidCluster* cluster) : PlanetAbstract(name, mass, radius, day,
+		int magneticField, float lifeChance, int moonsNum, std::vector<std::string> moons, int id, bool belt, AsteroidCluster* cluster) : PlanetAbstract(name, mass, radius, day,
 			area, period, distance, maxTemperature, minTemperature, atmosphere, atmosphereComposition,
-			gravity, magneticField, lifeChance, moonsNum, time, moons, id, belt, cluster) { std::cout << "Saturn Planet Generated...\n"; };
+			gravity, magneticField, lifeChance, moonsNum, moons, id, belt, cluster) { std::cout << "Saturn Planet Generated...\n"; };
 
 	SaturnPlanet() : PlanetAbstract("Saturn", 5.6834E26L, 58232.0f, 10.656f, 4.27E10L, 10759.22f, 9.58f, 134, 84, true, {
 		{"Hydrogen (H2)", 96.3}, {"Helium (He)", 3.25} 
-		}, 1.065f, 20000, 0.01f, 82, 135, {
+		}, 1.065f, 20000, 0.01f, 82, {
 		"Mimas", "Enceladus", "Tethys", "Dione", "Rhea", "Titan", "Hyperion", "Iapetus",
 		"Phoebe", "Janus", "Epimetheus", "Helene", "Telesto", "Calypso", "Atlas",
 		"Prometheus", "Pandora", "Pan", "Ymir", "Paaliaq", "Tarvos", "Ijiraq", "Suttungr",

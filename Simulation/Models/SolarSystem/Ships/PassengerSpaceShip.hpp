@@ -24,10 +24,10 @@ private:
 	void __removePassengersFromBoard();
 	void __touristsAction(SolarSystem* sol, int objectId);
 
-	void __sendShipToObject(PlanetAbstract* planet) override;
-	void __sendShipToObject(StarsAbstract* sun) override;
-	void __sendShipToEarth(PlanetAbstract* planet) override;
-	void __sendShipToEarth(StarsAbstract* sun) override;
+	void __sendShipToObject(SolarSystem* sol, PlanetAbstract* planet) override;
+	void __sendShipToObject(SolarSystem* sol, StarsAbstract* sun) override;
+	void __sendShipToEarth(SolarSystem* sol, PlanetAbstract* planet) override;
+	void __sendShipToEarth(SolarSystem* sol, StarsAbstract* sun) override;
 	void __landShipOnStation() override;
 
 	void __startEngine() override;
