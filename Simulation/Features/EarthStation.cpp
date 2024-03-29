@@ -8,7 +8,9 @@ std::mutex mtx;
 int EarthStation::getAstronautsNumber() { return __astronautsNumOnTheStation.load(std::memory_order_relaxed); }
 
 bool EarthStation::__checkIfShipIsAvailable(const int shipId) {
-    return __findShipById(shipId)->spaceShipStatus == SpaceShipStatus::AVAILABLE;
+    return (__findShipById(shipId)->spaceShipType != SpaceShipType::MINING 
+        ? __findShipById(shipId)->spaceShipStatus == SpaceShipStatus::AVAILABLE
+        : __findShipById(shipId)->spaceShipStatus == SpaceShipStatus::AVAILABLE && !solarSystem->isExploredClustersEmpty());
 }
 
 bool EarthStation::checkIfShipIsAvailable(const int shipId) {

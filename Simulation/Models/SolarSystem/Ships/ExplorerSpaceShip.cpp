@@ -18,7 +18,7 @@ void ExplorerSpaceShip::__sendShipToObject(SolarSystem* sol, PlanetAbstract* pla
 	}
 	printMessage(shipSign + " is currently heading to " + planet->_name + "..\n");
 	if (currentStatus == ShipCurrentStatus::STARTING) threadSleep(planet->timeFromEarthToPlanet);
-	else threadSleep(calculateTimeForFlight(sol, __objectsSearched[__objectsSearched.size() - 1], planet->_name));
+	else threadSleep(__calculateTimeForFlight(sol, __objectsSearched[__objectsSearched.size() - 1], planet->_name));
 	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " reached " + planet->_name + "'s orbit..\n");
 	threadSleep(2);
@@ -35,7 +35,7 @@ void ExplorerSpaceShip::__sendShipToObject(SolarSystem* sol, StarsAbstract* sun)
 	}
 	printMessage(shipSign + " is currently heading to " + sun->name + "..\n");
 	if (currentStatus == ShipCurrentStatus::STARTING) threadSleep(sun->timeFromEarthToStar);
-	else threadSleep(calculateTimeForFlight(sol, __objectsSearched[__objectsSearched.size() - 1], sun->name));
+	else threadSleep(__calculateTimeForFlight(sol, __objectsSearched[__objectsSearched.size() - 1], sun->name));
 	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " reached " + sun->name + "'s orbit..\n");
 	threadSleep(2);

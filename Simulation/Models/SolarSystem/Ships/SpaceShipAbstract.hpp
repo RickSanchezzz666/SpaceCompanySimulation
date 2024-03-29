@@ -61,11 +61,16 @@ protected:
 		return nullptr;
 	}
 
-	int calculateTimeForFlight(SolarSystem* sol, std::string oldObject, std::string newObject) {
+	int __getTimeForFlight(SolarSystem* sol, std::string object) {
+		return (object != "Sun" ? __getPlanetByName(sol, object)->timeFromEarthToPlanet : sol->star->timeFromEarthToStar);
+	}
+
+	int __calculateTimeForFlight(SolarSystem* sol, std::string oldObject, std::string newObject) {
 		float distanceOld = (oldObject != "Sun" ? __getPlanetByName(sol, oldObject)->getDistanceToStar() : 0.0f);
 		float distanceNew = (newObject != "Sun" ? __getPlanetByName(sol, newObject)->getDistanceToStar() : 0.0f);
 		return static_cast<int>(abs((distanceOld - distanceNew) * 15));
 	}
+
 
 	virtual void __sendShipToObject(SolarSystem* sol, PlanetAbstract* planet) = 0;
 	virtual void __sendShipToObject(SolarSystem* sol, StarsAbstract* sun) = 0;
@@ -95,6 +100,7 @@ public:
 		this->currentStatus = status;
 	}
 
+
 	void printMessage(const std::string& msg, bool withEndl = false) {
 		if (withEndl) {
 			std::cout << "\n" + __getCurrentTimestamp() + msg;
@@ -106,6 +112,10 @@ public:
 
 	void threadSleep(int sec) {
 		std::this_thread::sleep_for(std::chrono::seconds(sec));
+	}
+
+	void threadSleepMilliSeconds(int sec) {
+		std::this_thread::sleep_for(std::chrono::milliseconds(sec));
 	}
 
 	SpaceShipAbstract(SpaceShipStatus status, SpaceShipType type, int astroNumber, int id) : spaceShipStatus(status), spaceShipType(type), requiredAstronautsNumber(astroNumber), shipId(id) {}

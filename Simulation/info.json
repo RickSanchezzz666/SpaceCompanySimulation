@@ -23,8 +23,7 @@
         "StarType",
         "SpectralClass",
         "Luminosity",
-        "AbsoluteMagnitude",
-        "DistanceToCenterOfGalaxy"
+        "AbsoluteMagnitude"
       ]
     },
     "Planets": {
@@ -56,7 +55,6 @@
       "Methods": [
         "StartEngine",
         "StopEngine",
-        "flightInProgress"
       ]
     },
     "Station": {
@@ -75,7 +73,7 @@
   },
   "Prototypes": {
     "Stars": "Sun",
-    "Planets": [ "Mercury", "Venus", "Mars" ],
+    "Planets": [ "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune" ],
     "Ships": [ "Passenger", "Mining", "Explorer" ],
     "Station":  "Earth Station"
   }

@@ -46,6 +46,8 @@ public:
 
 	std::vector<AsteroidCluster*> getExploredClusters() const { return __exploredAsteroidClusters; }
 
+	bool isExploredClustersEmpty() const { return __exploredAsteroidClusters.empty(); }
+
 	bool isEveryClusterExplored() const {
 		for (auto& cluster : asteroidClusters) {
 			if (cluster->clusterStatus == AsteroidStatus::UNEXPLORED) {

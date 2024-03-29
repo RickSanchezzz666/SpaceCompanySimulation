@@ -82,7 +82,7 @@ void PassengerSpaceShip::__touristsAction(SolarSystem* sol, int objectId) {
 	bool asteroidEvent = false;
 	if (objectId == 0) {
 		randomNum = Random::getRandomNumber(0, 4);
-		if (sol->getExploredClusters().size() != 0) asteroidEvent = true;
+		if (!sol->isExploredClustersEmpty()) asteroidEvent = true;
 	}
 	else {
 		randomNum = Random::getRandomNumber(5, 9);
@@ -161,7 +161,7 @@ void PassengerSpaceShip::__sendShipToObject(SolarSystem* sol, PlanetAbstract* pl
 	}
 	printMessage(shipSign + " is currently heading to " + planet->_name + "..\n");
 	if (currentStatus == ShipCurrentStatus::STARTING) threadSleep(planet->timeFromEarthToPlanet);
-	else threadSleep(calculateTimeForFlight(sol, __objectsVisited[__objectsVisited.size() - 1], planet->_name));
+	else threadSleep(__calculateTimeForFlight(sol, __objectsVisited[__objectsVisited.size() - 1], planet->_name));
 	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " reached " + planet->_name + "'s orbit..\n");
 	threadSleep(2);
@@ -178,7 +178,7 @@ void PassengerSpaceShip::__sendShipToObject(SolarSystem* sol, StarsAbstract* sun
 	}
 	printMessage(shipSign + " is currently heading to " + sun->name + "..\n");
 	if (currentStatus == ShipCurrentStatus::STARTING) threadSleep(sun->timeFromEarthToStar);
-	else threadSleep(calculateTimeForFlight(sol, __objectsVisited[__objectsVisited.size() - 1], sun->name));
+	else threadSleep(__calculateTimeForFlight(sol, __objectsVisited[__objectsVisited.size() - 1], sun->name));
 	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " reached " + sun->name + "'s orbit..\n");
 	threadSleep(2);
@@ -217,6 +217,7 @@ void PassengerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* s
 	__decreaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
 	printMessage(shipSign + " is preparing for a flight..\n", true);
 	__getPassengersOnBoard(Random::getRandomNumber(10, 30));
+	threadSleep(1);
 	printMessage(shipSign + " is launching..\n");
 	this->__startEngine();
 	changeShipStatus(ShipCurrentStatus::STARTING);
