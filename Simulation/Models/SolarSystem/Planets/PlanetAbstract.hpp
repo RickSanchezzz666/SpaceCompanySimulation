@@ -6,6 +6,8 @@
 #include <unordered_map>
 #include <vector>
 
+using std::cout;
+
 class PlanetAbstract {
 protected:
 	const long double _mass; // Example: 3E23L KG
@@ -25,6 +27,7 @@ protected:
 	std::vector<std::string> _unexploredMoons; // Example: {"Deimos", "Phobos"}
 	std::vector<std::string> _exploredMoons; // Example: {}
 	const bool _asteroidBelt; // Example: True
+	const std::string _planetType; // Example: Metal-rich
 
 public:
 	const int _id; // objectId
@@ -51,23 +54,42 @@ public:
 	PlanetAbstract(std::string name, long double mass, float radius, float day, long double area,
 		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
 		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
-		int magneticField, float lifeChance, int moonsNum, std::vector<std::string> moons, int id, bool belt) : _name(name), _mass(mass), _radius(radius),
+		int magneticField, float lifeChance, int moonsNum, std::vector<std::string> moons, int id, bool belt, std::string type) : _name(name), _mass(mass), _radius(radius),
 		_dayDuration(day), _area(area), _orbitalPeriod(period),
 		_distanceToStar(distance), _maxTemperature(maxTemperature), _minTemperature(minTemperature), 
 		_atmosphere(atmosphere), _atmosphereComposition(atmosphereComposition), _gravity(gravity), 
-		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(static_cast<int>(abs(1 - distance) * 15)), _unexploredMoons(moons), _id(id), _asteroidBelt(belt) {};
+		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(static_cast<int>(abs(1 - distance) * 15)), _unexploredMoons(moons), _id(id), _asteroidBelt(belt), _planetType(type) {};
 
 	//asteroid belt
 	PlanetAbstract(std::string name, long double mass, float radius, float day, long double area,
 		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
 		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
-		int magneticField, float lifeChance, int moonsNum, std::vector<std::string> moons, int id, bool belt, AsteroidCluster* cluster) : _name(name), _mass(mass), _radius(radius),
+		int magneticField, float lifeChance, int moonsNum, std::vector<std::string> moons, int id, bool belt, AsteroidCluster* cluster, std::string type) : _name(name), _mass(mass), _radius(radius),
 		_dayDuration(day), _area(area), _orbitalPeriod(period),
 		_distanceToStar(distance), _maxTemperature(maxTemperature), _minTemperature(minTemperature),
 		_atmosphere(atmosphere), _atmosphereComposition(atmosphereComposition), _gravity(gravity),
-		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(static_cast<int>(abs(1 - distance) * 15)), _unexploredMoons(moons), _id(id), _asteroidBelt(belt), asteroidBelt(cluster) {};
+		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(static_cast<int>(abs(1 - distance) * 15)), _unexploredMoons(moons), _id(id), _asteroidBelt(belt), asteroidBelt(cluster), _planetType(type) {};
 
-	virtual ~PlanetAbstract() {};
-
-	virtual void showPlanetInfo() = 0;
+	void showPlanetInfo() {
+		cout << "\n" + _name + " Planet Properties:";
+		cout << "\n   Planet Type: " << _planetType;
+		cout << "\n   Mass (KG): " << _mass << " KG";
+		cout << "\n   Radius (KM): " << _radius << " KM";
+		cout << "\n   Day Duration (MIN): " << _dayDuration << " hours";
+		cout << "\n   Area (KM): " << _area << " KM^2";
+		cout << "\n   Orbital Period (EarthDay): " << _orbitalPeriod << " Earth's Day";
+		cout << "\n   Distance to Star (AU): " << _distanceToStar << " AU";
+		cout << "\n   Max Surface Temperature (K): " << _maxTemperature << " K";
+		cout << "\n   Min Surface Temperature (K): " << _minTemperature << " K";
+		cout << "\n   Atmosphere (BOOL): " << (_atmosphere ? "True" : "False");
+		if (_atmosphere)
+			cout << "\n   Atmosphere Composition ( {Element: Content%} ): ";
+		for (auto it = _atmosphereComposition.begin(); it != _atmosphereComposition.end(); ++it) {
+			cout << "\n   Element: " << it->first << " | Contains: " << it->second << "%";
+		}
+		cout << "\n   Gravity (EarthG): " << _gravity << " G";
+		cout << "\n   Magnetic Field Strength (nT): " << _magneticFieldStrength << " nT";
+		cout << "\n   Life Chance (%): " << _lifeChance << "%";
+		cout << "\n   Moons Number: " << _moonsNumber << "\n";
+	}
 };

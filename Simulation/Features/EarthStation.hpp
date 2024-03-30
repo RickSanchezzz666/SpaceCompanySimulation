@@ -53,15 +53,11 @@ public:
 				}
 			}
 		}
-		std::cout << "Earth Station generated...\n";
 	};
 
 	~EarthStation() { 
 		for (auto& ship : __everyShip) delete ship;
-		__everyShip.clear();
-		std::cout << "Earth Station destroyed...\n";
 	}
-	
 	void launchSpaceShip(const int shipId);
 
 	bool checkIfShipIsAvailable(const int shipId);

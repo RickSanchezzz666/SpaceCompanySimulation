@@ -15,7 +15,7 @@ private:
 
 	std::atomic<int> __numberOfLimpetDrones = 0;
 
-	std::vector<std::tuple<std::string, std::string>> __objectsVisited; // (Asteroid, Orbit)
+	std::vector<VisitedObject> __objectsVisited; // (Asteroid, Orbit)
 
 	std::vector<std::tuple<std::string, int>> __minedResourses; // (Element, Amount)
 
@@ -52,9 +52,7 @@ private:
 
 	void __setSpaceShipsStatus(SpaceShipStatus status) override { this->spaceShipStatus = status; }
 public:
-	MiningSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::MINING, 8, id) { std::cout << shipSign + " generated...\n"; }
-
-	~MiningSpaceShip() { std::cout << shipSign + " destroyed...\n"; }
+	MiningSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::MINING, 8, id) {}
 
 	void launchShip(std::atomic<short>& astroNum, SolarSystem* sol) override;
 };

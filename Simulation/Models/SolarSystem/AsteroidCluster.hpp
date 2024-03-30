@@ -50,6 +50,6 @@ public:
 	AsteroidCluster(const std::string n, const std::string orbit, const int d, const std::vector<std::string> type) :
 		name(n), whoseOrbitOn(orbit), diameter(d), asteroidType(type) { 
 		__asteroidComponents(type);
-		std::cout << name + " Asteroid Cluster generated..\n"; 
 	};
+
 };

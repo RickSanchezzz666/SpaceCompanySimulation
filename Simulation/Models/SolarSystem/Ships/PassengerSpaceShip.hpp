@@ -13,7 +13,7 @@ private:
 
 	std::atomic<int> __currPassengersAmount = 0;
 
-	std::vector<std::string> __objectsVisited;
+	std::vector<VisitedObject> __objectsVisited;
 
 	void __doTourism(SolarSystem* sol, int objectId);
 	void __endTourism(SolarSystem* sol, int objectId);
@@ -36,9 +36,7 @@ private:
 	void __setSpaceShipsStatus(SpaceShipStatus status) override { this->spaceShipStatus = status; }
 
 public:
-	PassengerSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::PASSENGER, 8, id) { std::cout << shipSign + " generated...\n"; }
-
-	~PassengerSpaceShip() { std::cout << shipSign + " destroyed...\n"; }
+	PassengerSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::PASSENGER, 8, id) {}
 
 	void launchShip(std::atomic<short>& astroNum, SolarSystem* sol) override;
 

@@ -20,6 +20,13 @@ enum class ShipCurrentStatus {
 	LANDING
 };
 
+struct VisitedObject {
+	std::string objName;
+	std::string objOrbit;
+
+	VisitedObject(std::string name, std::string orbit = "") : objName(name), objOrbit(orbit) {};
+};
+
 class SpaceShipAbstract {
 private:
 	virtual void __startEngine() = 0;
@@ -119,6 +126,8 @@ public:
 	}
 
 	SpaceShipAbstract(SpaceShipStatus status, SpaceShipType type, int astroNumber, int id) : spaceShipStatus(status), spaceShipType(type), requiredAstronautsNumber(astroNumber), shipId(id) {}
+
+	virtual ~SpaceShipAbstract() {};
 
 	virtual void launchShip(std::atomic<short>& astroNum, SolarSystem* sol) = 0;
 };

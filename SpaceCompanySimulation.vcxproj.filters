@@ -51,27 +51,6 @@
     <ClCompile Include="Simulation\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.cpp">
-      <Filter>Source Files\Planets</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\MarsPlanet.cpp">
-      <Filter>Source Files\Planets</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\MercuryPlanet.cpp">
-      <Filter>Source Files\Planets</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.cpp">
-      <Filter>Source Files\Planets</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.cpp">
-      <Filter>Source Files\Planets</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\UranusPlanet.cpp">
-      <Filter>Source Files\Planets</Filter>
-    </ClCompile>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\VenusPlanet.cpp">
-      <Filter>Source Files\Planets</Filter>
-    </ClCompile>
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp">
       <Filter>Source Files\Ships</Filter>
     </ClCompile>

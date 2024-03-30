@@ -17,8 +17,7 @@ void MiningSpaceShip::__sendShipToCluster(SolarSystem* sol, AsteroidCluster* clu
 		threadSleep(2);
 	}
 	printMessage(shipSign + " is currently heading to " + cluster->name + "..\n");
-	if (currentStatus == ShipCurrentStatus::STARTING) threadSleep(__getTimeForFlight(sol, cluster->whoseOrbitOn));
-	//else threadSleep(calculateTimeForFlight(sol, __objectsVisited[__objectsVisited.size() - 1], planet->_name));
+	threadSleep(__getTimeForFlight(sol, cluster->whoseOrbitOn));
 	changeShipStatus(ShipCurrentStatus::INFLIGHT);
 	printMessage(shipSign + " reached " + cluster->name + "'s orbit..\n");
 	threadSleep(2);
@@ -58,6 +57,13 @@ void MiningSpaceShip::__miningActions(SolarSystem* sol, AsteroidCluster* cluster
 		printMessage(shipSign + " Found potentinal " + cluster->asteroidType[asteroidType] + " Asteroid for Mining!.\n");
 		threadSleep(1);
 		printMessage(shipSign + " launched Limpet Drone in Asteroid..\n");
+		if (!Random::getRandomNumber(0, 4)) {
+			threadSleep(3);
+			printMessage(shipSign + " MINING RADIO: Limpet Drone missed in Asteroid..\n");
+			threadSleep(2);
+			printMessage(shipSign + " changing his target..\n");
+			continue;
+		}
 		threadSleep(3);
 		printMessage(shipSign + " MINING RADIO: " + cluster->asteroidType[asteroidType] + " Asteroid successfully blown up..\n");
 		threadSleep(2);
@@ -111,7 +117,7 @@ void MiningSpaceShip::__concludeMining() {
 	else {
 		std::cout << "Earth";
 		for (int i = 0; i < __objectsVisited.size(); ++i) {
-			std::cout << " --> " + std::get<0>(__objectsVisited[i]);
+			std::cout << " --> " + __objectsVisited[i].objName;
 		}
 		std::cout << " --> Earth.\n";
 	}
@@ -139,7 +145,7 @@ void MiningSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol)
 	AsteroidCluster* cluster = sol->getExploredClusters()[targetCluster];
 
 	__sendShipToCluster(sol, cluster);
-	__objectsVisited.push_back(std::make_tuple(cluster->name, cluster->whoseOrbitOn));
+	__objectsVisited.push_back(VisitedObject(cluster->name, cluster->whoseOrbitOn));
 	__doMining(sol, cluster);
 
 	__landShipOnStation();
@@ -147,5 +153,6 @@ void MiningSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol)
 	__removeLimpetDrones();
 	changeShipStatus(ShipCurrentStatus::LANDED);
 	__setSpaceShipsStatus(SpaceShipStatus::AVAILABLE);
+	__objectsVisited.clear();
 	__increaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
 }

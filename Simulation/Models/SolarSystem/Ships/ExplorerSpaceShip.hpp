@@ -11,7 +11,7 @@ class ExplorerSpaceShip : public SpaceShipAbstract {
 private:
 	const std::string shipSign = " >Explorer Ship (id: " + std::to_string(this->shipId) + ")";
 
-	std::vector<std::string> __objectsSearched;
+	std::vector<VisitedObject> __objectsSearched;
 	std::vector<std::tuple<std::string, std::string>> _exploredData; // (Moon, Planet)
 	std::vector<std::tuple<std::string, std::string>> _exploredDataClusters; // (Asteroid, Orbit)
 
@@ -33,9 +33,7 @@ private:
 	void __setSpaceShipsStatus(SpaceShipStatus status) override { this->spaceShipStatus = status; }
 
 public:
-	ExplorerSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::EXPLORER, 6, id) { std::cout << shipSign + " generated...\n"; }
-
-	~ExplorerSpaceShip() { std::cout << shipSign + " destroyed...\n"; }
+	ExplorerSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::EXPLORER, 6, id) {}
 
 	void launchShip(std::atomic<short>& astroNum, SolarSystem* sol) override;
 };

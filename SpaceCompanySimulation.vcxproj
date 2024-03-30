@@ -131,16 +131,9 @@
     <None Include="Simulation\info.json" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\JupiterPlanet.cpp" />
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\NeptunePlanet.cpp" />
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\SaturnPlanet.cpp" />
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\UranusPlanet.cpp" />
     <ClCompile Include="Simulation\Simulation.cpp" />
     <ClCompile Include="Simulation\Features\EarthStation.cpp" />
     <ClCompile Include="Simulation\main.cpp" />
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\MarsPlanet.cpp" />
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\MercuryPlanet.cpp" />
-    <ClCompile Include="Simulation\Models\SolarSystem\Planets\VenusPlanet.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\ExplorerSpaceShip.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\MiningSpaceShip.cpp" />
     <ClCompile Include="Simulation\Models\SolarSystem\Ships\PassengerSpaceShip.cpp" />
