@@ -15,7 +15,6 @@ void PassengerSpaceShip::__getPassengersOnBoard(const int passengersNum) {
 
 void PassengerSpaceShip::__removePassengersFromBoard() {
 	printMessage(shipSign + " " + std::to_string(__currPassengersAmount) + " passengers left a board..\n");
-	__currPassengersAmount = 0;
 }
 
 void PassengerSpaceShip::__doTourism(SolarSystem* sol, int objectId) {
@@ -212,11 +211,23 @@ void PassengerSpaceShip::__landShipOnStation() {
 	this->__stopEngine();
 }
 
-void PassengerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol) {
+int PassengerSpaceShip::__calculateRevenue() {
+	int multiplier = 1;
+	if (shipType == PassengerShipType::ECONOM) multiplier = 1;
+	else if (shipType == PassengerShipType::BUSSINESS) multiplier = 2;
+	else if (shipType == PassengerShipType::PREMIUM) multiplier = 4;
+
+	int revenue = (1000 * __currPassengersAmount * multiplier * __objectsVisited.size());
+	std::cout << "Passenger Ship Revenue: ";
+	std::cout << "\nRevenue from Tourism: " + std::to_string(revenue) + " $\n";
+	return revenue;
+}
+
+int PassengerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol) {
 	__setSpaceShipsStatus(SpaceShipStatus::BUSY);
 	__decreaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
 	printMessage(shipSign + " is preparing for a flight..\n", true);
-	__getPassengersOnBoard(Random::getRandomNumber(10, 30));
+	__getPassengersOnBoard(Random::getRandomNumber(10, 33));
 	threadSleep(1);
 	printMessage(shipSign + " is launching..\n");
 	this->__startEngine();
@@ -238,8 +249,11 @@ void PassengerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* s
 	__landShipOnStation();
 	__removePassengersFromBoard();
 	__concludeTourism();
+	int revenue = __calculateRevenue();
 	changeShipStatus(ShipCurrentStatus::LANDED);
 	__setSpaceShipsStatus(SpaceShipStatus::AVAILABLE);
 	__objectsVisited.clear();
+	__currPassengersAmount = 0;
 	__increaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
+	return revenue;
 }

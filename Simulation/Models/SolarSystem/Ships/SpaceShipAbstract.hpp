@@ -78,6 +78,7 @@ protected:
 		return static_cast<int>(abs((distanceOld - distanceNew) * 15));
 	}
 
+	virtual int __calculateRevenue() = 0;
 
 	virtual void __sendShipToObject(SolarSystem* sol, PlanetAbstract* planet) = 0;
 	virtual void __sendShipToObject(SolarSystem* sol, StarsAbstract* sun) = 0;
@@ -107,7 +108,6 @@ public:
 		this->currentStatus = status;
 	}
 
-
 	void printMessage(const std::string& msg, bool withEndl = false) {
 		if (withEndl) {
 			std::cout << "\n" + __getCurrentTimestamp() + msg;
@@ -129,5 +129,5 @@ public:
 
 	virtual ~SpaceShipAbstract() {};
 
-	virtual void launchShip(std::atomic<short>& astroNum, SolarSystem* sol) = 0;
+	virtual int launchShip(std::atomic<short>& astroNum, SolarSystem* sol) = 0;
 };

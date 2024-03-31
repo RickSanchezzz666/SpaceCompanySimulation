@@ -33,6 +33,12 @@ void EarthStation::__setSpaceShipsStatus(const int shipId, const SpaceShipStatus
     if (shipToChange != nullptr) shipToChange->spaceShipStatus = status;
 }
 
+void EarthStation::__getPaymentFromTheShip(const int payment) {
+    balance->updateBalance(payment);
+    std::cout << "\nCurrent Station Balance: " + std::to_string(balance->getBalance()) + " $\n";
+}
+
+SpaceShipType EarthStation::__getShipType(const int shipId) { return __findShipById(shipId)->spaceShipType; }
 
 void EarthStation::launchSpaceShip(const int shipId) {
     mtx.lock();
@@ -53,17 +59,35 @@ void EarthStation::launchSpaceShip(const int shipId) {
     launchThreads[shipId] = new Thread();
     switch (shipId) {
     case 0:
-        launchThreads[shipId]->createThread([&]() { __everyShip[0]->launchShip(__astronautsNumOnTheStation, solarSystem); });
+        launchThreads[shipId]->createThread([&]() { 
+            int payment = __everyShip[0]->launchShip(__astronautsNumOnTheStation, solarSystem);
+            __getPaymentFromTheShip(payment);
+        });
     case 1:
-        launchThreads[shipId]->createThread([&]() { __everyShip[1]->launchShip(__astronautsNumOnTheStation, solarSystem); });
+        launchThreads[shipId]->createThread([&]() { 
+            int payment = __everyShip[1]->launchShip(__astronautsNumOnTheStation, solarSystem); 
+            __getPaymentFromTheShip(payment);
+            });
     case 2:
-        launchThreads[shipId]->createThread([&]() { __everyShip[2]->launchShip(__astronautsNumOnTheStation, solarSystem); });
+        launchThreads[shipId]->createThread([&]() {
+            int payment = __everyShip[2]->launchShip(__astronautsNumOnTheStation, solarSystem);
+            __getPaymentFromTheShip(payment);
+            });
     case 3:
-        launchThreads[shipId]->createThread([&]() { __everyShip[3]->launchShip(__astronautsNumOnTheStation, solarSystem); });
+        launchThreads[shipId]->createThread([&]() {
+            int payment = __everyShip[3]->launchShip(__astronautsNumOnTheStation, solarSystem);
+            __getPaymentFromTheShip(payment);
+            });
     case 4:
-        launchThreads[shipId]->createThread([&]() { __everyShip[4]->launchShip(__astronautsNumOnTheStation, solarSystem); });
+        launchThreads[shipId]->createThread([&]() {
+            int payment = __everyShip[4]->launchShip(__astronautsNumOnTheStation, solarSystem);
+            __getPaymentFromTheShip(payment);
+            });
     case 5:
-        launchThreads[shipId]->createThread([&]() { __everyShip[5]->launchShip(__astronautsNumOnTheStation, solarSystem); });
+        launchThreads[shipId]->createThread([&]() {
+            int payment = __everyShip[5]->launchShip(__astronautsNumOnTheStation, solarSystem);
+            __getPaymentFromTheShip(payment);
+            });
     default:
         return;
     }
@@ -75,7 +99,7 @@ void EarthStation::displayAvailableSpaceShips() {
     for (auto& ship : __everyShip) {
         if (__checkIfShipIsAvailable(ship->shipId)) {
             std::cout << "\nShip Id: " << ship->shipId;
-            std::cout << "\nShip Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
+            std::cout << "; Ship Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
                 (ship->spaceShipType == SpaceShipType::MINING ? "Mining" :
                     (ship->spaceShipType == SpaceShipType::PASSENGER ? "Passenger" : "None")));
         }
@@ -90,7 +114,7 @@ void EarthStation::displaySpaceShipsInFlight() {
     for (auto& ship : __everyShip) {
         if (!__checkIfShipIsAvailable(ship->shipId)) {
             std::cout << "\nShip Id: " << ship->shipId;
-            std::cout << "\nShip Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
+            std::cout << "; Ship Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
                 (ship->spaceShipType == SpaceShipType::MINING ? "Mining" :
                     (ship->spaceShipType == SpaceShipType::PASSENGER ? "Passenger" : "None")));
         }
@@ -106,7 +130,7 @@ void EarthStation::displayEveryShip() {
     else {
         for (auto& ship : __everyShip) {
             std::cout << "\nShip Id: " << ship->shipId;
-            std::cout << "\nShip Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
+            std::cout << "; Ship Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
                 (ship->spaceShipType == SpaceShipType::MINING ? "Mining" :
                     (ship->spaceShipType == SpaceShipType::PASSENGER ? "Passenger" : "None")));
         }

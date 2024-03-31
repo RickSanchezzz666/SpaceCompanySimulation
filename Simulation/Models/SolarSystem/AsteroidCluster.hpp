@@ -25,7 +25,7 @@ private:
 		{"M-type", {{std::make_tuple("Iron (Fe)", 85), std::make_tuple("Nickel (Ni)", 10),
 		std::make_tuple("Cobalt (Co)", 5)}}},
 
-		{"S-type", {{std::make_tuple("Silicon (Si)", 30), std::make_tuple("Oxygen (O)", 25),
+		{"D-type", {{std::make_tuple("Silicon (Si)", 30), std::make_tuple("Oxygen (O)", 25),
 		std::make_tuple("Carbon (C)", 15), std::make_tuple("Iron (Fe)", 13),
 		std::make_tuple("Magnesium (Mg)", 12), std::make_tuple("Titanium (Ti)", 10)}}},
 	};

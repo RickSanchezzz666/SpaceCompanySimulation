@@ -43,7 +43,7 @@ void ExplorerSpaceShip::__sendShipToObject(SolarSystem* sol, StarsAbstract* sun)
 }
 
 void ExplorerSpaceShip::__sendShipToEarth(SolarSystem* sol, PlanetAbstract* planet) {
-	threadSleep(5);
+	threadSleep(2);
 	printMessage(shipSign + " ending expedition. Started heading back to Earth from " + planet->_name + "..\n");
 	threadSleep(planet->timeFromEarthToPlanet);
 	printMessage(shipSign + " is on Earth's orbit..\n");
@@ -52,7 +52,7 @@ void ExplorerSpaceShip::__sendShipToEarth(SolarSystem* sol, PlanetAbstract* plan
 }
 
 void ExplorerSpaceShip::__sendShipToEarth(SolarSystem* sol, StarsAbstract* star) {
-	threadSleep(5);
+	threadSleep(2);
 	printMessage(shipSign + " ending expedition. Started heading back to Earth from " + star->name + "..\n");
 	threadSleep(star->timeFromEarthToStar);
 	printMessage(shipSign + " is on Earth's orbit..\n");
@@ -209,8 +209,33 @@ void ExplorerSpaceShip::__concludeExploration() {
 	}
 }
 
+int ExplorerSpaceShip::__calculateRevenue() {
+	int sumForVisiting = 0;
+	int sumForObjects = 0;
+	int sumForClusters = 0;
+	for (auto& obj : __objectsSearched) { sumForVisiting += __getPrice(obj.objName, 0); }
+	for (auto& obj : _exploredData) { sumForObjects += __getPrice(std::get<1>(obj), 1); }
+	for (auto& obj : _exploredDataClusters) { sumForClusters += __getPrice(std::get<1>(obj), 2); }
 
-void ExplorerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol) {
+	int fullRevenue = sumForVisiting + sumForObjects + sumForVisiting;
+
+	std::cout << "Exploration Revenue: ";
+	std::cout << "\nRevenue from Visiting: " + std::to_string(sumForVisiting) + " $";
+	std::cout << "\nRevenue from Objects: " + std::to_string(sumForObjects) + " $";
+	std::cout << "\nRevenue from Clusters: " + std::to_string(sumForClusters) + " $";
+	std::cout << "\nFull Revenue: " + std::to_string(fullRevenue) + " $\n";
+	return fullRevenue;
+}
+
+int ExplorerSpaceShip::__getPrice( std::string& obj, const int type) {
+	if (type == 0) return std::get<0>(__explorerRevenue[obj]); // Get Visit Price of the Object
+	else if (type == 1) return std::get<1>(__explorerRevenue[obj]); // Get Moon Price of the Object
+	else if (type == 2) return std::get<2>(__explorerRevenue[obj]); // Get Cluster Price of the Object
+	else return 0;
+}
+
+
+int ExplorerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol) {
 	__setSpaceShipsStatus(SpaceShipStatus::BUSY);
 	__decreaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
 	printMessage(shipSign + " is preparing for a flight..\n", true);
@@ -233,8 +258,10 @@ void ExplorerSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* so
 	}
 	__landShipOnStation();
 	__concludeExploration();
+	int revenue = __calculateRevenue();
 	__setSpaceShipsStatus(SpaceShipStatus::AVAILABLE);
 	changeShipStatus(ShipCurrentStatus::LANDED);
 	__objectsSearched.clear();
 	__increaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
+	return revenue;
 }

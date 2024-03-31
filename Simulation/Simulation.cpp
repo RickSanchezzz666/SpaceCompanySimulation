@@ -17,6 +17,8 @@ void Simulation::__startSimulation() {
 	}*/
 	solarSystem->makeClusterExplored(solarSystem->asteroidClusters[0]);
 	if (earthStation->checkIfShipIsAvailable(2)) earthStation->launchSpaceShip(2);
+	std::this_thread::sleep_for(std::chrono::seconds(5));
+	if (earthStation->checkIfShipIsAvailable(3)) earthStation->launchSpaceShip(3);
 }
 
 void Simulation::__showInfo() {

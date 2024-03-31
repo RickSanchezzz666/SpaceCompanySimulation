@@ -131,8 +131,19 @@ void MiningSpaceShip::__concludeMining() {
 	}
 }
 
+int MiningSpaceShip::__calculateRevenue() {
+	int fullRevenue = 0;
+	for (const auto& resource : __calculateCollectedResources()) { fullRevenue += __getPrice(resource.first, resource.second); }
 
-void MiningSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol) {
+	std::cout << "\nMining Revenue: ";
+	std::cout << "\nFull Revenue: " + std::to_string(fullRevenue) + " $\n";
+	return fullRevenue;
+}
+
+int MiningSpaceShip::__getPrice(const std::string& resource, const int& amount) { return (__miningPrice[resource] * amount); }
+
+
+int MiningSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol) {
 	__setSpaceShipsStatus(SpaceShipStatus::BUSY);
 	__decreaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
 	printMessage(shipSign + " is preparing for a flight..\n", true);
@@ -151,8 +162,10 @@ void MiningSpaceShip::launchShip(std::atomic<short>& astroNum, SolarSystem* sol)
 	__landShipOnStation();
 	__concludeMining();
 	__removeLimpetDrones();
-	changeShipStatus(ShipCurrentStatus::LANDED);
+	int revenue = __calculateRevenue();
+;	changeShipStatus(ShipCurrentStatus::LANDED);
 	__setSpaceShipsStatus(SpaceShipStatus::AVAILABLE);
 	__objectsVisited.clear();
 	__increaseAstronautsNumber(astroNum, this->requiredAstronautsNumber);
+	return revenue;
 }

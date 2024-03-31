@@ -71,7 +71,7 @@ public:
 		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(static_cast<int>(abs(1 - distance) * 15)), _unexploredMoons(moons), _id(id), _asteroidBelt(belt), asteroidBelt(cluster), _planetType(type) {};
 
 	void showPlanetInfo() {
-		cout << "\n" + _name + " Planet Properties:";
+		cout << _name + " Planet Properties:";
 		cout << "\n   Planet Type: " << _planetType;
 		cout << "\n   Mass (KG): " << _mass << " KG";
 		cout << "\n   Radius (KM): " << _radius << " KM";

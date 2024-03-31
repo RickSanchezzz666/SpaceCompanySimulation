@@ -11,6 +11,19 @@
 
 class MiningSpaceShip : public SpaceShipAbstract {
 private:
+	std::unordered_map<std::string, int> __miningPrice{
+		{"Silicon (Si)", 750},
+		{"Oxygen (O)", 900},
+		{"Iron (Fe)", 1900},
+		{"Magnesium (Mg)", 2200},
+		{"Aluminum (Al)", 3500},
+		{"Nickel (Ni)", 3700},
+		{"Cobalt (Co)", 5000},
+		{"Carbon (C)", 3500},
+		{"Titanium (Ti)", 10000},
+
+	};
+private:
 	const std::string shipSign = " >Mining Ship (id: " + std::to_string(this->shipId) + ")";
 
 	std::atomic<int> __numberOfLimpetDrones = 0;
@@ -35,6 +48,9 @@ private:
 	std::unordered_map<std::string, int> __calculateCollectedResources();
 	void __concludeMining();
 
+	int __calculateRevenue() override;
+	int __getPrice(const std::string& resource, const int& amount);
+
 	void __sendShipToCluster(SolarSystem* sol, AsteroidCluster* cluster);
 	void __sendShipToEarth(SolarSystem* sol, AsteroidCluster* cluster);
 
@@ -54,5 +70,5 @@ private:
 public:
 	MiningSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::MINING, 8, id) {}
 
-	void launchShip(std::atomic<short>& astroNum, SolarSystem* sol) override;
+	int launchShip(std::atomic<short>& astroNum, SolarSystem* sol) override;
 };

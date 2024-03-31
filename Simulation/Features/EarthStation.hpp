@@ -30,7 +30,9 @@ private:
 
 	bool __checkIfShipIsAvailable(const int shipId);
 
-	//void __getShipType();
+	SpaceShipType __getShipType(const int shipId);
+
+	void __getPaymentFromTheShip(const int payment);
 
 public:
 	Balance* balance;
@@ -38,7 +40,7 @@ public:
 	SolarSystem* solarSystem = nullptr;
 
 	EarthStation(SolarSystem* sol) {
-		balance = new Balance(100);
+		balance = new Balance(0);
 		solarSystem = sol;
 		for (size_t i = 0; i < static_cast<int>(SpaceShipType::TYPE_COUNT); ++i) {
 			for (size_t j = 0; j < 2; ++j) {
@@ -49,7 +51,7 @@ public:
 					__everyShip.push_back(new MiningSpaceShip(__shipsNumber++));
 				}
 				else if (i == 2) {
-					__everyShip.push_back(new PassengerSpaceShip(__shipsNumber++));
+					__everyShip.push_back(new PassengerSpaceShip(__shipsNumber++, Random::getRandomNumber(0, 2)));
 				}
 			}
 		}
@@ -61,6 +63,7 @@ public:
 	void launchSpaceShip(const int shipId);
 
 	bool checkIfShipIsAvailable(const int shipId);
+
 
 	int getAstronautsNumber();
 

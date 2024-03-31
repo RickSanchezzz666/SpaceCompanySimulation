@@ -1,15 +1,17 @@
 #pragma once
 
+#include <atomic>
+
 class Balance {
 private:
-	int __balance;
+	std::atomic<int> __balance;
 
 public:
-	Balance(int balance) : __balance(balance) {};
+	Balance(const int balance) : __balance(balance) {};
 
-	const int getBalance() { return __balance; }
+	int getBalance() const { return __balance; }
 
-	const bool checkBalance() { return __balance >= 0 ? true : false; }
+	bool checkBalance() const { return __balance >= 0 ? true : false; }
 
-	const bool updateBalance(const int value) { __balance += value; return checkBalance(); }
+	bool updateBalance(const int value) { __balance.fetch_add(value, std::memory_order_relaxed); return checkBalance(); }
 };
