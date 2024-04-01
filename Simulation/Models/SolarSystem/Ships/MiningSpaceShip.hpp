@@ -68,7 +68,7 @@ private:
 
 	void __setSpaceShipsStatus(SpaceShipStatus status) override { this->spaceShipStatus = status; }
 public:
-	MiningSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::MINING, 8, id) {}
+	MiningSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::ON_STATION, SpaceShipType::MINING, 8, id) {}
 
 	int launchShip(std::atomic<short>& astroNum, SolarSystem* sol) override;
 };

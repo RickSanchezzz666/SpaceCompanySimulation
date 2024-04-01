@@ -63,16 +63,18 @@ void PassengerSpaceShip::__endTourism(SolarSystem* sol, int objectId) {
 
 void PassengerSpaceShip::__concludeTourism() {
 	threadSleep(2);
-	std::cout << "\nResults of expedition of Passenger Ship(id: " + std::to_string(this->shipId) + "):\n";
-	std::cout << "Visited objects: ";
-	if (__objectsVisited.size() == 0) std::cout << "None!.\n";
+	std::string infoString = "";
+	infoString += "\nResults of expedition of Passenger Ship(id: " + std::to_string(this->shipId) + "):\n";
+	infoString += "Visited objects: ";
+	if (__objectsVisited.size() == 0) infoString += "None!.\n";
 	else {
-		std::cout << "Earth";
+		infoString += "Earth";
 		for (int i = 0; i < __objectsVisited.size(); ++i) {
-			std::cout << " --> " + __objectsVisited[i].objName;
+			infoString += " --> " + __objectsVisited[i].objName;
 		}
-		std::cout << " --> Earth.\n";
+		infoString += " --> Earth.\n";
 	}
+	std::cout << infoString;
 }
 
 
@@ -212,14 +214,16 @@ void PassengerSpaceShip::__landShipOnStation() {
 }
 
 int PassengerSpaceShip::__calculateRevenue() {
+	std::string infoString = "";
 	int multiplier = 1;
 	if (shipType == PassengerShipType::ECONOM) multiplier = 1;
 	else if (shipType == PassengerShipType::BUSSINESS) multiplier = 2;
 	else if (shipType == PassengerShipType::PREMIUM) multiplier = 4;
 
 	int revenue = (1000 * __currPassengersAmount * multiplier * __objectsVisited.size());
-	std::cout << "Passenger Ship Revenue: ";
-	std::cout << "\nRevenue from Tourism: " + std::to_string(revenue) + " $\n";
+	infoString += "Passenger Ship Revenue: ";
+	infoString += "\nRevenue from Tourism: " + std::to_string(revenue) + " $\n";
+	std::cout << infoString;
 	return revenue;
 }
 

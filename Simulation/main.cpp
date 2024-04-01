@@ -8,7 +8,5 @@ int main() {
 
 	simulation.startSimulation();
 
-	// clear Explored Clusters for Mining
-
 	return 0;
 }

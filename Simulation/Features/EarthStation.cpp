@@ -8,9 +8,9 @@ std::mutex mtx;
 int EarthStation::getAstronautsNumber() { return __astronautsNumOnTheStation.load(std::memory_order_relaxed); }
 
 bool EarthStation::__checkIfShipIsAvailable(const int shipId) {
-    return (__findShipById(shipId)->spaceShipType != SpaceShipType::MINING 
-        ? __findShipById(shipId)->spaceShipStatus == SpaceShipStatus::AVAILABLE
-        : __findShipById(shipId)->spaceShipStatus == SpaceShipStatus::AVAILABLE && !solarSystem->isExploredClustersEmpty());
+    return (__findShipById(shipId)->spaceShipType != SpaceShipType::MINING
+        ? (__findShipById(shipId)->spaceShipStatus == SpaceShipStatus::AVAILABLE || __findShipById(shipId)->spaceShipStatus == SpaceShipStatus::ON_STATION)
+        : ((__findShipById(shipId)->spaceShipStatus == SpaceShipStatus::AVAILABLE || __findShipById(shipId)->spaceShipStatus == SpaceShipStatus::ON_STATION) && !solarSystem->isExploredClustersEmpty()));
 }
 
 bool EarthStation::checkIfShipIsAvailable(const int shipId) {
@@ -25,6 +25,11 @@ SpaceShipAbstract* EarthStation::__findShipById(const int shipId) {
         }
     }
     return nullptr;
+}
+
+SpaceShipStatus EarthStation::__getShipStatus(const int shipId) {
+    return __findShipById(shipId)->spaceShipStatus;
+
 }
 
 void EarthStation::__setSpaceShipsStatus(const int shipId, const SpaceShipStatus status) {
@@ -94,47 +99,31 @@ void EarthStation::launchSpaceShip(const int shipId) {
 }
 
 void EarthStation::displayAvailableSpaceShips() {
-    std::cout << "\nAvailable ships: ";
-    mtx.lock();
+    std::string infoString = "";
+    infoString += "\nAvailable ships: ";
     for (auto& ship : __everyShip) {
         if (__checkIfShipIsAvailable(ship->shipId)) {
-            std::cout << "\nShip Id: " << ship->shipId;
-            std::cout << "; Ship Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
+            infoString += "\nShip Id: " + std::to_string(ship->shipId) + "; Ship Type: " + (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
                 (ship->spaceShipType == SpaceShipType::MINING ? "Mining" :
                     (ship->spaceShipType == SpaceShipType::PASSENGER ? "Passenger" : "None")));
         }
     }
-    std::cout << "\n\n";
-    mtx.unlock();
+    infoString += "\n";
+    std::cout << infoString;
 }
 
-void EarthStation::displaySpaceShipsInFlight() {
-    std::cout << "\nShips in Flight: ";
-    mtx.lock();
-    for (auto& ship : __everyShip) {
-        if (!__checkIfShipIsAvailable(ship->shipId)) {
-            std::cout << "\nShip Id: " << ship->shipId;
-            std::cout << "; Ship Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
-                (ship->spaceShipType == SpaceShipType::MINING ? "Mining" :
-                    (ship->spaceShipType == SpaceShipType::PASSENGER ? "Passenger" : "None")));
-        }
-    }
-    std::cout << "\n\n";
-    mtx.unlock();
-}
 
 void EarthStation::displayEveryShip() {
-    std::cout << "\nEvery Ship that Station own: ";
-    mtx.lock();
-    if (__everyShip.empty()) std::cout << "None!\n";
+    std::string infoString = "";
+    infoString += "\nEvery Ship that Station own: ";
+    if (__everyShip.empty()) infoString += "None!\n";
     else {
         for (auto& ship : __everyShip) {
-            std::cout << "\nShip Id: " << ship->shipId;
-            std::cout << "; Ship Type: " << (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
+            infoString += "\nShip Id: " + std::to_string(ship->shipId) + "; Ship Type: " + (ship->spaceShipType == SpaceShipType::EXPLORER ? "Explorer" :
                 (ship->spaceShipType == SpaceShipType::MINING ? "Mining" :
                     (ship->spaceShipType == SpaceShipType::PASSENGER ? "Passenger" : "None")));
         }
     }
-    std::cout << "\n\n";
-    mtx.unlock();
+    infoString += "\n";
+    std::cout << infoString;
 }

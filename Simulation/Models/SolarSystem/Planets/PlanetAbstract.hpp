@@ -71,25 +71,28 @@ public:
 		_magneticFieldStrength(magneticField), _lifeChance(lifeChance), _moonsNumber(moonsNum), timeFromEarthToPlanet(static_cast<int>(abs(1 - distance) * 15)), _unexploredMoons(moons), _id(id), _asteroidBelt(belt), asteroidBelt(cluster), _planetType(type) {};
 
 	void showPlanetInfo() {
-		cout << _name + " Planet Properties:";
-		cout << "\n   Planet Type: " << _planetType;
-		cout << "\n   Mass (KG): " << _mass << " KG";
-		cout << "\n   Radius (KM): " << _radius << " KM";
-		cout << "\n   Day Duration (MIN): " << _dayDuration << " hours";
-		cout << "\n   Area (KM): " << _area << " KM^2";
-		cout << "\n   Orbital Period (EarthDay): " << _orbitalPeriod << " Earth's Day";
-		cout << "\n   Distance to Star (AU): " << _distanceToStar << " AU";
-		cout << "\n   Max Surface Temperature (K): " << _maxTemperature << " K";
-		cout << "\n   Min Surface Temperature (K): " << _minTemperature << " K";
-		cout << "\n   Atmosphere (BOOL): " << (_atmosphere ? "True" : "False");
+		std::string infoString = "";
+		infoString += _name + " Planet Properties:";
+		infoString += "\n   Planet Type: " + _planetType;
+		infoString += "\n   Mass (KG): " + std::to_string(_mass) + " KG";
+		infoString += "\n   Radius (KM): " + std::to_string(_radius) + " KM";
+		infoString += "\n   Day Duration (MIN): " + std::to_string(_dayDuration) + " hours";
+		infoString += "\n   Area (KM): " + std::to_string(_area) + " KM^2";
+		infoString += "\n   Orbital Period (EarthDay): " + std::to_string(_orbitalPeriod) + " Earth's Day";
+		infoString += "\n   Distance to Star (AU): " + std::to_string(_distanceToStar) + " AU";
+		infoString += "\n   Max Surface Temperature (K): " + std::to_string(_maxTemperature) + " K";
+		infoString += "\n   Min Surface Temperature (K): " + std::to_string(_minTemperature) + " K";
+		infoString += "\n   Atmosphere (BOOL): ";
+		infoString += (_atmosphere ? "True" : "False");
 		if (_atmosphere)
-			cout << "\n   Atmosphere Composition ( {Element: Content%} ): ";
+			infoString += "\n   Atmosphere Composition ( {Element: Content%} ): ";
 		for (auto it = _atmosphereComposition.begin(); it != _atmosphereComposition.end(); ++it) {
-			cout << "\n   Element: " << it->first << " | Contains: " << it->second << "%";
+			infoString += "\n   Element: " + it->first + " | Contains: " + std::to_string(it->second) + "%";
 		}
-		cout << "\n   Gravity (EarthG): " << _gravity << " G";
-		cout << "\n   Magnetic Field Strength (nT): " << _magneticFieldStrength << " nT";
-		cout << "\n   Life Chance (%): " << _lifeChance << "%";
-		cout << "\n   Moons Number: " << _moonsNumber << "\n";
+		infoString += "\n   Gravity (EarthG): " + std::to_string(_gravity) +" G";
+		infoString += "\n   Magnetic Field Strength (nT): " + std::to_string(_magneticFieldStrength) +" nT";
+		infoString += "\n   Life Chance (%): " + std::to_string(_lifeChance) + "%";
+		infoString += "\n   Moons Number: " + std::to_string(_moonsNumber) + "\n";
+		std::cout << infoString;
 	}
 };

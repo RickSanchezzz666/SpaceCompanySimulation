@@ -48,7 +48,7 @@ private:
 	void __setSpaceShipsStatus(SpaceShipStatus status) override { this->spaceShipStatus = status; }
 
 public:
-	PassengerSpaceShip(int id, int type) : shipType(static_cast<PassengerShipType>(type)), SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::PASSENGER, 8, id) {
+	PassengerSpaceShip(int id, int type) : shipType(static_cast<PassengerShipType>(type)), SpaceShipAbstract(SpaceShipStatus::ON_STATION, SpaceShipType::PASSENGER, 8, id) {
 		if (shipType == PassengerShipType::ECONOM) shipSymbol = "E";
 		else if (shipType == PassengerShipType::BUSSINESS) shipSymbol = "B";
 		else if (shipType == PassengerShipType::PREMIUM) shipSymbol = "P";

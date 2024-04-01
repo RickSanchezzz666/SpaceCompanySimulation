@@ -186,30 +186,33 @@ void ExplorerSpaceShip::__doExploration(SolarSystem* sol, PlanetAbstract* planet
 
 void ExplorerSpaceShip::__concludeExploration() {
 	threadSleep(2);
-	std::cout << "\nResults of expedition of Explorer Ship(id: " + std::to_string(this->shipId) + "):\n";
-	std::cout << "Visited objects: ";
-	if (__objectsSearched.empty()) std::cout << "None!.\n";
+	std::string infoString = "";
+	infoString += "\nResults of expedition of Explorer Ship(id: " + std::to_string(this->shipId) + "):\n";
+	infoString += "Visited objects: ";
+	if (__objectsSearched.empty()) infoString += "None!.\n";
 	else {
-		std::cout << "Earth";
+		infoString += "Earth";
 		for (int i = 0; i < __objectsSearched.size(); ++i) {
-			std::cout << " --> " + __objectsSearched[i].objName;
+			infoString += " --> " + __objectsSearched[i].objName;
 		}
-		std::cout << " --> Earth.\n";
+		infoString += " --> Earth.\n";
 	}
-	std::cout << "Found objects: ";
-	if (_exploredData.empty() && _exploredDataClusters.empty()) std::cout << "None!.\n";
+	infoString += "Found objects: ";
+	if (_exploredData.empty() && _exploredDataClusters.empty()) infoString += "None!.\n";
 	else {
 		for (std::tuple<std::string, std::string>& cluster : _exploredDataClusters) {
-			std::cout << "\nAsteroid Clusters: " + std::get<0>(cluster) + " (" + std::get<1>(cluster) + "'s orbit)";
+			infoString += "\nAsteroid Clusters: " + std::get<0>(cluster) + " (" + std::get<1>(cluster) + "'s orbit)";
 		}
 		for (std::tuple<std::string, std::string>& obj : _exploredData) {
-			std::cout << "\nObject: " + std::get<0>(obj) + " (" + std::get<1>(obj) + "'s moon)";
+			infoString += "\nObject: " + std::get<0>(obj) + " (" + std::get<1>(obj) + "'s moon)";
 		}
-		std::cout << "\n";
+		infoString += "\n";
 	}
+	std::cout << infoString;
 }
 
 int ExplorerSpaceShip::__calculateRevenue() {
+	std::string infoString = "";
 	int sumForVisiting = 0;
 	int sumForObjects = 0;
 	int sumForClusters = 0;
@@ -219,11 +222,12 @@ int ExplorerSpaceShip::__calculateRevenue() {
 
 	int fullRevenue = sumForVisiting + sumForObjects + sumForVisiting;
 
-	std::cout << "Exploration Revenue: ";
-	std::cout << "\nRevenue from Visiting: " + std::to_string(sumForVisiting) + " $";
-	std::cout << "\nRevenue from Objects: " + std::to_string(sumForObjects) + " $";
-	std::cout << "\nRevenue from Clusters: " + std::to_string(sumForClusters) + " $";
-	std::cout << "\nFull Revenue: " + std::to_string(fullRevenue) + " $\n";
+	infoString += "Exploration Revenue: ";
+	infoString += "\nRevenue from Visiting: " + std::to_string(sumForVisiting) + " $";
+	infoString += "\nRevenue from Objects: " + std::to_string(sumForObjects) + " $";
+	infoString += "\nRevenue from Clusters: " + std::to_string(sumForClusters) + " $";
+	infoString += "\nFull Revenue: " + std::to_string(fullRevenue) + " $\n";
+	std::cout << infoString;
 	return fullRevenue;
 }
 

@@ -111,32 +111,36 @@ std::unordered_map<std::string, int> MiningSpaceShip::__calculateCollectedResour
 
 void MiningSpaceShip::__concludeMining() {
 	threadSleep(2);
-	std::cout << "\nResults of Mining expedition of Mining Ship(id: " + std::to_string(this->shipId) + "):\n";
-	std::cout << "Visited objects: ";
-	if (__objectsVisited.size() == 0) std::cout << "None!.\n";
+	std::string infoString = "";
+	infoString += "\nResults of Mining expedition of Mining Ship(id: " + std::to_string(this->shipId) + "):\n";
+	infoString += "Visited objects: ";
+	if (__objectsVisited.size() == 0) infoString += "None!.\n";
 	else {
-		std::cout << "Earth";
+		infoString += "Earth";
 		for (int i = 0; i < __objectsVisited.size(); ++i) {
-			std::cout << " --> " + __objectsVisited[i].objName;
+			infoString += " --> " + __objectsVisited[i].objName;
 		}
-		std::cout << " --> Earth.\n";
+		infoString += " --> Earth.\n";
 	}
-	std::cout << "Gathered resources: ";
-	if (__minedResourses.size() == 0) std::cout << "None!.\n";
+	infoString += "Gathered resources: ";
+	if (__minedResourses.size() == 0) infoString += "None!.\n";
 	else { 
 		std::unordered_map<std::string, int> resources = __calculateCollectedResources();
 		for (const auto& resource : resources) {
-			std::cout << "\nElement: " + resource.first + "; Amount: " + std::to_string(resource.second) + ".";
+			infoString += "\nElement: " + resource.first + "; Amount: " + std::to_string(resource.second) + ".";
 		}
 	}
+	std::cout << infoString;
 }
 
 int MiningSpaceShip::__calculateRevenue() {
+	std::string infoString = "";
 	int fullRevenue = 0;
 	for (const auto& resource : __calculateCollectedResources()) { fullRevenue += __getPrice(resource.first, resource.second); }
 
-	std::cout << "\nMining Revenue: ";
-	std::cout << "\nFull Revenue: " + std::to_string(fullRevenue) + " $\n";
+	infoString += "\nMining Revenue: ";
+	infoString += "\nFull Revenue: " + std::to_string(fullRevenue) + " $\n";
+	std::cout << infoString;
 	return fullRevenue;
 }
 

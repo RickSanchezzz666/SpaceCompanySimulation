@@ -50,7 +50,7 @@ private:
 	void __setSpaceShipsStatus(SpaceShipStatus status) override { this->spaceShipStatus = status; }
 
 public:
-	ExplorerSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::AVAILABLE, SpaceShipType::EXPLORER, 6, id) {}
+	ExplorerSpaceShip(int id) : SpaceShipAbstract(SpaceShipStatus::ON_STATION, SpaceShipType::EXPLORER, 6, id) {}
 
 	int launchShip(std::atomic<short>& astroNum, SolarSystem* sol) override;
 };

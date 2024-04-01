@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 
 #include "SpaceShipStatus.hpp"
 #include "SpaceShipType.hpp"
@@ -98,7 +98,7 @@ protected:
 	}
 
 public:
-	SpaceShipStatus spaceShipStatus = SpaceShipStatus::AVAILABLE;
+	SpaceShipStatus spaceShipStatus = SpaceShipStatus::ON_STATION;
 	const SpaceShipType spaceShipType;
 	const int requiredAstronautsNumber;
 	const int shipId;

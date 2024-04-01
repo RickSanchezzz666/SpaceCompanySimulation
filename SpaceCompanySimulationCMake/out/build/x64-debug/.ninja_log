@@ -1,6 +1,6 @@
 # ninja log v5
 20	2718	7313408981085704	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/main.cpp.obj	5a44f18e1d672edd
-18	206	7334307840774238	build.ninja	43bafa7065663f24
+18	206	7335865752192745	build.ninja	43bafa7065663f24
 8678	9255	7334238969372412	SpaceCompanySimulationCMake.exe	f6f4f1ea485b50e6
 3820	8678	7334238965502744	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Features/EarthStation.cpp.obj	880ebbceea2c857c
 51	2855	7313385293612403	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/ExplorerSpaceShip.cpp.obj	b1d517bf1be7db
@@ -31,3 +31,11 @@
 54	3820	7334238916979832	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Planets/SaturnPlanet.cpp.obj	5c696e52d60485be
 61	3945	7334238918056867	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Planets/UranusPlanet.cpp.obj	e622210701aa984a
 50	3835	7334238917119375	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Planets/JupiterPlanet.cpp.obj	91eaea1d90122350
+21	1822	7335865862930383	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Stars/SunStar.cpp.obj	6ca9578a5745997
+11	3779	7335865882398741	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp.obj	a10127947ab2715f
+30	3807	7335865882668020	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Simulation.cpp.obj	7dbb9bfac18e079f
+17	3836	7335865882967221	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp.obj	54e6974ae4831ab9
+14	3838	7335865883047007	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp.obj	b896d91a7ae0432e
+8	3932	7335865884025078	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/main.cpp.obj	b54c41f7a9aef044
+25	3938	7335865884094889	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/Simulation/Features/EarthStation.cpp.obj	880ebbceea2c857c
+3938	4452	7335865887817215	SpaceCompanySimulationCMake.exe	1aec13117393c4f4

@@ -18,7 +18,7 @@ class EarthStation {
 private:
 	std::vector<Thread*> launchThreads;
 
-	std::atomic<short> __astronautsNumOnTheStation = 40;
+	std::atomic<short> __astronautsNumOnTheStation = 26;
 
 	std::vector<SpaceShipAbstract*> __everyShip;
 
@@ -29,6 +29,8 @@ private:
 	void __setSpaceShipsStatus(const int shipId, const SpaceShipStatus status);
 
 	bool __checkIfShipIsAvailable(const int shipId);
+
+	SpaceShipStatus __getShipStatus(const int shipId);
 
 	SpaceShipType __getShipType(const int shipId);
 
@@ -60,17 +62,24 @@ public:
 	~EarthStation() { 
 		for (auto& ship : __everyShip) delete ship;
 	}
+
 	void launchSpaceShip(const int shipId);
 
 	bool checkIfShipIsAvailable(const int shipId);
 
-
 	int getAstronautsNumber();
+
+	void showAstronautsNumber() { std::cout << "\nAstronauts currently on Station: " + std::to_string(getAstronautsNumber()); }
 
 	int getShipsNumber() { return __shipsNumber; }
 
+	int getShipBusyShipsNumber() {
+		int count = 0;
+		for (auto& ship : __everyShip) if (ship->spaceShipStatus == SpaceShipStatus::BUSY) ++count;
+		return count;
+	}
+
 	void displayAvailableSpaceShips();
-	void displaySpaceShipsInFlight();
 
 	void displayEveryShip();
 };
