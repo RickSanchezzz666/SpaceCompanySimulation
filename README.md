@@ -6,5 +6,4 @@ In this project I have used ```C++``` mainly, along with ```CMake``` and ```GTes
 
 ## About Simulation
 
-Space Station have 3 types of space ships: Trading, Mining and Passenger. Different planets of Solar system (clusters and Sun). Planets will have different parameters such as, mass, radius, life chance.
-Ships can be destroyed, for instance, due to gravitational force of the planet.
+Station have 3 types of space ships: explorer, mining and passenger. Different planets of Solar system (Asteroid clusters and Sun). Planets will have different parameters such as, mass, radius, life chance. Ships do various things such as exploring, mining and tourism. Earn as much money as you want!
