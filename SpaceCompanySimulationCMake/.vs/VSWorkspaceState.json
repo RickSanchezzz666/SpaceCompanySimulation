@@ -12,7 +12,10 @@
     ]
   },
   "ExpandedNodes": [
-    ""
+    "",
+    "\\build\\CMakeFiles",
+    "\\Tests"
   ],
+  "SelectedNode": "\\Tests",
   "PreviewInSolutionExplorer": false
 }

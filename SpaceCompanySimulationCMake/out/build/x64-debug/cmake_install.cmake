@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "D:/Repos/SpaceCompanySimulation/SpaceCompanySimulationCMake/out/install/x64-debug")
+  set(CMAKE_INSTALL_PREFIX "/Dependencies")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

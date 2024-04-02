@@ -20,7 +20,7 @@ msvc_deps_prefix = Note: including file:
 #############################################
 # Rule for generating CXX dependencies.
 
-rule CXX_SCAN__SpaceCompanySimulationCMake_Debug
+rule CXX_SCAN__SpaceCompanySimulation_Debug
   deps = msvc
   command = "D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\cl.exe" $DEFINES $INCLUDES $FLAGS $in -nologo -TP -showIncludes -scanDependencies $DYNDEP_INTERMEDIATE_FILE -Fo$OBJ_FILE
   description = Scanning $in for CXX dependencies
@@ -29,8 +29,8 @@ rule CXX_SCAN__SpaceCompanySimulationCMake_Debug
 #############################################
 # Rule to generate ninja dyndep files for CXX.
 
-rule CXX_DYNDEP__SpaceCompanySimulationCMake_Debug
-  command = "D:\Programms\Visual studio\IDE\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E cmake_ninja_dyndep --tdi=CMakeFiles\SpaceCompanySimulationCMake.dir\CXXDependInfo.json --lang=CXX --modmapfmt=msvc --dd=$out @$out.rsp
+rule CXX_DYNDEP__SpaceCompanySimulation_Debug
+  command = "D:\Programms\Visual studio\IDE\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E cmake_ninja_dyndep --tdi=CMakeFiles\SpaceCompanySimulation.dir\CXXDependInfo.json --lang=CXX --modmapfmt=msvc --dd=$out @$out.rsp
   description = Generating CXX dyndep file $out
   rspfile = $out.rsp
   rspfile_content = $in
@@ -39,7 +39,7 @@ rule CXX_DYNDEP__SpaceCompanySimulationCMake_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__SpaceCompanySimulationCMake_scanned_Debug
+rule CXX_COMPILER__SpaceCompanySimulation_scanned_Debug
   deps = msvc
   command = ${LAUNCHER}${CODE_CHECK}"D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\cl.exe"  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes @$DYNDEP_MODULE_MAP_FILE /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building CXX object $out
@@ -48,7 +48,7 @@ rule CXX_COMPILER__SpaceCompanySimulationCMake_scanned_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__SpaceCompanySimulationCMake_unscanned_Debug
+rule CXX_COMPILER__SpaceCompanySimulation_unscanned_Debug
   deps = msvc
   command = ${LAUNCHER}${CODE_CHECK}"D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\cl.exe"  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building CXX object $out
@@ -57,7 +57,25 @@ rule CXX_COMPILER__SpaceCompanySimulationCMake_unscanned_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__SpaceCompanySimulationCMake_Debug
+rule CXX_EXECUTABLE_LINKER__SpaceCompanySimulation_Debug
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && "D:\Programms\Visual studio\IDE\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E vs_link_exe --intdir=$OBJECT_DIR --rc="D:\Windows Kits\10\bin\10.0.22621.0\x64\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.22621.0\x64\mt.exe" --manifests $MANIFESTS -- "D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\link.exe" /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /version:0.0 $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  description = Linking CXX executable $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__TestFiles_unscanned_Debug
+  deps = msvc
+  command = ${LAUNCHER}${CODE_CHECK}"D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\cl.exe"  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX executable.
+
+rule CXX_EXECUTABLE_LINKER__TestFiles_Debug
   command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && "D:\Programms\Visual studio\IDE\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E vs_link_exe --intdir=$OBJECT_DIR --rc="D:\Windows Kits\10\bin\10.0.22621.0\x64\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.22621.0\x64\mt.exe" --manifests $MANIFESTS -- "D:\Programms\Visual studio\IDE\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\link.exe" /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /version:0.0 $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT

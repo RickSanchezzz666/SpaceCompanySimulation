@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Repos\SpaceCompanySimulation\SpaceCompanySimulationCMake\build\CMakeFiles\f72df4a26b03ccc062b46b018c8d26d7\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{94B50DFF-BEE1-3A83-BAF9-DFFC07C37592}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
