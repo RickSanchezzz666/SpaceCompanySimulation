@@ -2,7 +2,7 @@
 
 ## Stack
 
-In this project I have used ```C++``` mainly, along with ```CMake``` and ```GTests``` for Unit Testing.
+In this project I have used ```C++``` mainly, along with ```CMake``` and ```Catch2``` for Unit Testing.
 
 ## About Simulation
 
