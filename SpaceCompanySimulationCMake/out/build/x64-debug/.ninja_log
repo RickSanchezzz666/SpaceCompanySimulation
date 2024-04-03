@@ -1,6 +1,6 @@
 # ninja log v5
 946	1261	7338707178660637	D:/Repos/SpaceCompanySimulation/SpaceCompanySimulationCMake/out/build/x64-debug/TestFiles-b12d07c_tests.cmake	1dc5fb9cd3370feb
-13	929	7338707379938135	build.ninja	43bafa7065663f24
+13	929	7338708834815013	build.ninja	43bafa7065663f24
 2	92	7337845277411434	CMakeFiles/TestFiles.dir/D_/Repos/SpaceCompanySimulation/Tests/tests.cpp.obj	c1efb38f37235008
 20	2718	7313408981085704	CMakeFiles/SpaceCompanySimulationCMake.dir/D_/Repos/SpaceCompanySimulation/main.cpp.obj	5a44f18e1d672edd
 6722	7622	7337717756820993	SpaceCompanySimulation.exe	e683bfbe037a0998
@@ -49,3 +49,10 @@
 15	993	7338383441868065	CMakeFiles/TestFiles.dir/Tests/Threads/thread.test_(2).cpp.obj	848911367d0b4b14
 13	1262	7338699359225335	CMakeFiles/TestFiles.dir/Tests/main.test.cpp.obj	7cfd7c44d7bc9c81
 13	945	7338707175481772	CMakeFiles/TestFiles.dir/Tests/Features/thread.test.cpp.obj	e0a82171ef902fba
+13	3569	7338708933143854	CMakeFiles/SpaceCompanySimulation.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp.obj	46c8b1b13e2cfbdf
+40	3604	7338708934051417	CMakeFiles/SpaceCompanySimulation.dir/D_/Repos/SpaceCompanySimulation/Simulation/Simulation.cpp.obj	ca4d1a4a6b40ec44
+20	3616	7338708934161133	CMakeFiles/SpaceCompanySimulation.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp.obj	d83d2b105d7314e7
+26	3617	7338708934201029	CMakeFiles/SpaceCompanySimulation.dir/D_/Repos/SpaceCompanySimulation/Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp.obj	7ad9e6ff09ce90ed
+7	3697	7338708935018831	CMakeFiles/SpaceCompanySimulation.dir/D_/Repos/SpaceCompanySimulation/Simulation/main.cpp.obj	1a5b2db9ebf7abfe
+33	3747	7338708935544182	CMakeFiles/SpaceCompanySimulation.dir/D_/Repos/SpaceCompanySimulation/Simulation/Features/EarthStation.cpp.obj	67f0dd9d6a845e1b
+3747	4253	7338708939814837	SpaceCompanySimulation.exe	e683bfbe037a0998
