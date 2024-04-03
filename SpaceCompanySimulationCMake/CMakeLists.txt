@@ -53,10 +53,13 @@ set(CMAKE_INSTALL_PREFIX "/Dependencies")
 
 find_package(Catch2 REQUIRED PATHS "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/Catch2")
 
-add_executable(TestFiles "Tests/test.cpp")
+add_executable(TestFiles "Tests/main.test.cpp" "Tests/TestRunner.hpp" 
+                         "Tests/Features/thread.test.cpp" 
+                         "Tests/Features/random.test.cpp" 
+                         "Tests/Features/balance.test.cpp")
 
 target_link_libraries(TestFiles PRIVATE Catch2::Catch2WithMain)
-
+    
 include(CTest)
 include(Catch)
 

@@ -13,9 +13,8 @@
   },
   "ExpandedNodes": [
     "",
-    "\\build\\CMakeFiles",
-    "\\Tests"
+    "\\Tests\\Threads"
   ],
-  "SelectedNode": "\\Tests",
+  "SelectedNode": "\\buzz.gcda",
   "PreviewInSolutionExplorer": false
 }
