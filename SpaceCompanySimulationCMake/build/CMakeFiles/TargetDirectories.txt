@@ -1,0 +1,3 @@
+D:/Repos/SpaceCompanySimulation/SpaceCompanySimulationCMake/build/CMakeFiles/SpaceCompanySimulation.dir
+D:/Repos/SpaceCompanySimulation/SpaceCompanySimulationCMake/build/CMakeFiles/ALL_BUILD.dir
+D:/Repos/SpaceCompanySimulation/SpaceCompanySimulationCMake/build/CMakeFiles/ZERO_CHECK.dir

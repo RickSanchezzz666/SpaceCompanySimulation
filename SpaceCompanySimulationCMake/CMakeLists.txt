@@ -12,7 +12,7 @@ endif()
 project ("SpaceCompanySimulationCMake")
 
 # Add source to this project's executable.
-add_executable (SpaceCompanySimulationCMake  "../Simulation/main.cpp"
+add_executable (SpaceCompanySimulation  "../Simulation/main.cpp"
                                              "../Simulation/Models/SolarSystem/Planets/PlanetAbstract.hpp"
                                              "../Simulation/Models/SolarSystem/Ships/SpaceShipAbstract.hpp"
                                              "../Simulation/Models/SolarSystem/Stars/StarsAbstract.hpp"
@@ -45,7 +45,22 @@ add_executable (SpaceCompanySimulationCMake  "../Simulation/main.cpp"
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET SpaceCompanySimulationCMake PROPERTY CXX_STANDARD 20)
+  set_property(TARGET SpaceCompanySimulation PROPERTY CXX_STANDARD 20)
 endif()
 
 # TODO: Add tests and install targets if needed.
+set(CMAKE_INSTALL_PREFIX "/Dependencies")
+
+find_package(Catch2 REQUIRED PATHS "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/Catch2")
+
+add_executable(TestFiles "Tests/main.test.cpp" "Tests/TestRunner.hpp" 
+                         "Tests/Features/thread.test.cpp" 
+                         "Tests/Features/random.test.cpp" 
+                         "Tests/Features/balance.test.cpp")
+
+target_link_libraries(TestFiles PRIVATE Catch2::Catch2WithMain)
+    
+include(CTest)
+include(Catch)
+
+CATCH_DISCOVER_TESTS(TestFiles)

@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Simulation\info.json" />
   </ItemGroup>
   <ItemGroup>
