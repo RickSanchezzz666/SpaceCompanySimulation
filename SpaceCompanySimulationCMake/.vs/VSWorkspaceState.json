@@ -14,8 +14,10 @@
   "ExpandedNodes": [
     "",
     "\\Tests",
-    "\\Tests\\Features"
+    "\\Tests\\Features",
+    "\\Tests\\Simulation",
+    "\\Tests\\Simulation\\Planets"
   ],
-  "SelectedNode": "\\Tests\\main.test.cpp",
+  "SelectedNode": "\\Tests\\Simulation\\Planets\\jupiterPlanet.test.cpp",
   "PreviewInSolutionExplorer": false
 }

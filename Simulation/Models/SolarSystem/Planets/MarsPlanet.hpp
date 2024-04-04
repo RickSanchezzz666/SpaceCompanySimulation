@@ -5,13 +5,6 @@
 
 class MarsPlanet : public PlanetAbstract {
 public:
-	MarsPlanet(std::string name, long double mass, float radius, float day, long double area,
-		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
-		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
-		int magneticField, float lifeChance, int moonsNum, std::vector<std::string> moons, int id, bool belt, std::string type) : PlanetAbstract(name, mass, radius, day,
-			area, period, distance, maxTemperature, minTemperature, atmosphere, atmosphereComposition,
-			gravity, magneticField, lifeChance, moonsNum, moons, id, belt, type) {};
-
 	MarsPlanet() : PlanetAbstract("Mars", 6.417E23L, 3389.5f, 1.025f, 144'800'000, 687.0f, 1.52f, 35, -143, true,
 		{ {"Carbon Dioxide (CO2)", 95.32},
 		{"Nitrogen (N)", 2.7},

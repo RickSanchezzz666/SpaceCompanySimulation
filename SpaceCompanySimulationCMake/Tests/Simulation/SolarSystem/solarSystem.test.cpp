@@ -24,6 +24,8 @@ TEST_CASE("Create Solar System", TEST_NAME) {
 	SECTION("Comparing ID's of objects") {
 		REQUIRE(sol->planets[0]->_id == 1);
 		REQUIRE(sol->planets[3]->_id == 4);
+		REQUIRE(sol->planets[6]->_id == 7);
+		REQUIRE(sol->asteroidClusters[0]->name == "Asteroid Belt");
 		REQUIRE(sol->asteroidClusters[2]->name == "Kuiper Belt");
 		REQUIRE(sol->star->_id == 0);
 	}
