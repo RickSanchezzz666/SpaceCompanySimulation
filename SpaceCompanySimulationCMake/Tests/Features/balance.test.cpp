@@ -27,7 +27,7 @@ SCENARIO("Balance instance should be created and initialised", TEST_NAME) {
 SCENARIO("checkBalance should return correct BOOL", TEST_NAME) {
 	printStartTest(TEST_NAME);
 	
-	SECTION("Positive Value") {
+	SECTION("Positive Value", "[Positive]") {
 		GIVEN("Balance instance created with positive value") {
 			Balance testBalance(100);
 			THEN("It should return TRUE") {
@@ -36,7 +36,7 @@ SCENARIO("checkBalance should return correct BOOL", TEST_NAME) {
 		}
 	}
 
-	SECTION("Negative Value") {
+	SECTION("Negative Value", "[Negative]") {
 		GIVEN("Balance instance created with negative value") {
 			Balance testBalance(-100);
 			THEN("It should return FALSE") {
@@ -49,7 +49,7 @@ SCENARIO("checkBalance should return correct BOOL", TEST_NAME) {
 SCENARIO("updateBalance should return correct BOOL and update value", TEST_NAME) {
 	printStartTest(TEST_NAME);
 
-	SECTION("Positive Value") {
+	SECTION("Positive Value", "[Positive]") {
 		GIVEN("Balance instance created with positive value") {
 			int testNumber = 100;
 			int testNumberToUpdate = 50;
@@ -66,7 +66,7 @@ SCENARIO("updateBalance should return correct BOOL and update value", TEST_NAME)
 		}
 	}
 
-	SECTION("Negative Value") {
+	SECTION("Negative Value", "[Negative]") {
 		GIVEN("Balance instance created with negative value") {
 			int testNumber = 100;
 			int testNumberToUpdate = -200;

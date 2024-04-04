@@ -13,8 +13,9 @@
   },
   "ExpandedNodes": [
     "",
-    "\\Tests\\Threads"
+    "\\Tests",
+    "\\Tests\\Features"
   ],
-  "SelectedNode": "\\buzz.gcda",
+  "SelectedNode": "\\Tests\\main.test.cpp",
   "PreviewInSolutionExplorer": false
 }
