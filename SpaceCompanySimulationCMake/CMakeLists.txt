@@ -101,7 +101,9 @@ add_executable(TestFiles ${APP_SOURCES}
                          "Tests/Simulation/Planets/neptunePlanet.test.cpp" 
                          "Tests/Simulation/Planets/saturnPlanet.test.cpp" 
                          "Tests/Simulation/Planets/uranusPlanet.test.cpp" 
-                         "Tests/Simulation/Planets/venusPlanet.test.cpp")
+                         "Tests/Simulation/Planets/venusPlanet.test.cpp" 
+                         "Tests/Simulation/Planets/planetAbstract.test.cpp"  
+                         "Tests/Simulation/Ships/spaceShipAbstract.test.cpp")
 
 target_link_libraries(TestFiles PRIVATE Catch2::Catch2WithMain)
     
