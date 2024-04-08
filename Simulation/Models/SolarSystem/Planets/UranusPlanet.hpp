@@ -5,13 +5,6 @@
 
 class UranusPlanet : public PlanetAbstract {
 public:
-	UranusPlanet(std::string name, long double mass, float radius, float day, long double area,
-		float period, float distance, int maxTemperature, int minTemperature, bool atmosphere,
-		std::unordered_map<std::string, float> atmosphereComposition, float gravity,
-		int magneticField, float lifeChance, int moonsNum, std::vector<std::string> moons, int id, bool belt, AsteroidCluster* cluster, std::string type) : PlanetAbstract(name, mass, radius, day,
-			area, period, distance, maxTemperature, minTemperature, atmosphere, atmosphereComposition,
-			gravity, magneticField, lifeChance, moonsNum, moons, id, belt, cluster, type) {};
-
 	UranusPlanet() : PlanetAbstract("Uranus", 8.6810E25L, 25362.0f, 17.24f, 8.115E9L, 30685.0f, 19.22f, 76, 49, true, {
 		{"Hydrogen (H2)", 82.5}, {"Helium (He)", 15.2}, {"Methane (CH4)", 2.3} 
 		}, 0.886f, 7500, 0.001f, 27, { "Miranda", "Ariel", "Umbriel", "Titania", "Oberon", "Cordelia", "Ophelia",

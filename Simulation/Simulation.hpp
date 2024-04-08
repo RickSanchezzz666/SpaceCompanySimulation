@@ -33,11 +33,12 @@ public:
 	}
 
 	void startSimulation() {
+		std::cout << "Press Enter if you want to stop simulation...\n";
 		__showInfo();
 		Thread* thread = new Thread();
 		thread->createThread([&]() { __startSimulation(); });
 		std::cin.get();
 		std::cout << "\nYou have successfully earned: " + std::to_string(earthStation->balance->getBalance()) + " $\nThanks for the participation!\n";
+		std::this_thread::sleep_for(std::chrono::seconds(3));
 	}
-
 };

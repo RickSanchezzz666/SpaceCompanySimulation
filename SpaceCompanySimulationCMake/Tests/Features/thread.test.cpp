@@ -22,6 +22,8 @@ TEST_CASE("Thread creation and destruction", TEST_NAME) {
 	thread->~Thread();
 
 	REQUIRE_FALSE(thread->isRunning.load());
+
+	delete thread;
 }
 
 TEST_CASE("Thread creation twice", TEST_NAME) {
@@ -45,6 +47,8 @@ TEST_CASE("Thread creation twice", TEST_NAME) {
 	thread->~Thread();
 
 	REQUIRE_FALSE(initialThreadID == secondThreadID);
+
+	delete thread;
 }
 
 void emptyFunction(int& arg) {
@@ -71,6 +75,8 @@ TEST_CASE("Thread creation with function", TEST_NAME) {
 	REQUIRE_FALSE(thread->isRunning.load());
 
 	REQUIRE(testNumber == 8);
+
+	delete thread;
 }
 
 TEST_CASE("Immidiate Thread creation twice is not available", TEST_NAME) {
@@ -91,4 +97,6 @@ TEST_CASE("Immidiate Thread creation twice is not available", TEST_NAME) {
 	thread->~Thread();
 
 	REQUIRE_FALSE(thread->isRunning.load());
+
+	delete thread;
 }

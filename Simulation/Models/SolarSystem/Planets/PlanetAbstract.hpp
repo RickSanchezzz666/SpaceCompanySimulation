@@ -95,4 +95,8 @@ public:
 		infoString += "\n   Moons Number: " + std::to_string(_moonsNumber) + "\n";
 		std::cout << infoString;
 	}
+
+	~PlanetAbstract() {
+		if (asteroidBelt != nullptr) delete asteroidBelt;
+	}
 };

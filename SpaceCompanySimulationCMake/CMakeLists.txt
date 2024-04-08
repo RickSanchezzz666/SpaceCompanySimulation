@@ -49,14 +49,63 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
 endif()
 
 # TODO: Add tests and install targets if needed.
+
+set(APP_SOURCES
+    "../Simulation/Models/SolarSystem/Planets/PlanetAbstract.hpp"
+    "../Simulation/Models/SolarSystem/Ships/SpaceShipAbstract.hpp"
+    "../Simulation/Models/SolarSystem/Stars/StarsAbstract.hpp"
+    "../Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.hpp"
+    "../Simulation/Models/SolarSystem/Ships/PassengerSpaceShip.cpp"
+    "../Simulation/Models/SolarSystem/Ships/MiningSpaceShip.hpp"
+    "../Simulation/Models/SolarSystem/Ships/MiningSpaceShip.cpp"
+    "../Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.hpp"
+    "../Simulation/Models/SolarSystem/Ships/ExplorerSpaceShip.cpp"
+    "../Simulation/Models/SolarSystem/Planets/MercuryPlanet.hpp"
+    "../Simulation/Models/SolarSystem/Planets/VenusPlanet.hpp"
+    "../Simulation/Models/SolarSystem/Planets/MarsPlanet.hpp"
+    "../Simulation/Models/SolarSystem/Planets/JupiterPlanet.hpp"
+    "../Simulation/Models/SolarSystem/Planets/SaturnPlanet.hpp"
+    "../Simulation/Models/SolarSystem/Planets/UranusPlanet.hpp"
+    "../Simulation/Models/SolarSystem/Planets/NeptunePlanet.hpp"
+    "../Simulation/Models/SolarSystem/Stars/SunStar.hpp"
+    "../Simulation/Models/SolarSystem/Stars/SunStar.cpp"
+    "../Simulation/Models/SolarSystem/SolarSystem.hpp"
+    "../Simulation/Models/SolarSystem/Ships/SpaceShipType.hpp"
+    "../Simulation/Features/EarthStation.hpp"
+    "../Simulation/Features/EarthStation.cpp"
+    "../Simulation/Models/SolarSystem/Ships/SpaceShipStatus.hpp"
+    "../Threads/Thread.hpp"
+    "../Simulation/Simulation.hpp"
+    "../Simulation/Simulation.cpp"
+    "../Simulation/Features/Random.hpp"
+    "../Simulation/Features/Balance.hpp"
+    "../Simulation/Models/SolarSystem/AsteroidCluster.hpp"
+)
+
 set(CMAKE_INSTALL_PREFIX "/Dependencies")
 
 find_package(Catch2 REQUIRED PATHS "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/Catch2")
 
-add_executable(TestFiles "Tests/main.test.cpp" "Tests/TestRunner.hpp" 
+add_executable(TestFiles ${APP_SOURCES}
+                         "Tests/main.test.cpp" 
+                         "Tests/TestRunner.hpp" 
                          "Tests/Features/thread.test.cpp" 
                          "Tests/Features/random.test.cpp" 
-                         "Tests/Features/balance.test.cpp")
+                         "Tests/Features/balance.test.cpp" 
+                         "Tests/Features/earthStation.test.cpp"
+                         "Tests/Simulation/SolarSystem/asteroidCluster.test.cpp"
+                         "Tests/Simulation/SolarSystem/solarSystem.test.cpp"  
+                         "Tests/Simulation/Stars/sunStar.test.cpp" 
+                         "Tests/Simulation/Planets/jupiterPlanet.test.cpp" 
+                         "Tests/Simulation/Planets/marsPlanet.test.cpp" 
+                         "Tests/Simulation/Planets/mercuryPlanet.test.cpp" 
+                         "Tests/Simulation/Planets/neptunePlanet.test.cpp" 
+                         "Tests/Simulation/Planets/saturnPlanet.test.cpp" 
+                         "Tests/Simulation/Planets/uranusPlanet.test.cpp" 
+                         "Tests/Simulation/Planets/venusPlanet.test.cpp" 
+                         "Tests/Simulation/Planets/planetAbstract.test.cpp"  
+                         "Tests/Simulation/Ships/spaceShipAbstract.test.cpp" 
+)
 
 target_link_libraries(TestFiles PRIVATE Catch2::Catch2WithMain)
     

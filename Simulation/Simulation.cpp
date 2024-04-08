@@ -20,7 +20,7 @@ void Simulation::__startSimulation() {
 		__launchShip();
 		std::this_thread::sleep_for(std::chrono::seconds(Random::getRandomNumber(5, 25)));
 		__launchShip();
-		if (earthStation->getShipBusyShipsNumber() >= 2) std::this_thread::sleep_for(std::chrono::seconds(Random::getRandomNumber(30, 180)));
+		if (earthStation->getBusyShipsNumber() >= 2) std::this_thread::sleep_for(std::chrono::seconds(Random::getRandomNumber(30, 180)));
 	}
 	
 }

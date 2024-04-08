@@ -73,7 +73,7 @@ public:
 
 	int getShipsNumber() { return __shipsNumber; }
 
-	int getShipBusyShipsNumber() {
+	int getBusyShipsNumber() {
 		int count = 0;
 		for (auto& ship : __everyShip) if (ship->spaceShipStatus == SpaceShipStatus::BUSY) ++count;
 		return count;
