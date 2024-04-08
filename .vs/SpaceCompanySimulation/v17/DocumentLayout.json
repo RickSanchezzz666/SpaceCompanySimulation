@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Repos\\SpaceCompanySimulation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Simulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Simulation.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|solutionrelative:Simulation\\Simulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ECC3904E-ABCA-4127-BF0C-F2FA6FB1F7B3}|SpaceCompanySimulation.vcxproj|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Features\\EarthStation.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 225,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
@@ -87,8 +87,7 @@
               "RelativeToolTip": "Simulation\\Features\\EarthStation.hpp",
               "ViewState": "AQIAADwAAAAAAAAAAAAAAEsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T14:20:22.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T14:20:22.449Z"
             },
             {
               "$type": "Document",
@@ -128,26 +127,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Simulation.cpp",
               "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.cpp",
               "RelativeDocumentMoniker": "Simulation\\Simulation.cpp",
               "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.cpp",
               "RelativeToolTip": "Simulation\\Simulation.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAvwBEAAAAiAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-31T10:24:01.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Simulation.hpp",
               "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.hpp",
               "RelativeDocumentMoniker": "Simulation\\Simulation.hpp",
               "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Simulation.hpp",
               "RelativeToolTip": "Simulation\\Simulation.hpp",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABMAAAAXAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-01T12:18:26.885Z",
               "EditorCaption": ""
@@ -162,8 +161,7 @@
               "RelativeToolTip": "Simulation\\Features\\EarthStation.cpp",
               "ViewState": "AQIAADgAAAAAAAAAAAAAAEYAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-01T15:19:19.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-01T15:19:19.114Z"
             }
           ]
         }

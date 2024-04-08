@@ -33,6 +33,7 @@ public:
 	}
 
 	void startSimulation() {
+		std::cout << "Press Enter if you want to stop simulation...\n";
 		__showInfo();
 		Thread* thread = new Thread();
 		thread->createThread([&]() { __startSimulation(); });
