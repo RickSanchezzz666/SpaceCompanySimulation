@@ -3,17 +3,14 @@
   "WorkspaceRootPath": "D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\Tests\\Simulation\\Ships\\spaceShipAbstract.test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tests\\Simulation\\Ships\\spaceShipAbstract.test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\Tests\\Features\\earthStation.test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tests\\Features\\earthStation.test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Features\\EarthStation.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\SpaceCompanySimulation\\Simulation\\Features\\EarthStation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -27,17 +24,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "CMakeLists.txt",
               "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\CMakeLists.txt",
               "RelativeDocumentMoniker": "CMakeLists.txt",
               "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\CMakeLists.txt",
               "RelativeToolTip": "CMakeLists.txt",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAUwGkAAAAZAAAA",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAUwF4AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-03-02T15:56:37.297Z",
               "IsPinned": true,
@@ -49,54 +46,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "spaceShipAbstract.test.cpp",
-              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\Tests\\Simulation\\Ships\\spaceShipAbstract.test.cpp",
-              "RelativeDocumentMoniker": "Tests\\Simulation\\Ships\\spaceShipAbstract.test.cpp",
-              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\Tests\\Simulation\\Ships\\spaceShipAbstract.test.cpp",
-              "RelativeToolTip": "Tests\\Simulation\\Ships\\spaceShipAbstract.test.cpp",
-              "ViewState": "AQIAADMAAAAAAAAAAAApwDsAAAAKAAAA",
+              "DocumentIndex": 2,
+              "Title": "EarthStation.cpp",
+              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Features\\EarthStation.cpp",
+              "RelativeDocumentMoniker": "..\\Simulation\\Features\\EarthStation.cpp",
+              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Features\\EarthStation.cpp",
+              "RelativeToolTip": "..\\Simulation\\Features\\EarthStation.cpp",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAQwHUAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-07T14:21:53.988Z",
+              "WhenOpened": "2024-04-08T13:20:16.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SpaceShipAbstract.hpp",
-              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp",
-              "RelativeDocumentMoniker": "..\\Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp",
-              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp",
-              "RelativeToolTip": "..\\Simulation\\Models\\SolarSystem\\Ships\\SpaceShipAbstract.hpp",
-              "ViewState": "AQIAADwAAAAAAAAAAAAQwEsAAAACAAAA",
+              "Title": "EarthStation.hpp",
+              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Features\\EarthStation.hpp",
+              "RelativeDocumentMoniker": "..\\Simulation\\Features\\EarthStation.hpp",
+              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Features\\EarthStation.hpp",
+              "RelativeToolTip": "..\\Simulation\\Features\\EarthStation.hpp",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAQwFEAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T16:20:03.137Z",
+              "WhenOpened": "2024-04-08T11:44:04.426Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PassengerSpaceShip.hpp",
-              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp",
-              "RelativeDocumentMoniker": "..\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp",
-              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp",
-              "RelativeToolTip": "..\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.hpp",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwC0AAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T14:23:54.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PassengerSpaceShip.cpp",
-              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp",
-              "RelativeDocumentMoniker": "..\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp",
-              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp",
-              "RelativeToolTip": "..\\Simulation\\Models\\SolarSystem\\Ships\\PassengerSpaceShip.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAxAAAA",
+              "DocumentIndex": 0,
+              "Title": "earthStation.test.cpp",
+              "DocumentMoniker": "D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\Tests\\Features\\earthStation.test.cpp",
+              "RelativeDocumentMoniker": "Tests\\Features\\earthStation.test.cpp",
+              "ToolTip": "D:\\Repos\\SpaceCompanySimulation\\SpaceCompanySimulationCMake\\Tests\\Features\\earthStation.test.cpp",
+              "RelativeToolTip": "Tests\\Features\\earthStation.test.cpp",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAgwGQAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-07T14:28:25.671Z",
+              "WhenOpened": "2024-04-08T11:06:26.589Z",
               "EditorCaption": ""
             }
           ]

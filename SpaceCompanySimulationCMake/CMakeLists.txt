@@ -92,6 +92,7 @@ add_executable(TestFiles ${APP_SOURCES}
                          "Tests/Features/thread.test.cpp" 
                          "Tests/Features/random.test.cpp" 
                          "Tests/Features/balance.test.cpp" 
+                         "Tests/Features/earthStation.test.cpp"
                          "Tests/Simulation/SolarSystem/asteroidCluster.test.cpp"
                          "Tests/Simulation/SolarSystem/solarSystem.test.cpp"  
                          "Tests/Simulation/Stars/sunStar.test.cpp" 
@@ -103,7 +104,8 @@ add_executable(TestFiles ${APP_SOURCES}
                          "Tests/Simulation/Planets/uranusPlanet.test.cpp" 
                          "Tests/Simulation/Planets/venusPlanet.test.cpp" 
                          "Tests/Simulation/Planets/planetAbstract.test.cpp"  
-                         "Tests/Simulation/Ships/spaceShipAbstract.test.cpp")
+                         "Tests/Simulation/Ships/spaceShipAbstract.test.cpp" 
+)
 
 target_link_libraries(TestFiles PRIVATE Catch2::Catch2WithMain)
     

@@ -16,8 +16,9 @@
     "\\Tests",
     "\\Tests\\Features",
     "\\Tests\\Simulation",
+    "\\Tests\\Simulation\\Planets",
     "\\Tests\\Simulation\\Ships"
   ],
-  "SelectedNode": "\\Tests\\Simulation\\Ships\\passengerSpaceShip.test.cpp",
+  "SelectedNode": "\\Tests\\Simulation\\Planets\\marsPlanet.test.cpp",
   "PreviewInSolutionExplorer": false
 }
